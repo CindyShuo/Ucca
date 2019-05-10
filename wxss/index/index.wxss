@@ -1,0 +1,217 @@
+.body{
+  color: #232323;
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0;
+  padding:0;
+  background: #FCFCFC;
+  padding-bottom:130rpx;
+}
+.top{
+  color:#fff;
+  font-size:28rpx;
+  padding:0 40rpx;
+  border-radius: 0 0 90rpx 90rpx;
+  background:#000;
+  width:670rpx;
+  height:282rpx;
+  padding-top:20rpx;
+}
+.top-icon{
+  float:left;
+  width:28rpx;
+  height:32rpx;
+  margin-right:10rpx;
+}
+.top-p{
+  float:left;
+  height:32rpx;
+  line-height:32rpx;
+}
+.top-lan{
+  float:right;
+  height:32rpx;
+  line-height:32rpx;
+}
+.pic{
+  width:670rpx;
+  height:340rpx;
+  margin-left:40rpx;
+  margin-top:-212rpx;
+}
+.topic{
+  margin-top:60rpx;
+  padding:0 40rpx;
+  font-size:48rpx;
+  height:67rpx;
+}
+.topic-p{
+  float:left;
+  line-height:67rpx;
+  height:67rpx;
+}
+.topic-icon{
+  float:right;
+  width:22rpx;
+  height:28rpx;
+  margin-top:20rpx;
+}
+.topic-icon1{
+  float:right;
+  width:21rpx;
+  height:12rpx;
+  margin-top:32rpx;
+  margin-left:15rpx;
+}
+.topic-icon-p{
+  float:right;
+  margin-top:23rpx;
+  font-size:30rpx;
+  line-height:37rpx;
+}
+.scroll-pic{
+  clear:both;
+  margin:30rpx 0 0 40rpx;
+  height:430rpx;
+  font-size:34rpx;
+  width:3000rpx;
+}
+.scroll-pic-div{
+  float:left;
+  margin-right:30rpx;
+  width:500rpx;
+  height:430rpx;
+  background: #fff;
+  border-radius:0 20rpx 0 0;
+  box-shadow: 3rpx 3rpx 35rpx rgba(0,0,0,.1);
+
+}
+.scroll-div-pic{
+  width:500rpx;
+  height:280rpx;
+  border-radius:0 20rpx 0 0;
+}
+.scroll-div-p{
+  padding:17rpx 40rpx;
+  height:90rpx;
+  font-size:34rpx;
+  line-height: 48rpx;
+}
+.scroll-div-p span{
+  font-size:24rpx;
+  opacity: .4;
+  line-height: 33rpx;
+}
+.scroll2{
+  clear:both;
+  position: relative;
+  margin:30rpx 0 0 40rpx;
+  height:330rpx;
+  font-size:30rpx;
+  width:3000rpx;
+}
+.scroll2-div{
+  float:left;
+  margin-right:30rpx;
+  width:640rpx;
+  height:330rpx;
+}
+.scroll2-div-pic{
+  float:left;
+  width:240rpx;
+  height:300rpx;
+  margin-left:30rpx;
+  border-radius:0 30rpx 0 0;
+  position: relative;
+  z-index: 100;
+}
+.scroll2-div-bg{
+  width:640rpx;
+  height:290rpx;
+  background: #fff;
+  position: absolute;
+  bottom:0;
+  box-shadow: 3rpx 3rpx 35rpx rgba(0,0,0,.1);
+  z-index: 0;
+}
+.scroll2-div-p{
+  float:right;
+  position: relative;
+  margin:0 40rpx 0 40rpx;
+  font-size:30rpx;
+  width:290rpx;
+  z-index: 100;
+}
+.scroll2-div-span{
+  float:right;
+  position: relative;
+  margin:100rpx 40rpx 10rpx 40rpx;
+  width:290rpx;
+  font-size:24rpx;
+  opacity: .4;
+  z-index: 100;
+}
+.xinxi{
+  margin:30rpx auto 0;
+  width:670rpx;
+  height:906rpx;
+  background: #fff;
+  box-shadow: 3rpx 3rpx 35rpx rgba(0,0,0,.1);
+}
+.xinxi-p{
+  padding:60rpx 0 0 50rpx;
+  overflow: hidden;
+}
+.xinxi-p1{
+  font-size:24rpx;
+  opacity:.6;
+}
+.xinxi-p2{
+  font-size:30rpx;
+  line-height:80rpx;
+}
+.xinxi-p3{
+  float:left;
+  font-size:30rpx;
+  line-height:30rpx;
+}
+.xinxi-icon{
+  width:35rpx;
+  height:35rpx;
+  float:left;
+  clear:left;
+  margin-top:24rpx;
+  margin-right:20rpx;
+}
+.xinxi-icon1{
+  width:40rpx;
+  height:30rpx;
+  float:left;
+  clear:left;
+  margin-top:0rpx;
+  margin-right:20rpx;
+}
+.xinxi-map{
+  width:670rpx;
+  height:360rpx;
+}
+.bottom-memu{
+  position:fixed;
+  bottom:0;
+  width:750rpx;
+  height:100rpx;
+  background: #fff;
+  z-index:10009;
+  box-shadow: 1rpx -1rpx 1rpx rgba(0,0,0,.05);
+  display:flex;
+  justify-content: center;
+}
+.bottom-div{
+  float:left;
+  width:55rpx;
+  height:81rpx;
+  margin: 12rpx 60rpx;
+}
