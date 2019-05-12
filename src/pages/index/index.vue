@@ -9,16 +9,27 @@
     ></image>
     <inner-exhibition />
     <near-activity />
+    <map
+      id="myMap"
+      style="width: 670rpx; height: 360rpx;"
+      :latitude="latitude"
+      :longitude="longitude"
+      :markers="markers"
+      :covers="covers"
+      show-location
+    ></map>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
+  import CommonFooter from '../../components/common/CommonFooter'
 
   export default {
     name: 'HomePage',
-    components: { InnerExhibition, NearActivity },
+    components: { InnerExhibition, NearActivity, CommonFooter },
     data () {
       return {
         motto: 'Hello miniprograme',
@@ -41,10 +52,6 @@
         console.log('clickHandle:', ev)
         // throw {message: 'custom test'}
       }
-    },
-
-    created () {
-      // let app = getApp()
     }
   }
 </script>
@@ -62,6 +69,9 @@
       margin: -212rpx auto 0;
       width: 670rpx;
       height: 340rpx;
+    }
+    #myMap {
+      margin: 0 auto;
     }
   }
 </style>
