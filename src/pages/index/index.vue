@@ -30,12 +30,21 @@
         <div class="right">
         </div>
     </div>
+    <map
+      id="myMap"
+      style="width: 670rpx; height: 360rpx;"
+      :latitude="latitude"
+      :longitude="longitude"
+      :markers="markers"
+      :covers="covers"
+      show-location></map>
+    <common-footer></common-footer>
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
-
+import CommonFooter from '@/components/common/CommonFooter'
 export default {
   data () {
     return {
@@ -43,12 +52,28 @@ export default {
       userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
+      },
+      latitude: 23.099994,
+      longitude: 113.324520,
+      markers: [{
+        id: 1,
+        latitude: 23.099994,
+        longitude: 113.324520,
+        name: 'T.I.T 创意园'
+      }],
+      covers: [{
+        latitude: 23.099994,
+        longitude: 113.344520
+      }, {
+        latitude: 23.099994,
+        longitude: 113.304520
+      }]
     }
   },
 
   components: {
-    card
+    card,
+    CommonFooter
   },
 
   methods: {
@@ -63,6 +88,46 @@ export default {
     clickHandle (ev) {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
+    },
+    onReady (e) {
+      this.mapCtx = wx.createMapContext('myMap')
+    },
+    getCenterLocation () {
+      this.mapCtx.getCenterLocation({
+        success: function (res) {
+          console.log(res.longitude)
+          console.log(res.latitude)
+        }
+      })
+    },
+    moveToLocation () {
+      this.mapCtx.moveToLocation()
+    },
+    translateMarker () {
+      this.mapCtx.translateMarker({
+        markerId: 1,
+        autoRotate: true,
+        duration: 1000,
+        destination: {
+          latitude: 23.10229,
+          longitude: 113.3345211
+        },
+        animationEnd () {
+          console.log('animation end')
+        }
+      })
+    },
+    includePoints () {
+      this.mapCtx.includePoints({
+        padding: [10],
+        points: [{
+          latitude: 23.10229,
+          longitude: 113.3345211
+        }, {
+          latitude: 23.00229,
+          longitude: 113.3345211
+        }]
+      })
     }
   },
 
@@ -123,4 +188,7 @@ export default {
   height:1rem;
   background-color:green;
 }
+  #myMap {
+    margin: 0 auto;
+  }
 </style>
