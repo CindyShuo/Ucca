@@ -68,4 +68,5 @@
   font-size:24rpx;
   color:red;
   line-height:20rpx;
+  float:left;
 }

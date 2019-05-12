@@ -17,7 +17,7 @@
       <view class='ucca-p5'>￥100</view>
     </view>
   </view>
-    <view class='topic'>
+  <view class='topic'>
     <view class='topic-p'>当前展览</view>
   </view>
   <view class='ucca'>
@@ -40,9 +40,9 @@
       <view class='ucca-p5'>￥100</view>
     </view>
   </view>
-    <view class='topic'>
+  <view class='topic'>
     <view class='topic-p'>历史展览</view>
-    <image class='topic-icon1'src='../images/arrow1.png'></image>
+    <image class='topic-icon1' src='../images/arrow1.png'></image>
     <view class='topic-icon-p'>2019</view>
   </view>
   <view class='ucca'>
@@ -61,4 +61,5 @@
     <image class='bottom-div' src='../images/bottom3.png'></image>
     <image class='bottom-div' src='../images/bottom4.png'></image>
   </view>
+  
 </scroll-view>

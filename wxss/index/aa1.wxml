@@ -1,0 +1,81 @@
+<!--index/aa1.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='top-menu'>
+    <view class='top-menu-p1'>展览</view>
+    <view class='top-menu-p'>活动</view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>近期活动</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>历史活动</view>
+    <image class='topic-icon1' src='../images/arrow1.png'></image>
+    <view class='topic-icon-p'>2019</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+    <view class='ucca-p3 ucca-p3-1'>￥138-￥188</view>
+    <view class='ucca-p4'>UCAA会员</view>
+    <view class='ucca-p5'>￥100</view>
+  </view>
+  <view class='bottom-memu'>
+    <image class='bottom-div' src='../images/bottom1.png'></image>
+    <image class='bottom-div' src='../images/bottom2-.png'></image>
+    <image class='bottom-div' src='../images/bottom3.png'></image>
+    <image class='bottom-div' src='../images/bottom4.png'></image>
+  </view>
+</scroll-view>

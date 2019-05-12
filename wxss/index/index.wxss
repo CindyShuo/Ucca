@@ -72,6 +72,13 @@
   font-size:30rpx;
   line-height:37rpx;
 }
+.topic-icon-p1{
+  float:right;
+  margin:18rpx 20rpx 0 0;
+  opacity: .6;
+  line-height: 37rpx;
+  font-size:24rpx;
+}
 .scroll-pic{
   clear:both;
   margin:30rpx 0 0 40rpx;

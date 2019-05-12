@@ -1,0 +1,8 @@
+/* index/nowgo.wxss */
+@import "details.wxss";
+.brief {
+  height: 396rpx;
+}
+.details-bottom-div4{
+  width:499rpx;
+}

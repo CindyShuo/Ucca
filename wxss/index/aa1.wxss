@@ -1,0 +1,56 @@
+/* index/aa1.wxss */
+@import"aa.wxss";
+.unit{
+  position:relative;
+  margin:30rpx auto 0;
+  width:670rpx;
+  height:335rpx;
+}
+.unit-pic{
+  float:left;
+  width:240rpx;
+  height:300rpx;
+  margin-left:30rpx;
+  border-radius:0 30rpx 0 0;
+  position: relative;
+  z-index: 100;
+}
+.unit-bg{
+  width:670rpx;
+  height:295rpx;
+  background: #fff;
+  position: absolute;
+  bottom:0;
+  box-shadow: 3rpx 3rpx 35rpx rgba(0,0,0,.1);
+  z-index: 0;
+}
+.unit-p{
+  float:right;
+  position: relative;
+  margin:0 40rpx 0 30rpx;
+  font-size:30rpx;
+  width:330rpx;
+  z-index: 100;
+}
+.unit-span{
+  float:right;
+  position: relative;
+  margin:100rpx 40rpx 10rpx 30rpx;
+  width:330rpx;
+  font-size:24rpx;
+  opacity: .4;
+  z-index: 100;
+}
+.ucca-p3-1{
+  position:relative;
+  margin: 28rpx 15rpx 0 25rpx;
+}
+.ucca-p4{
+  position: relative;
+  margin-top:28rpx;
+}
+.ucca-p5{
+  position: relative;
+  margin-top:30rpx;
+
+}

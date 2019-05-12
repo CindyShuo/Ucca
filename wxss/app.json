@@ -1,7 +1,10 @@
 {
   "pages": [
     "index/index",
-    "index/aa"
+    "index/aa",
+    "index/aa1",
+    "index/details",
+    "index/nowgo"
   ],
   "window": {
     "backgroundTextStyle": "light",
