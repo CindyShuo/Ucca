@@ -56,7 +56,6 @@
 
 <style lang="less" scoped>
   .visit-info {
-    margin-top: 60rpx;
     &__content {
       margin: 30rpx auto 0;
       width: 670rpx;

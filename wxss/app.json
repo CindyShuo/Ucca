@@ -7,6 +7,8 @@
     "index/nowgo"
   ],
   "window": {
+
+    "backgroundColor": "#fcfcfc",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
