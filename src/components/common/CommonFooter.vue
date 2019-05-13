@@ -1,28 +1,17 @@
 <template>
   <view class='bottom-menu'>
-    <a href="/pages/index/main" @click="flag = 1">
-      <image class="bottom-div" v-if="flag === 1" src='/static/images/footerMenu/bottom1-.png'></image>
-      <image class="bottom-div" v-else src='/static/images/footerMenu/bottom1.png'></image>
-    </a>
-    <a href="/pages/logs/main" @click="flag = 2">
-      <image class='bottom-div' v-if="flag === 2" src='/static/images/footerMenu/bottom2-.png'></image>
-      <image class='bottom-div' v-else src='/static/images/footerMenu/bottom2.png'></image>
-    </a>
-    <a href="/pages/index/main" @click="flag = 3">
-      <image class='bottom-div' v-if="flag === 3" src='/static/images/footerMenu/bottom3.png'></image>
-      <image class='bottom-div' v-else src='/static/images/footerMenu/bottom3.png'></image>
-    </a>
-    <a href="/pages/logs/main" @click="flag = 4">
-      <image class='bottom-div' v-if="flag === 4" src='/static/images/footerMenu/bottom4.png'></image>
-      <image class='bottom-div' v-else src='/static/images/footerMenu/bottom4.png'></image>
-    </a>
+    <p v-for="(item, index) in navList"
+       @click="bindViewTap(index, item.pagePath)"
+       :key="index">
+      <img class='bottom-div' :src="selectNavIndex === index ? item.selectedIconPath : item.iconPath" alt="iconPath" />
+    </p>
   </view>
 </template>
 
 <style scoped>
   .bottom-menu{
     position: fixed;
-    bottom :0;
+    bottom: 0;
     width: 750rpx;
     height: 100rpx;
     background: #fff;
@@ -37,17 +26,55 @@
     height: 81rpx;
     margin: 12rpx 60rpx;
   }
+
 </style>
 
 <script>
   export default {
     data () {
       return {
-        flag: 1
+        flag: 1,
+        selectNavIndex: 0,
+        navList: [
+          {
+            pagePath: '/pages/index/main',
+            iconPath: '/static/images/footerMenu/bottom1.png',
+            selectedIconPath: '/static/images/footerMenu/bottom1-.png'
+          },
+          {
+            pagePath: '/pages/logs/main',
+            iconPath: '/static/images/footerMenu/bottom2.png',
+            selectedIconPath: '/static/images/footerMenu/bottom2-.png'
+          },
+          {
+            pagePath: '/pages/index/main',
+            iconPath: '/static/images/footerMenu/bottom3.png',
+            selectedIconPath: '/static/images/footerMenu/bottom3.png'
+          },
+          {
+            pagePath: '/pages/logs/main',
+            iconPath: '/static/images/footerMenu/bottom4.png',
+            selectedIconPath: '/static/images/footerMenu/bottom4.png'
+          }
+        ]
       }
     },
     methods: {
-
+      /**
+       * tabBar路由跳转
+       */
+      bindViewTap (index, url) {
+        this.selectNavIndex = index
+        if (mpvuePlatform === 'wx') {
+          wx.navigateTo({
+            url
+          })
+        } else {
+          wx.switchTab({
+            url
+          })
+        }
+      }
     }
   }
 </script>
