@@ -1,6 +1,6 @@
 <template>
   <scroll-view scroll-y class='body'>
-    <common-entry title="展览预告" />
+    <common-entry title="展览预告" type="none" />
     <view class='ucca'>
       <image class='ucca-pic' src='/static/images/pic.png'></image>
       <view class='ucca-p'>
@@ -12,7 +12,7 @@
       </view>
     </view>
     <view class='topic'>
-      <common-entry title="当前展览" />
+      <common-entry title="当前展览" type="none" />
     </view>
     <view class='ucca'>
       <image class='ucca-pic' src='/static/images/pic.png'></image>
@@ -39,7 +39,7 @@
     <!--        <image class='topic-icon1' src='/static/images/arrow1.png'></image>-->
     <!--        <view class='topic-icon-p'>2019</view>-->
     <!--      </view>-->
-    <common-entry title="历史展览" />
+    <common-entry title="历史展览" type="date" />
     <view class='ucca'>
       <image class='ucca-pic' src='/static/images/pic.png'></image>
       <view class='ucca-p'>

@@ -1,6 +1,6 @@
 <template>
   <div class="visit-info">
-    <common-entry title="参观信息" />
+    <common-entry type="none" title="参观信息" />
     <div class="visit-info__content">
       <div class="text">
         <h3 class="text--style-1">开放时间</h3>
