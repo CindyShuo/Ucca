@@ -26,6 +26,18 @@ export default {
   },
   log () {
     console.log(`log at:${Date.now()}`)
+  },
+  onLaunch () {
+    wx.getSystemInfo({
+      success: res => {
+        // 导航高度
+        console.log(this.globalData)
+        this.globalData.navHeight = res.statusBarHeight + 46
+      },
+      fail (err) {
+        console.log(err)
+      }
+    })
   }
 }
 </script>

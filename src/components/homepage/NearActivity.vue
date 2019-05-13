@@ -31,7 +31,6 @@
 
 <style lang="less" scoped>
   .near-activity {
-    margin-top: 60rpx;
     &__content {
       margin-top: 70rpx;
       padding-left: 40rpx;

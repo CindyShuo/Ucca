@@ -1,5 +1,8 @@
 <template>
-  <div class="common-activity-item">
+  <div
+    @click="direction"
+    class="common-activity-item"
+  >
     <image
       src="/static/images/banner.png"
       class="common-activity-item__image"
@@ -16,7 +19,14 @@
 
 <script>
   export default {
-    name: 'CommonActivityItem'
+    name: 'CommonActivityItem',
+    methods: {
+      direction () {
+        wx.navigateTo({
+          url: '/pages/activeInfo/main'
+        })
+      }
+    }
   }
 </script>
 
@@ -44,7 +54,7 @@
       height: 290rpx;
       padding: 60rpx 40rpx 0 310rpx;
       background-color: #fff;
-      box-shadow: 0 12px 34px 0 rgba(0, 0, 0, 0.05);
+      box-shadow: 0 12rpx 34rpx 0 rgba(0, 0, 0, 0.05);
       .time {
         margin-bottom: 10rpx;
         line-height: 32rpx;
