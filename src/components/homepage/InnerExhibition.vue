@@ -35,7 +35,7 @@
       margin-top: 30rpx;
       padding-left: 40rpx;
       .swipe {
-        height: 430rpx;
+        height: 490rpx;
       }
     }
   }

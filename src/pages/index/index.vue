@@ -1,35 +1,27 @@
 <template>
   <div class="home-page">
-    <div class="home-page__top">
-
-    </div>
+    <home-top />
     <image
       src="/static/images/banner.png"
       class="home-page__banner"
     ></image>
     <inner-exhibition />
     <near-activity />
-    <map
-      id="myMap"
-      style="width: 670rpx; height: 360rpx;"
-      :latitude="latitude"
-      :longitude="longitude"
-      :markers="markers"
-      :covers="covers"
-      show-location
-    ></map>
+    <visit-info />
     <common-footer></common-footer>
   </div>
 </template>
 
 <script>
+  import HomeTop from '../../components/homepage/HomeTop'
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
   import CommonFooter from '../../components/common/CommonFooter'
+  import VisitInfo from '../../components/homepage/VisitInfo'
 
-  export default {
+export default {
     name: 'HomePage',
-    components: { InnerExhibition, NearActivity, CommonFooter },
+    components: { HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
         motto: 'Hello miniprograme',
@@ -58,12 +50,8 @@
 
 <style lang="less" scoped>
   .home-page {
-    &__top {
-      width: 100%;
-      height: 302rpx;
-      border-radius: 0 0 90rpx 90rpx;
-      background-color: #232323;
-    }
+    padding-bottom: 130rpx;
+    background-color: #fcfcfc;
     &__banner {
       display: block;
       margin: -212rpx auto 0;
