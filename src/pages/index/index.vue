@@ -9,6 +9,7 @@
     <near-activity />
     <visit-info />
     <common-footer></common-footer>
+<!-- <common-footerHandle></common-footerHandle> -->
   </div>
 </template>
 
@@ -17,11 +18,12 @@
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
   import CommonFooter from '../../components/common/CommonFooter'
+  import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import VisitInfo from '../../components/homepage/VisitInfo'
 
 export default {
     name: 'HomePage',
-    components: { HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
+    components: { HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter, CommonFooterHandle },
     data () {
       return {
         motto: 'Hello miniprograme',
