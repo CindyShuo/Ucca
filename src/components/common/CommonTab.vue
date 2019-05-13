@@ -1,6 +1,6 @@
 <template>
   <view class="top-menu">
-    <a v-for="(item, index) in arr" @click="tabFlag(index)" class='top-menu-p' >{{ item }}</a>
+    <a v-for="(item, index) in arr" :key="index" @click="tabFlag(index)" class='top-menu-p' v-bind:class="{ active: index === flag }">{{ item }}</a>
   </view>
 </template>
 
