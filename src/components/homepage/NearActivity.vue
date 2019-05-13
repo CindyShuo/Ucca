@@ -10,6 +10,7 @@
         <swiper-item
           v-for="(item, i) in 10"
           :key="i"
+          class="swipe-item"
         >
           <common-activity-item />
         </swiper-item>
@@ -33,8 +34,12 @@
     margin-top: 60rpx;
     &__content {
       margin-top: 70rpx;
-      .item {
-        height: 290rpx;
+      padding-left: 40rpx;
+      .swipe {
+        height: 390rpx;
+      }
+      .swipe-item {
+        overflow: auto;
       }
     }
   }

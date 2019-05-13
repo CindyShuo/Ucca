@@ -5,6 +5,7 @@
     "pages/counter/main"
   ],
   "window": {
+    "backgroundColor": "#000000",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#232323",
     "navigationBarTitleText": "UCCA",

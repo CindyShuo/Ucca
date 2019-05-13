@@ -24,9 +24,7 @@
   .common-activity-item {
     position: relative;
     width: 640rpx;
-    height: 290rpx;
-    background-color: #fff;
-    box-shadow: 0 12px 34px 0 rgba(0, 0, 0, 0.05);
+    height: 330rpx;
     &__image {
       position: absolute;
       left: 30rpx;
@@ -38,7 +36,15 @@
       border-radius: 0 20rpx 0 0;
     }
     &__text {
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 290rpx;
       padding: 60rpx 40rpx 0 310rpx;
+      background-color: #fff;
+      box-shadow: 0 12px 34px 0 rgba(0, 0, 0, 0.05);
       .time {
         margin-bottom: 10rpx;
         line-height: 32rpx;

@@ -63,12 +63,17 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const stylusOptions = {
+    import: [path.join(__dirname, "../src/assets/css/base.less")],  //你公共样式存放的位置
+    paths: [path.join(__dirname, '../src/assets/css'), path.join(__dirname, '../')]  //公共样式文件位置
+  }
+
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     wxss: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less'),
+    less: generateLoaders('less', stylusOptions),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
