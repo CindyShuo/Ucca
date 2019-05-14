@@ -43,7 +43,7 @@
             selectedIconPath: '/static/images/footerMenu/bottom1-.png'
           },
           {
-            pagePath: '/pages/logs/main',
+            pagePath: '/pages/purchase/main',
             iconPath: '/static/images/footerMenu/bottom2.png',
             selectedIconPath: '/static/images/footerMenu/bottom2-.png'
           },
@@ -53,7 +53,7 @@
             selectedIconPath: '/static/images/footerMenu/bottom3.png'
           },
           {
-            pagePath: '/pages/logs/main',
+            pagePath: '/pages/purchase/main',
             iconPath: '/static/images/footerMenu/bottom4.png',
             selectedIconPath: '/static/images/footerMenu/bottom4.png'
           }

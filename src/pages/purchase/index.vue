@@ -1,5 +1,6 @@
 <template>
   <div>
+    <common-header/>
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
 <!--    <view class='top-menu'>-->
 <!--      <view class='top-menu-p'>展览</view>-->
@@ -13,6 +14,7 @@
 
 <script>
 import { formatTime } from '@/utils/index'
+import CommonHeader from '../../components/common/CommonHeader'
 import CommonTab from '@/components/common/CommonTab'
 import card from '@/components/card'
 import Exhibition from '@/components/PurchaseTickets/Exhibition'
@@ -21,6 +23,7 @@ import CommonFooter from '../../components/common/CommonFooter'
 
 export default {
   components: {
+    CommonHeader,
     card,
     CommonTab,
     CommonFooter,
