@@ -1,6 +1,6 @@
 <template>
   <div class="near-activity">
-    <common-entry title="近期活动" goLink="/pages/logs/main" />
+    <common-entry title="近期活动" goLink="/pages/purchase/main" />
     <div class="near-activity__content">
       <swiper
         duration="2000"

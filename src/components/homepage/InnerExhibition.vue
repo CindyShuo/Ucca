@@ -1,6 +1,6 @@
 <template>
   <div class="inner-exhibition">
-    <common-entry title="馆内展览" goLink="/pages/logs/main" />
+    <common-entry title="馆内展览" goLink="/pages/purchase/main" />
     <div class="inner-exhibition__content">
       <swiper
         duration="2000"
