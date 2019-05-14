@@ -1,5 +1,6 @@
 <template>
   <div class="home-page">
+    <common-header />
     <home-top />
     <image
       src="/static/images/banner.png"
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+  import CommonHeader from '../../components/common/CommonHeader'
   import HomeTop from '../../components/homepage/HomeTop'
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
@@ -23,7 +25,7 @@
 
 export default {
     name: 'HomePage',
-    components: { HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter, CommonFooterHandle },
+    components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter, CommonFooterHandle },
     data () {
       return {
         motto: 'Hello miniprograme',
