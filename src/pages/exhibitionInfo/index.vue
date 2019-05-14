@@ -54,15 +54,23 @@
 <!--        <view class='details-menu-div'>关于嘉宾</view>-->
 <!--        <view class='details-menu-div'>活动须知</view>-->
 <!--      </view>-->
-      <view class='details-most-topic'>活动流程</view>
-      <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-      <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-      <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-      <view class='details-most-topic'>关于嘉宾</view>
-      <view class='details-most-p'>展览“王音：礼物”由策展人秦思源与UCCA馆长田霏宇联合策划，助理策展人张张协助呈现，由建筑设计师田军赞助并提供展览设计。</view>
-      <view class='details-most-p'>展览同名出版物《王音：礼物》由新世纪当代艺术基金会（NCAF）支持出版，于尤伦斯艺术商店（UCCASTORE）有售。该画册由新星出版社出版，不仅收录了约四十件王音近年来创作的油画，且田霏宇、秦思源、赵汀阳等撰稿人文章提供的多重解析视角——王音不断成熟的职业生涯历程、多件重要作品的个案分析、观看其作品的方法论——与图像互为补充，更为立体、丰富和隽永地呈现艺术家的作品。</view>
-      <view class='details-most-p'>本次展览亦延伸出一系列精心策划的公共项目对话，包括“礼物：王音的‘出发’‘游离’与‘还乡’暨新书发布会”“礼物的文化政治”“礼物：鲁迅公园——王音的绘画和青岛城市历史”，以及有关戏剧的讨论。</view>
-      <p></p>
+      <div v-if="showContent === 0">
+        <view class='details-most-topic'>活动流程</view>
+        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
+        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
+        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
+        <view class='details-most-topic'>关于嘉宾</view>
+        <view class='details-most-p'>展览“王音：礼物”由策展人秦思源与UCCA馆长田霏宇联合策划，助理策展人张张协助呈现，由建筑设计师田军赞助并提供展览设计。</view>
+        <view class='details-most-p'>展览同名出版物《王音：礼物》由新世纪当代艺术基金会（NCAF）支持出版，于尤伦斯艺术商店（UCCASTORE）有售。该画册由新星出版社出版，不仅收录了约四十件王音近年来创作的油画，且田霏宇、秦思源、赵汀阳等撰稿人文章提供的多重解析视角——王音不断成熟的职业生涯历程、多件重要作品的个案分析、观看其作品的方法论——与图像互为补充，更为立体、丰富和隽永地呈现艺术家的作品。</view>
+        <view class='details-most-p'>本次展览亦延伸出一系列精心策划的公共项目对话，包括“礼物：王音的‘出发’‘游离’与‘还乡’暨新书发布会”“礼物的文化政治”“礼物：鲁迅公园——王音的绘画和青岛城市历史”，以及有关戏剧的讨论。</view>
+        <p></p>
+      </div>
+      <div v-if="showContent === 1">
+        关于嘉宾
+      </div>
+      <div v-if="showContent === 2">
+        活动须知
+      </div>
     </view>
     <common-footerHandle></common-footerHandle>
   </div>
@@ -91,6 +99,7 @@
 
 <style lang="less" scoped>
   .exhibition-info {
+    padding-bottom: 100rpx;
     background-color: #fcfcfc;
     &__banner {
       display: block;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding-bottom: 100rpx">
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
 <!--    <view class='top-menu'>-->
 <!--      <view class='top-menu-p'>展览</view>-->
