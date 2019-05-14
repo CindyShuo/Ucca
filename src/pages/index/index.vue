@@ -9,8 +9,7 @@
     <inner-exhibition />
     <near-activity />
     <visit-info />
-    <common-footer></common-footer>
-<!-- <common-footerHandle></common-footerHandle> -->
+    <common-footer selectNavIndex="0"></common-footer>
   </div>
 </template>
 
@@ -20,12 +19,11 @@
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
   import CommonFooter from '../../components/common/CommonFooter'
-  import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import VisitInfo from '../../components/homepage/VisitInfo'
 
 export default {
     name: 'HomePage',
-    components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter, CommonFooterHandle },
+    components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
         motto: 'Hello miniprograme',

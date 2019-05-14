@@ -1,6 +1,6 @@
 <template>
   <view class='details-bottom'>
-    <view class='details-bottom-div'>
+    <view class='details-bottom-div' v-bind:style="[type? 'width: 270rpx': '']">
       <a href="/pages/index/main" class="details-bottom_a">
         <image class='details-bottom-div1' src='/static/images/footerHandle/details-icon1.png'></image>
       </a>
@@ -11,14 +11,16 @@
         <image class='details-bottom-div1' src='/static/images/footerHandle/details-icon3.png'></image>
       </a>
     </view>
-    <view class='details-bottom-div details-bottom-div2'>团体预约<view class='details-bottom-div2-span'>20人以上</view></view>
-    <view class='details-bottom-div details-bottom-div3'>立即购票</view>
+    <view class='details-bottom-div details-bottom-div2' v-if="!type">团体预约<view class='details-bottom-div2-span'>20人以上</view></view>
+    <view class='details-bottom-div details-bottom-div3' v-if="!type">立即购票</view>
+    <view class='details-bottom-div details-bottom-div3' style="width: 480rpx" v-else-if="type">参与活动</view>
   </view>
 </template>
 
 <script>
   export default {
     name: 'CommonFooterHandle',
+    props: ['type'],
     methods: {
       onShareAppMessage (options) {
         // var that = this

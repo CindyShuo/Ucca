@@ -3,7 +3,7 @@
     <p v-for="(item, index) in navList"
        @click="bindViewTap(index, item.pagePath)"
        :key="index">
-      <img class='bottom-div' :src="selectNavIndex === index ? item.selectedIconPath : item.iconPath" alt="iconPath" />
+      <img class='bottom-div' :src="selectNavIndex - 0 === index ? item.selectedIconPath : item.iconPath" alt="iconPath" />
     </p>
   </view>
 </template>
@@ -31,6 +31,7 @@
 
 <script>
   export default {
+    props: ['selectNavIndex'],
     data () {
       return {
         flag: 1,

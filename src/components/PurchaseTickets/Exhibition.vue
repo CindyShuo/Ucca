@@ -1,7 +1,7 @@
 <template>
-  <scroll-view scroll-y class='body'>
+  <scroll-view scroll-y class='body' style="padding-top: 50rpx">
     <common-entry title="展览预告" type="none" />
-    <view class='ucca'>
+    <div class='ucca' @click="direction">
       <image class='ucca-pic' src='/static/images/pic.png'></image>
       <view class='ucca-p'>
         <view class='ucca-p1'>2019.6.15-2019.9.1</view>
@@ -10,8 +10,8 @@
         <view class='ucca-p4'>UCAA会员</view>
         <view class='ucca-p5'>￥100</view>
       </view>
-    </view>
-    <view class='topic'>
+    </div>
+    <view class='topic' style="margin-top: 50rpx">
       <common-entry title="当前展览" type="none" />
     </view>
     <view class='ucca'>
@@ -39,7 +39,9 @@
     <!--        <image class='topic-icon1' src='/static/images/arrow1.png'></image>-->
     <!--        <view class='topic-icon-p'>2019</view>-->
     <!--      </view>-->
-    <common-entry title="历史展览" type="date" />
+    <view class='topic' style="margin-top: 50rpx">
+      <common-entry title="历史展览" type="date" />
+    </view>
     <view class='ucca'>
       <image class='ucca-pic' src='/static/images/pic.png'></image>
       <view class='ucca-p'>
@@ -59,6 +61,13 @@
     name: 'Exhibition',
     components: {
       CommonEntry
+    },
+    methods: {
+      direction () {
+        wx.navigateTo({
+          url: '/pages/exhibitionInfo/main'
+        })
+      }
     }
   }
 </script>
