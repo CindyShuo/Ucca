@@ -1,7 +1,8 @@
 <template>
   <div class="common-entry">
-    <p class="common-entry__title">{{ title }}</p>
+    <p class="common-entry__title" v-bind:style="titleFontStyle">{{ title }}</p>
     <a class="common-entry__arrow" v-if="!type">
+      <p v-if="description" class="description-content">共24件作品</p>
       <image
         src="/static/images/arrow.png"
         mode="widthFix"
@@ -19,6 +20,7 @@
       <view class="common-entry_picker">
         {{ defaultDate }}
       </view>
+      <image class='topic-icon1' src='/static/images/arrow1.png'></image>
     </picker>
   </div>
 </template>
@@ -32,6 +34,12 @@
         required: true
       },
       type: {
+        type: String
+      },
+      titleFontStyle: {
+        type: String
+      },
+      description: {
         type: String
       }
     },
@@ -64,8 +72,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 32rpx;
+      // width: 32rpx;
       height: 32rpx;
+      line-height: 32rpx;
+      .description-content {
+        margin-right: 20rpx;
+        font-size: 24rpx;
+        line-height: 24rpx;
+        color: #232323;
+        vertical-align: top;
+      }
       .icon-arrow {
         width: 15rpx;
         height: 27rpx;
@@ -73,11 +89,16 @@
     }
   }
   .common-entry_picker {
+    display: inline-block;
     height: 28px;
     line-height: 28px;
     font-size: 14px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  }
+  .topic-icon1 {
+    display: inline-block;
+    width: 21rpx;
+    height: 12rpx;
+    margin-top: 32rpx;
+    margin-left: 15rpx;
   }
 </style>

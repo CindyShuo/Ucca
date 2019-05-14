@@ -1,14 +1,13 @@
 <template>
-  <div class="active-info">
+  <div class="exhibition-info">
     <image
       src="/static/images/banner.png"
-      class="active-info__banner"
+      class="exhibition-info__banner"
     ></image>
-    <div class="active-info__card">
+    <div class="exhibition-info__card">
       <div class="intro">
         <h2>
-          邱志杰：寰宇全图”系列<br/>
-          何波娜、邱志杰与于渺：绘制纠缠物的地图
+          王音：礼物
         </h2>
         <p>时间：2019.6.15 - 2019.9.1</p>
         <p>地址：UCCA尤伦斯当代艺术中心（北京798艺术区）</p>
@@ -16,12 +15,15 @@
       </div>
       <div class="split-line"></div>
       <div class="price">
-        <p>￥138</p>
+        <p>￥138-￥188</p>
         <span>UCAA会员</span>
-        <em>免费</em>
+        <em>￥100</em>
+      </div>
+      <div class='brife-p6'>
+        库存紧张
       </div>
     </div>
-    <div class="active-info__tip">
+    <div class="exhibition-info__tip">
       <p>加入<span>UCCA会员</span>，享受更多权益</p>
       <a class="arrow">
         <image
@@ -31,8 +33,27 @@
         ></image>
       </a>
     </div>
+    <div class="exhibition-info_scroll">
+      <common-entry titleFontStyle="font-size: 34rpx;" title="作品导览" description="true" />
+      <div class="exhibition-info_content">
+        <swiper
+          duration="2000"
+          next-margin="120rpx"
+          class="swipe"
+        >
+          <swiper-item>
+            <image v-for="(item, i) in 10" :key="i" class='exhibition-info_scroll-div' src='/static/images/pic.png'></image>
+          </swiper-item>
+        </swiper>
+      </div>
+    </div>
     <view class='details-most'>
       <common-tab :arr="arrList" @flag="flagShow" tabFontStyle="true"></common-tab>
+<!--      <view class='details-menu'>-->
+<!--        <view class='details-menu-div details-menu-div1'>活动流程</view>-->
+<!--        <view class='details-menu-div'>关于嘉宾</view>-->
+<!--        <view class='details-menu-div'>活动须知</view>-->
+<!--      </view>-->
       <view class='details-most-topic'>活动流程</view>
       <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
       <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
@@ -43,16 +64,17 @@
       <view class='details-most-p'>本次展览亦延伸出一系列精心策划的公共项目对话，包括“礼物：王音的‘出发’‘游离’与‘还乡’暨新书发布会”“礼物的文化政治”“礼物：鲁迅公园——王音的绘画和青岛城市历史”，以及有关戏剧的讨论。</view>
       <p></p>
     </view>
-    <common-footerHandle type="true"></common-footerHandle>
+    <common-footerHandle></common-footerHandle>
   </div>
 </template>
 
 <script>
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import CommonTab from '@/components/common/CommonTab'
+  import CommonEntry from '../../components/common/CommonEntry'
   export default {
-    name: 'ActiveInfo',
-    components: { CommonFooterHandle, CommonTab },
+    name: 'ExhibitionInfo',
+    components: { CommonFooterHandle, CommonTab, CommonEntry },
     data () {
       return {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
@@ -68,7 +90,7 @@
 </script>
 
 <style lang="less" scoped>
-  .active-info {
+  .exhibition-info {
     background-color: #fcfcfc;
     &__banner {
       display: block;
@@ -110,7 +132,7 @@
       .price {
         display: flex;
         align-items: center;
-        padding: 28rpx 40rpx 40rpx;
+        padding: 28rpx 40rpx 0rpx;
         p {
           line-height: 60rpx;
           font-size: 42rpx;
@@ -130,6 +152,12 @@
           font-size: 24rpx;
           color: #ed3024;
         }
+      }
+      .brife-p6 {
+        padding: 0rpx 40rpx 40rpx;
+        clear: both;
+        font-size: 24rpx;
+        line-height: 32rpx;
       }
     }
     &__tip {
@@ -240,6 +268,23 @@
       color: #fff;
       font-size: 30rpx;
       line-height: 100rpx;
+    }
+    .exhibition-info_scroll {
+      margin-top: 32rpx;
+    }
+    .exhibition-info_content {
+      padding-left: 40rpx;
+      width: 3000rpx;
+      .swipe {
+        height: 180rpx;
+      }
+    }
+    .exhibition-info_scroll-div {
+      display: inline-block;
+      width: 240rpx;
+      height: 180rpx;
+      border-radius: 0 20rpx 0 0;
+      margin-right: 20rpx;
     }
   }
 </style>

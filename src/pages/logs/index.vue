@@ -7,7 +7,7 @@
 <!--    </view>-->
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
-    <common-footer></common-footer>
+    <common-footer selectNavIndex="1"></common-footer>
   </div>
 </template>
 
