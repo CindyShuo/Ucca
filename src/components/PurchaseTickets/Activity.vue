@@ -1,6 +1,6 @@
 <template>
   <scroll-view scroll-y class='body activity'>
-    <common-entry title="近期活动" />
+    <common-entry title="近期活动" type="none" />
     <view class='activity-unit'>
       <view class='activity-unit_bg'></view>
       <image class='activity-unit_pic' src='/static/images/pic.png'></image>
@@ -36,7 +36,7 @@
 <!--      <image class='topic-icon1' src='/static/images/arrow1.png'></image>-->
 <!--      <view class='topic-icon-p'>2019</view>-->
 <!--    </view>-->
-    <common-entry title="历史活动" />
+    <common-entry title="历史活动" type="date" />
     <view class='activity-unit'>
       <view class='activity-unit_bg'></view>
       <image class='activity-unit_pic' src='/static/images/pic.png'></image>
