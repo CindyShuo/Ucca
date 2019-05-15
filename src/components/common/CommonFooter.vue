@@ -1,15 +1,15 @@
 <template>
-  <view class='bottom-menu'>
+  <view class='common-footer'>
     <p v-for="(item, index) in navList"
        @click="bindViewTap(index, item.pagePath)"
        :key="index">
-      <img class='bottom-div' :src="selectNavIndex - 0 === index ? item.selectedIconPath : item.iconPath" alt="iconPath" />
+      <img class='common-footer__img' :src="selectNavIndex - 0 === index ? item.selectedIconPath : item.iconPath" alt="iconPath" />
     </p>
   </view>
 </template>
 
-<style scoped>
-  .bottom-menu{
+<style lang="less" scoped>
+  .common-footer {
     position: fixed;
     bottom: 0;
     width: 750rpx;
@@ -19,12 +19,12 @@
     box-shadow: 1rpx -1rpx 1rpx rgba(0,0,0,.05);
     display: flex;
     justify-content: center;
-  }
-  .bottom-div{
-    float: left;
-    width: 55rpx;
-    height: 81rpx;
-    margin: 12rpx 60rpx;
+    &__img {
+     float: left;
+     width: 55rpx;
+     height: 81rpx;
+     margin: 12rpx 60rpx;
+    }
   }
 
 </style>

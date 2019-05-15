@@ -1,20 +1,20 @@
 <template>
-  <view class='details-bottom'>
-    <view class='details-bottom-div' v-bind:style="[type? 'width: 270rpx': '']">
-      <a href="/pages/index/main" class="details-bottom_a">
-        <image class='details-bottom-div1' src='/static/images/footerHandle/details-icon1.png'></image>
+  <div class='common-footer-handle'>
+    <div class='common-footer-handle__div' v-bind:style="[type? 'width: 270rpx': '']">
+      <a href="/pages/index/main" class="common-footer-handle__a">
+        <image class='div1' src='/static/images/footerHandle/details-icon1.png'></image>
       </a>
-      <a class="details-bottom_a">
-        <image class='details-bottom-div1' src='/static/images/footerHandle/details-icon2.png'></image>
+      <a class="common-footer-handle__a">
+        <image class='div1' src='/static/images/footerHandle/details-icon2.png'></image>
       </a>
-      <a @click="onShareAppMessage" class="details-bottom_a">
-        <image class='details-bottom-div1' src='/static/images/footerHandle/details-icon3.png'></image>
+      <a @click="onShareAppMessage" class="common-footer-handle__a">
+        <image class='div1' src='/static/images/footerHandle/details-icon3.png'></image>
       </a>
-    </view>
-    <view class='details-bottom-div details-bottom-div2' v-if="!type">团体预约<view class='details-bottom-div2-span'>20人以上</view></view>
-    <view class='details-bottom-div details-bottom-div3' v-if="!type">立即购票</view>
-    <view class='details-bottom-div details-bottom-div3' style="width: 480rpx" v-else-if="type">参与活动</view>
-  </view>
+    </div>
+    <div class='common-footer-handle__div common-footer-handle__div2' v-if="!type">团体预约<div class='content'>20人以上</div></div>
+    <div class='common-footer-handle__div common-footer-handle__div3' v-if="!type">立即购票</div>
+    <div class='common-footer-handle__div common-footer-handle__div3' style="width: 480rpx" v-else-if="type">参与活动</div>
+  </div>
 </template>
 
 <script>
@@ -60,8 +60,8 @@
   }
 </script>
 
-<style scoped>
-  .details-bottom {
+<style lang="less" scoped>
+  .common-footer-handle {
     display: flex;
     position: fixed;
     bottom: 0;
@@ -70,45 +70,39 @@
     background: #fff;
     z-index: 10009;
     box-shadow: 1rpx -1rpx 1rpx rgba(0, 0, 0, 0.05);
-  }
-
-  .details-bottom-div {
-    float: left;
-    width: 248rpx;
-    height: 100%;
-    border-right: 1rpx solid rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  .details-bottom_a {
-    display: inline-block;
-    width: 82rpx;
-    height: 100%;
-  }
-
-  .details-bottom-div1 {
-    width: 82rpx;
-    height: 100%;
-  }
-
-  .details-bottom-div2 {
-    font-size: 30rpx;
-    line-height: 80rpx;
-    position: relative;
-  }
-
-  .details-bottom-div2-span {
-    position: absolute;
-    font-size: 20rpx;
-    opacity: 0.6;
-    width: 100%;
-    top: 30rpx;
-  }
-
-  .details-bottom-div3 {
-    background: #000;
-    color: #fff;
-    font-size: 30rpx;
-    line-height: 100rpx;
+    &__div {
+      float: left;
+      width: 248rpx;
+      height: 100%;
+      border-right: 1rpx solid rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    &__a {
+      display: inline-block;
+      width: 82rpx;
+      height: 100%;
+      .div1 {
+        width: 82rpx;
+        height: 100%;
+      }
+    }
+    &__div2 {
+      font-size: 30rpx;
+      line-height: 80rpx;
+      position: relative;
+      .content {
+        position: absolute;
+        font-size: 20rpx;
+        opacity: 0.6;
+        width: 100%;
+        top: 30rpx;
+      }
+    }
+    &__div3 {
+      background: #000;
+      color: #fff;
+      font-size: 30rpx;
+      line-height: 100rpx;
+    }
   }
 </style>

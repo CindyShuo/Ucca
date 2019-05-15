@@ -1,6 +1,6 @@
 <template>
-  <view class="top-menu" v-bind:style="[!tabFontStyle ? 'padding: 0 194rpx' : '']">
-    <a v-for="(item, index) in arr" :key="index" @click="tabFlag(index)" class="top-menu-p" v-bind:class="[ tabFontStyle ? 'top-menu-small_p' : '', index === flag ? 'active' : '']">{{ item }}</a>
+  <view class="common-tab" v-bind:style="[!tabFontStyle ? 'padding: 0 194rpx' : '']">
+    <a v-for="(item, index) in arr" :key="index" @click="tabFlag(index)" class="common-tab__p" v-bind:class="[ tabFontStyle ? 'common-tab__small' : '', index === flag ? 'common-tab__active' : '']">{{ item }}</a>
   </view>
 </template>
 
@@ -37,8 +37,8 @@
   }
 </script>
 
-<style scoped>
-  .top-menu {
+<style lang="less" scoped>
+  .common-tab {
     display: flex;
     justify-content: space-between;
     padding: 0 70rpx;
@@ -47,23 +47,21 @@
     background: #fff;
     border-bottom: 1rpx solid rgba(0,0,0,.1);
     box-sizing: border-box;
-  }
-  .top-menu-p {
-    float: left;
-    /*width: 84rpx;*/
-    padding: 0;
-    font-size: 42rpx;
-    line-height: 80rpx;
-  }
-  .top-menu-small_p {
-    float: left;
-    /*width: 112rpx;*/
-    font-size: 28rpx;
-    font-weight: bold;
-    color: #232323;
-    line-height: 80rpx;
-  }
-  .active {
-    border-bottom: solid 4rpx red;
+    &__p {
+     float: left;
+     padding: 0;
+     font-size: 42rpx;
+     line-height: 80rpx;
+    }
+    &__small {
+      float: left;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #232323;
+      line-height: 80rpx;
+    }
+    &__active {
+      border-bottom: solid 4rpx red;
+    }
   }
 </style>
