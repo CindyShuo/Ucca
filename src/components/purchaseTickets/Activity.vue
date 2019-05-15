@@ -1,7 +1,7 @@
 <template>
   <scroll-view scroll-y class='body activity' style="padding-top: 50rpx">
     <common-entry title="近期活动" type="none" />
-    <view class='activity-unit'>
+    <view class='activity-unit' @click="direction">
       <view class='activity-unit_bg'></view>
       <image class='activity-unit_pic' src='/static/images/pic.png'></image>
       <view class='activity-unit_span'>2019.5.12-2019.5.28</view>
@@ -31,11 +31,6 @@
       <view class='activity-ucca_p4'>UCAA会员</view>
       <view class='activity-ucca_p5'>￥100</view>
     </view>
-<!--    <view class='activity-topic'>-->
-<!--      <view class='topic-p'>历史活动</view>-->
-<!--      <image class='topic-icon1' src='/static/images/arrow1.png'></image>-->
-<!--      <view class='topic-icon-p'>2019</view>-->
-<!--    </view>-->
     <view class='topic' style="margin-top: 50rpx">
       <common-entry title="历史活动" type="date" />
     </view>
@@ -78,6 +73,13 @@
     name: 'Activity',
     components: {
       CommonEntry
+    },
+    methods: {
+      direction () {
+        wx.navigateTo({
+          url: '/pages/activeInfo/main'
+        })
+      }
     }
   }
 </script>

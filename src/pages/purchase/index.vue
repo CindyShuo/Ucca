@@ -1,11 +1,7 @@
 <template>
-  <div>
+  <div style="padding-bottom: 100rpx">
     <common-header/>
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
-<!--    <view class='top-menu'>-->
-<!--      <view class='top-menu-p'>展览</view>-->
-<!--      <view class='top-menu-p1'>活动</view>-->
-<!--    </view>-->
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
     <common-footer selectNavIndex="1"></common-footer>

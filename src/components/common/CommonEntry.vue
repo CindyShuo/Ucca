@@ -1,7 +1,7 @@
 <template>
   <div class="common-entry">
     <p class="common-entry__title" v-bind:style="titleFontStyle">{{ title }}</p>
-    <a class="common-entry__arrow" v-if="!type">
+    <a class="common-entry__arrow" v-if="!type" :href="goLink">
       <p v-if="description" class="description-content">共24件作品</p>
       <image
         src="/static/images/arrow.png"
@@ -40,6 +40,9 @@
         type: String
       },
       description: {
+        type: String
+      },
+      goLink: {
         type: String
       }
     },

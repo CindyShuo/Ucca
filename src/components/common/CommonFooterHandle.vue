@@ -62,6 +62,7 @@
 
 <style scoped>
   .details-bottom {
+    display: flex;
     position: fixed;
     bottom: 0;
     width: 750rpx;
