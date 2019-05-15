@@ -23,7 +23,7 @@
     methods: {
       direction () {
         wx.navigateTo({
-          url: '/pages/purchase/main'
+          url: '/pages/activeInfo/main'
         })
       }
     }
