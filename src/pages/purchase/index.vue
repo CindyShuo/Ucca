@@ -35,6 +35,11 @@ export default {
       showContent: 0
     }
   },
+  watch: {
+    'showContent' (val) {
+      this.showContent = val
+    }
+  },
   methods: {
     flagShow (val) {
       this.showContent = val
@@ -48,6 +53,11 @@ export default {
       logs = mpvue.getStorageSync('logs') || []
     }
     this.logs = logs.map(log => formatTime(new Date(log)))
+  },
+  onLoad (option) {
+    if (option.type) {
+      this.showContent = Number(option.type)
+    }
   }
 }
 </script>

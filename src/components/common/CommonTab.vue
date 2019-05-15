@@ -26,6 +26,13 @@
         this.flag = index
         this.$emit('flag', this.flag)
       }
+    },
+    onLoad (options) {
+      if (options.type) {
+        this.flag = Number(options.type)
+      } else {
+        this.tabFlag(0)
+      }
     }
   }
 </script>
