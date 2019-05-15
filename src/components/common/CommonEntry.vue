@@ -12,14 +12,15 @@
     <picker
       v-else-if="type === 'date'"
       mode="date"
+      :value="defaultDate"
       fields="year"
-      start="2005"
-      end="2019"
+      start="2005-01-01"
+      end="2019-01-01"
       bindchange="bindDateChange"
     >
-      <view class="common-entry_picker">
+      <div class="common-entry_picker">
         {{ defaultDate }}
-      </view>
+      </div>
       <image class='topic-icon1' src='/static/images/arrow1.png'></image>
     </picker>
   </div>
@@ -53,6 +54,7 @@
     },
     methods: {
       bindDateChange (e) {
+        console.log(e.detail, 'e.detail')
         this.setData({
           defaultDate: e.detail.value
         })
@@ -86,8 +88,8 @@
         vertical-align: top;
       }
       .icon-arrow {
-        width: 15rpx;
-        height: 27rpx;
+        width: 16rpx;
+        height: 28rpx;
       }
     }
   }
@@ -99,9 +101,9 @@
   }
   .topic-icon1 {
     display: inline-block;
-    width: 21rpx;
+    width: 20rpx;
     height: 12rpx;
-    margin-top: 32rpx;
-    margin-left: 15rpx;
+    margin-top: 20rpx;
+    margin-left: 14rpx;
   }
 </style>
