@@ -17,8 +17,8 @@ import { formatTime } from '@/utils/index'
 import CommonHeader from '../../components/common/CommonHeader'
 import CommonTab from '@/components/common/CommonTab'
 import card from '@/components/card'
-import Exhibition from '@/components/PurchaseTickets/Exhibition'
-import Activity from '@/components/PurchaseTickets/Activity'
+import Exhibition from '@/components/purchaseTickets/Exhibition'
+import Activity from '@/components/purchaseTickets/Activity'
 import CommonFooter from '../../components/common/CommonFooter'
 
 export default {
