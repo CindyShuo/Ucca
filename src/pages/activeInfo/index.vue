@@ -31,17 +31,17 @@
         ></image>
       </a>
     </div>
-    <view class='details-most'>
+    <div class='active-info__most'>
       <common-tab :arr="arrList" @flag="flagShow" tabFontStyle="true"></common-tab>
       <div v-if="showContent === 0">
-        <view class='details-most-topic'>活动流程</view>
-        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-        <view class='details-most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</view>
-        <view class='details-most-topic'>关于嘉宾</view>
-        <view class='details-most-p'>展览“王音：礼物”由策展人秦思源与UCCA馆长田霏宇联合策划，助理策展人张张协助呈现，由建筑设计师田军赞助并提供展览设计。</view>
-        <view class='details-most-p'>展览同名出版物《王音：礼物》由新世纪当代艺术基金会（NCAF）支持出版，于尤伦斯艺术商店（UCCASTORE）有售。该画册由新星出版社出版，不仅收录了约四十件王音近年来创作的油画，且田霏宇、秦思源、赵汀阳等撰稿人文章提供的多重解析视角——王音不断成熟的职业生涯历程、多件重要作品的个案分析、观看其作品的方法论——与图像互为补充，更为立体、丰富和隽永地呈现艺术家的作品。</view>
-        <view class='details-most-p'>本次展览亦延伸出一系列精心策划的公共项目对话，包括“礼物：王音的‘出发’‘游离’与‘还乡’暨新书发布会”“礼物的文化政治”“礼物：鲁迅公园——王音的绘画和青岛城市历史”，以及有关戏剧的讨论。</view>
+        <div class='most-topic'>活动流程</div>
+        <div class='most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</div>
+        <div class='most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</div>
+        <div class='most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</div>
+        <div class='most-p'>关于嘉宾</div>
+        <div class='most-p'>展览“王音：礼物”由策展人秦思源与UCCA馆长田霏宇联合策划，助理策展人张张协助呈现，由建筑设计师田军赞助并提供展览设计。</div>
+        <div class='most-p'>展览同名出版物《王音：礼物》由新世纪当代艺术基金会（NCAF）支持出版，于尤伦斯艺术商店（UCCASTORE）有售。该画册由新星出版社出版，不仅收录了约四十件王音近年来创作的油画，且田霏宇、秦思源、赵汀阳等撰稿人文章提供的多重解析视角——王音不断成熟的职业生涯历程、多件重要作品的个案分析、观看其作品的方法论——与图像互为补充，更为立体、丰富和隽永地呈现艺术家的作品。</div>
+        <div class='most-p'>本次展览亦延伸出一系列精心策划的公共项目对话，包括“礼物：王音的‘出发’‘游离’与‘还乡’暨新书发布会”“礼物的文化政治”“礼物：鲁迅公园——王音的绘画和青岛城市历史”，以及有关戏剧的讨论。</div>
         <p></p>
       </div>
       <div v-if="showContent === 1">
@@ -50,7 +50,7 @@
       <div v-if="showContent === 2">
         活动须知
       </div>
-    </view>
+    </div>
     <common-footerHandle type="true"></common-footerHandle>
   </div>
 </template>
@@ -169,86 +169,21 @@
         }
       }
     }
-    .details-most {
+    &__most {
       width: 100%;
       margin-top: 40rpx;
       background: #fff;
       font-size: 30rpx;
       box-shadow: 1rpx -1rpx 26rpx rgba(0, 0, 0, 0.05);
-    }
-
-    .details-menu {
-      width: 100%;
-      margin-top: 40rpx;
-      display: flex;
-      justify-content: center;
-      height: 90rpx;
-      font-size: 28rpx;
-      border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
-    }
-
-    .details-menu-div {
-      line-height: 90rpx;
-      margin: 0 68rpx;
-    }
-
-    .details-menu-div1 {
-      border-bottom: 4rpx solid red;
-    }
-
-    .details-most-topic {
-      font-size: 34rpx;
-      margin: 50rpx 40rpx 10rpx;
-    }
-
-    .details-most-p {
-      width: 670rpx;
-      padding: 10rpx 40rpx;
-      line-height: 54rpx;
-    }
-
-    .details-bottom {
-      position: fixed;
-      bottom: 0;
-      width: 750rpx;
-      height: 100rpx;
-      background: #fff;
-      z-index: 10009;
-      box-shadow: 1rpx -1rpx 1rpx rgba(0, 0, 0, 0.05);
-    }
-
-    .details-bottom-div {
-      float: left;
-      width: 248rpx;
-      height: 100%;
-      border-right: 1rpx solid rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .details-bottom-div1 {
-      width: 82rpx;
-      height: 100%;
-    }
-
-    .details-bottom-div2 {
-      font-size: 30rpx;
-      line-height: 80rpx;
-      position: relative;
-    }
-
-    .details-bottom-div2-span {
-      position: absolute;
-      font-size: 20rpx;
-      opacity: 0.6;
-      width: 100%;
-      top: 30rpx;
-    }
-
-    .details-bottom-div3 {
-      background: #000;
-      color: #fff;
-      font-size: 30rpx;
-      line-height: 100rpx;
+      .most-topic {
+        font-size: 34rpx;
+        margin: 50rpx 40rpx 10rpx;
+      }
+      .most-p {
+        width: 670rpx;
+        padding: 10rpx 40rpx;
+        line-height: 54rpx;
+      }
     }
   }
 </style>

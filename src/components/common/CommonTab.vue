@@ -1,7 +1,7 @@
 <template>
-  <view class="common-tab" v-bind:style="[!tabFontStyle ? 'padding: 0 194rpx' : '']">
+  <div class="common-tab" v-bind:style="[!tabFontStyle ? 'padding: 0 194rpx' : '']">
     <a v-for="(item, index) in arr" :key="index" @click="tabFlag(index)" class="common-tab__p" v-bind:class="[ tabFontStyle ? 'common-tab__small' : '', index === flag ? 'common-tab__active' : '']">{{ item }}</a>
-  </view>
+  </div>
 </template>
 
 <script>
