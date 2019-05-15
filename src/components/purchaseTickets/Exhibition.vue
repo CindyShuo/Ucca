@@ -72,7 +72,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .ucca {
     margin: 30rpx auto 0;
     width: 670rpx;

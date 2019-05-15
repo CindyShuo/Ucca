@@ -84,7 +84,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .activity-unit{
     position: relative;
     margin: 30rpx auto 0;
