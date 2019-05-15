@@ -53,7 +53,6 @@ export default {
 <style lang="less" scoped>
   .home-page {
     padding-bottom: 130rpx;
-    background-color: #fcfcfc;
     &__banner {
       display: block;
       margin: -212rpx auto 0;
