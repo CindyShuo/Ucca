@@ -1,0 +1,30 @@
+/* index/order.wxss */
+@import "index.wxss";
+@import "win3.wxss";
+.order-top{
+  position: relative;
+  padding:40rpx;
+  width:670rp;
+  height:285rpx;
+  background: #fff;
+  border-top:1rpx solid rgba(0,0,0,.1)
+
+}
+.pic{
+  margin:auto;
+}
+.order-line{
+  position: absolute;
+  width:670rpx;
+  top:232rpx;
+}
+.order-font{
+  position: absolute;
+  bottom:0;
+  height:110rpx;
+  width:670rpx;
+  line-height: 110rpx;
+}
+.list-span1 span{
+font-size:30rpx;
+}

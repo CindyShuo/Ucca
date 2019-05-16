@@ -1,4 +1,4 @@
-// index/aa1.js
+// index/win4.js
 Page({
 
   /**

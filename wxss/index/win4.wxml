@@ -1,0 +1,7 @@
+<!--index/win4.wxml-->
+<view class='bg'></view>
+<view class='win4'>
+<image class='ok-icon' src='../images/ok.png'></image>
+<view class='font'>提交成功</view>
+<view class='font-span'>感谢您的预约，我们将在两个工作日内联系您进行确认</view>
+</view>

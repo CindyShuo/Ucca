@@ -1,4 +1,4 @@
-// index/aa1.js
+// index/window1.js
 Page({
 
   /**

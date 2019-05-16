@@ -1,0 +1,84 @@
+/* index/window2.wxss */
+@import "window1.wxss";
+
+.window {
+  top: 230rpx;
+  bottom: 100rpx;
+}
+
+.win2-topic {
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.win2-p {
+  font-size: 24rpx;
+  opacity: 0.4;
+  margin-top: 10rpx;
+}
+
+.list {
+  width: 670rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-top: 70rpx;
+}
+
+.list1 {
+  height: auto;
+}
+
+.list1-span {
+  clear: both;
+  font-size: 24rpx;
+  opacity: 0.4;
+  margin-top:15rpx;
+}
+
+.list-span {
+  float: right;
+  font-size: 24rpx;
+  opacity: 0.4;
+}
+
+.list-kuang {
+  float: right;
+  width: 100rpx;
+  height: 54rpx;
+  border: 1rpx solid #000;
+  text-align: center;
+  margin-left: 20rpx;
+  line-height: 54rpx;
+  margin-top: -7rpx;
+  font-weight: normal;
+}
+.list-kuang-down{
+  background: #000;
+  color: #fff;
+}
+
+.win-icon {
+  float: right;
+  width: 20rpx;
+  height: 26rpx;
+  margin-top: 9rpx;
+  margin-left: 30rpx;
+}
+.win2-button{
+  position:fixed;
+  bottom:0;
+  height:100rpx;
+  line-height: 100rpx;
+  width:100%;
+  background:#7b7b7b;
+  font-size:30rpx;
+  color:#fff;
+  text-align:center;
+}
+.win2-button-down{
+  background: #000;
+}
+
+
