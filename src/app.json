@@ -1,13 +1,12 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
-    "pages/counter/main"
+    "pages/purchase/main",
+    "pages/counter/main",
+    "pages/activeInfo/main",
+    "pages/exhibitionInfo/main"
   ],
   "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#232323",
-    "navigationBarTitleText": "UCCA",
-    "navigationBarTextStyle": "white"
+    "navigationStyle": "custom"
   }
 }

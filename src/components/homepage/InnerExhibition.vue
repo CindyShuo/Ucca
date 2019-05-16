@@ -1,6 +1,6 @@
 <template>
   <div class="inner-exhibition">
-    <common-entry title="馆内展览" />
+    <common-entry title="馆内展览" goLink="/pages/purchase/main?type=0" />
     <div class="inner-exhibition__content">
       <swiper
         duration="2000"
@@ -35,7 +35,7 @@
       margin-top: 30rpx;
       padding-left: 40rpx;
       .swipe {
-        height: 430rpx;
+        height: 490rpx;
       }
     }
   }

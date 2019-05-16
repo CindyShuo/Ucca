@@ -9,8 +9,8 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
-	"projectname": "youlunsi-wechat-app",
+	"appid": "wx25331d4268392a6a",
+	"projectname": "Ucca",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

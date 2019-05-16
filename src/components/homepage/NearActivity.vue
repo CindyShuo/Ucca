@@ -1,6 +1,6 @@
 <template>
   <div class="near-activity">
-    <common-entry title="近期活动" />
+    <common-entry title="近期活动" goLink="/pages/purchase/main?type=1" />
     <div class="near-activity__content">
       <swiper
         duration="2000"
@@ -10,6 +10,7 @@
         <swiper-item
           v-for="(item, i) in 10"
           :key="i"
+          class="swipe-item"
         >
           <common-activity-item />
         </swiper-item>
@@ -30,11 +31,14 @@
 
 <style lang="less" scoped>
   .near-activity {
-    margin-top: 60rpx;
     &__content {
       margin-top: 70rpx;
-      .item {
-        height: 290rpx;
+      padding-left: 40rpx;
+      .swipe {
+        height: 390rpx;
+      }
+      .swipe-item {
+        overflow: auto;
       }
     }
   }

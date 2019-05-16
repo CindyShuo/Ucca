@@ -1,5 +1,5 @@
 <template>
-  <div class="common-exhibition-item">
+  <div @click="direction" class="common-exhibition-item">
     <image
       src="/static/images/banner.png"
       class="common-exhibition-item__image"
@@ -13,7 +13,14 @@
 
 <script>
   export default {
-    name: 'CommonExhibitionItem'
+    name: 'CommonExhibitionItem',
+    methods: {
+      direction () {
+        wx.navigateTo({
+          url: '/pages/exhibitionInfo/main'
+        })
+      }
+    }
   }
 </script>
 
@@ -22,7 +29,7 @@
     width: 500rpx;
     border-radius: 0 20rpx 0 0;
     background-color: #fff;
-    box-shadow: 3rpx 3rpx 35rpx rgba(0, 0, 0, .1);
+    box-shadow: 0 8rpx 34rpx 0 rgba(0, 0, 0, .1);
     &__image {
       display: block;
        width:500rpx;
