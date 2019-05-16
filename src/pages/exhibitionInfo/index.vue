@@ -67,14 +67,15 @@
         活动须知
       </div>
     </div>
-    <common-footerHandle></common-footerHandle>
+    <common-footer-handle></common-footer-handle>
   </div>
 </template>
 
 <script>
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
-  import CommonTab from '@/components/common/CommonTab'
+  import CommonTab from '../../components/common/CommonTab'
   import CommonEntry from '../../components/common/CommonEntry'
+
   export default {
     name: 'ExhibitionInfo',
     components: { CommonFooterHandle, CommonTab, CommonEntry },
@@ -95,7 +96,6 @@
 <style lang="less" scoped>
   .exhibition-info {
     padding-bottom: 100rpx;
-    background-color: #fcfcfc;
     &__banner {
       display: block;
       width: 100%;
@@ -107,7 +107,6 @@
       border-radius: 0 20rpx 0 0;
       background-color: #fff;
       .intro {
-        box-sizing: border-box;
         padding: 40rpx 60rpx 30rpx 40rpx;
         h2 {
           margin-bottom: 10rpx;

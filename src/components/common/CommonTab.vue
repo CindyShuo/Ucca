@@ -46,7 +46,6 @@
     height: 93rpx;
     background: #fff;
     border-bottom: 1rpx solid rgba(0,0,0,.1);
-    box-sizing: border-box;
     &__p {
      float: left;
      padding: 0;

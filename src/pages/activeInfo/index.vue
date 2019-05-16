@@ -78,7 +78,6 @@
 <style lang="less" scoped>
   .active-info {
     padding-bottom: 100rpx;
-    background-color: #fcfcfc;
     &__banner {
       display: block;
       width: 100%;
@@ -90,7 +89,6 @@
       border-radius: 0 20rpx 0 0;
       background-color: #fff;
       .intro {
-        box-sizing: border-box;
         padding: 40rpx 60rpx 30rpx 40rpx;
         h2 {
           margin-bottom: 10rpx;
