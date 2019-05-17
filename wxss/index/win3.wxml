@@ -1,0 +1,13 @@
+<!--index/win3.wxml-->
+<view class='bg'></view>
+<view class='window'>
+  <image class='window-close' src='../images/close.png'></image>
+  <view class='win2-topic'>20人以上团体预约</view>
+  <view class='win2-p'>为了提供更好的服务，20人以上团体购票采取登记预约的形式，请登记您的信息，后续我们将会有专人联系您进行接待</view>
+  <view class='list'>联系人
+    <view class='list-span list-span1'>2019/08/19</view>
+  </view>
+  <view class='line'></view>
+  <view class='date'></view>
+  <view class='win3-button'>选好了</view>
+</view>

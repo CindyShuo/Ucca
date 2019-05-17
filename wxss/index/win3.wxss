@@ -1,0 +1,25 @@
+/* index/win3.wxss */
+@import "window2.wxss";
+.list-span1{
+  opacity: 1;
+  font-weight: normal;
+}
+.window {
+  bottom: 0;
+}
+.win3-button{
+  position: absolute;
+  bottom:40rpx;
+  left:265rpx;
+  width:220rpx;
+  height:80rpx;
+  border:1rpx solid #000;
+  text-align: center;
+  font-size:30rpx;
+  line-height: 80rpx;
+}
+.date{
+  width:686rpx;
+  height:517rpx;
+  margin:auto;
+}
