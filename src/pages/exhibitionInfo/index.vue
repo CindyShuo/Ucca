@@ -41,8 +41,14 @@
           next-margin="120rpx"
           class="swipe"
         >
-          <swiper-item>
-            <image v-for="(item, i) in 10" :key="i" class='exhibition-info__scroll-div' src='/static/images/pic.png'></image>
+          <swiper-item
+            v-for="(item, i) in 10"
+            :key="i"
+          >
+            <image
+              src='/static/images/pic.png'
+              class='exhibition-info__scroll-div'
+            ></image>
           </swiper-item>
         </swiper>
       </div>
