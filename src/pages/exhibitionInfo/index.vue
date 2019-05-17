@@ -74,6 +74,9 @@
       </div>
     </div>
     <common-footer-handle></common-footer-handle>
+    <common-picker>
+      <choose-ticket />
+    </common-picker>
   </div>
 </template>
 
@@ -81,10 +84,12 @@
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import CommonTab from '../../components/common/CommonTab'
   import CommonEntry from '../../components/common/CommonEntry'
+  import CommonPicker from '../../components/common/CommonPicker'
+  import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
 
-  export default {
+export default {
     name: 'ExhibitionInfo',
-    components: { CommonFooterHandle, CommonTab, CommonEntry },
+    components: { ChooseTicket, CommonPicker, CommonFooterHandle, CommonTab, CommonEntry },
     data () {
       return {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
@@ -101,6 +106,7 @@
 
 <style lang="less" scoped>
   .exhibition-info {
+    position: relative;
     padding-bottom: 100rpx;
     &__banner {
       display: block;
