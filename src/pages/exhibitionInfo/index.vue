@@ -75,6 +75,11 @@
     </div>
     <common-footer-handle></common-footer-handle>
     <common-picker>
+      <div class="exhibition-info__box">
+        <image class='close' src='/static/images/close.png'></image>
+        <common-order-item :orderList="orderList" flag="buy"></common-order-item>
+        <choose-ticket-type></choose-ticket-type>
+      </div>
       <choose-ticket />
     </common-picker>
   </div>
@@ -86,14 +91,27 @@
   import CommonEntry from '../../components/common/CommonEntry'
   import CommonPicker from '../../components/common/CommonPicker'
   import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
+  import ChooseTicketType from '../../components/purchaseTickets/ChooseTicketType'
+  import CommonOrderItem from '@/components/common/CommonOrderItem'
 
 export default {
     name: 'ExhibitionInfo',
-    components: { ChooseTicket, CommonPicker, CommonFooterHandle, CommonTab, CommonEntry },
+    components: { ChooseTicket, CommonPicker, CommonFooterHandle, CommonTab, CommonEntry, ChooseTicketType, CommonOrderItem },
     data () {
       return {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
-        showContent: 0
+        showContent: 0,
+        orderList: [
+          {
+            imgSrc: '/static/images/pic.png',
+            title: '王音：礼物',
+            status: '已选：早鸟全日期通票',
+            validityPeriod: '2019.5.12-2019.6-21',
+            type: '早鸟票全日期通票',
+            money: '￥138',
+            number: '1张'
+          }
+        ]
       }
     },
     methods: {
@@ -236,6 +254,23 @@ export default {
       height: 180rpx;
       border-radius: 0 20rpx 0 0;
       margin-right: 20rpx;
+    }
+    &__box {
+      position: absolute;
+      top: 234rpx;
+      left: 0;
+      bottom: 0;
+      padding: 40rpx;
+      background: #fff;
+      border-radius: 0 20rpx 0 0;
+      .close {
+        position: absolute;
+        top: 30rpx;
+        right: 30rpx;
+        z-index: 10;
+        width: 24rpx;
+        height: 24rpx;
+      }
     }
   }
 </style>
