@@ -3,15 +3,15 @@
     <div class="choose-ticket__count">
       <p>购买数量</p>
       <div class="num">
-        <a class="subtract">-</a>
-        <span>1</span>
-        <a class="add">+</a>
+        <a class="subtract" @click="subtract">-</a>
+        <span>{{ count }}</span>
+        <a class="add" @click="add">+</a>
       </div>
     </div>
     <div class="choose-ticket__footer">
       <div class="price">
         <span class="title">合计</span>
-        <span class="total">￥138</span>
+        <span class="total">￥{{ price * count }}</span>
       </div>
       <a class="button">下一步</a>
     </div>
@@ -20,18 +20,34 @@
 
 <script>
   export default {
-    name: 'ChooseTicket'
+    name: 'ChooseTicket',
+    data () {
+      return {
+        price: 138,
+        count: 1
+      }
+    },
+    methods: {
+      subtract () {
+        if (this.count === 1) return
+        this.count -= 1
+      },
+      add () {
+        this.count += 1
+      }
+    }
   }
 </script>
 
 <style lang="less" scoped>
   .choose-ticket {
-    position: relative;
-    padding-top: 234rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     &__count {
       display: flex;
       align-items: center;
-      width: 100%;
       height: 100rpx;
       padding-left: 40rpx;
       padding-right: 35rpx;
@@ -40,6 +56,7 @@
       background-color: #fff;
       p {
         flex: 1;
+        font-size: 24rpx;
         color: #232323;
       }
       .num {
@@ -50,7 +67,6 @@
           width: 50rpx;
           height: 50rpx;
           background-color: rgba(0, 0, 0, 0.04);
-
           line-height: 50rpx;
           text-align: center;
           font-size: 35rpx;
