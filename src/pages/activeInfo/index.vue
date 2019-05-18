@@ -58,7 +58,7 @@
         <common-order-item :orderList="orderList" flag="buy"></common-order-item>
         <choose-activity></choose-activity>
       </div>
-      <choose-ticket />
+      <choose-ticket buyType="active" />
     </common-picker>
   </div>
 </template>

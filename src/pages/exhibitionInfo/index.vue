@@ -88,7 +88,7 @@
         <common-order-item :orderList="orderList" flag="buy"></common-order-item>
         <choose-ticket-type></choose-ticket-type>
       </div>
-      <choose-ticket />
+      <choose-ticket buyType="exhibition" />
     </common-picker>
     <common-picker v-if="confirmSuccessFlag">
       <div class="exhibition-info__success">

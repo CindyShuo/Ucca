@@ -13,7 +13,7 @@
         <span class="title">合计</span>
         <span class="total">￥{{ price * count }}</span>
       </div>
-      <a class="button">下一步</a>
+      <a class="button" @click="nextStep">下一步</a>
     </div>
   </div>
 </template>
@@ -21,6 +21,11 @@
 <script>
   export default {
     name: 'ChooseTicket',
+    props: {
+      buyType: {
+        type: String
+      }
+    },
     data () {
       return {
         price: 138,
@@ -34,6 +39,20 @@
       },
       add () {
         this.count += 1
+      },
+      nextStep () {
+        // if (this.buyType === 'active') {
+        //   wx.navigateTo({
+        //     url: '/pages/activityConfirmOrder/main'
+        //   })
+        // } else {
+        //   wx.navigateTo({
+        //     url: '/pages/exhibitionConfirmOrder/main'
+        //   })
+        // }
+        wx.navigateTo({
+          url: '/pages/exhibitionConfirmOrder/main'
+        })
       }
     }
   }

@@ -5,7 +5,8 @@
     "pages/counter/main",
     "pages/activeInfo/main",
     "pages/exhibitionInfo/main",
-    "pages/order/main"
+    "pages/order/main",
+    "pages/exhibitionConfirmOrder/main"
   ],
   "window": {
     "navigationStyle": "custom"
