@@ -93,8 +93,8 @@
     <common-picker v-if="confirmSuccessFlag">
       <div class="exhibition-info__success">
         <image class='ok-icon' src='/static/images/ok.png'></image>
-        <view class='font'>提交成功</view>
-        <view class='font-span'>感谢您的预约，我们将在两个工作日内联系您进行确认</view>
+        <div class='font'>提交成功</div>
+        <div class='font-span'>感谢您的预约，我们将在两个工作日内联系您进行确认</div>
       </div>
     </common-picker>
   </div>
@@ -110,7 +110,7 @@
   import GroupAppointment from '@/components/purchaseTickets/GroupAppointment'
   import CommonOrderItem from '@/components/common/CommonOrderItem'
 
-export default {
+  export default {
     name: 'ExhibitionInfo',
     components: {
       ChooseTicket,
@@ -137,9 +137,9 @@ export default {
             number: '1张'
           }
         ],
-        groupAppointment: false,
-        buyTicket: false,
-        participate: false,
+        groupAppointment: false, // 团购票
+        buyTicket: false, // 立即购买
+        participate: false, // 参与活动
         confirmSuccessFlag: false // 提交成功
       }
     },

@@ -51,25 +51,57 @@
         活动须知
       </div>
     </div>
-    <common-footerHandle type="true"></common-footerHandle>
+    <common-footerHandle type="true" @buyTicket="isBuyTicket"></common-footerHandle>
+    <common-picker v-if="participate">
+      <div class="active-info__box">
+        <image @click="close" class='close' src='/static/images/close.png'></image>
+        <common-order-item :orderList="orderList" flag="buy"></common-order-item>
+        <choose-activity></choose-activity>
+      </div>
+      <choose-ticket />
+    </common-picker>
   </div>
 </template>
 
 <script>
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
-  import CommonTab from '@/components/common/CommonTab'
+  import CommonTab from '../../components/common/CommonTab'
+  import CommonPicker from '../../components/common/CommonPicker'
+  import ChooseActivity from '../../components/purchaseTickets/ChooseActivity'
+  import CommonOrderItem from '../../components/common/CommonOrderItem'
+  import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
+
   export default {
     name: 'ActiveInfo',
-    components: { CommonFooterHandle, CommonTab },
+    components: { CommonFooterHandle, CommonTab, CommonPicker, ChooseTicket, CommonOrderItem, ChooseActivity },
     data () {
       return {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
-        showContent: 0
+        showContent: 0,
+        participate: false, // 参与活动
+        orderList: [
+          {
+            imgSrc: '/static/images/pic.png',
+            title: '王音：礼物',
+            status: '已选：早鸟全日期通票',
+            validityPeriod: '2019.5.12-2019.6-21',
+            type: '早鸟票全日期通票',
+            money: '￥138',
+            number: '1张'
+          }
+        ]
       }
     },
     methods: {
       flagShow (val) {
         this.showContent = val
+      },
+      // 关闭弹框
+      close () {
+        this.participate = false
+      },
+      isBuyTicket (val) {
+        this[val.type] = val.buyTicket
       }
     }
   }
@@ -77,6 +109,7 @@
 
 <style lang="less" scoped>
   .active-info {
+    position: relative;
     padding-bottom: 100rpx;
     &__banner {
       display: block;
@@ -181,6 +214,23 @@
         width: 670rpx;
         padding: 10rpx 40rpx;
         line-height: 54rpx;
+      }
+    }
+    &__box {
+      position: absolute;
+      top: 234rpx;
+      left: 0;
+      bottom: 0;
+      padding: 40rpx;
+      background: #fff;
+      border-radius: 0 20rpx 0 0;
+      .close {
+        position: absolute;
+        top: 30rpx;
+        right: 30rpx;
+        z-index: 10;
+        width: 24rpx;
+        height: 24rpx;
       }
     }
   }

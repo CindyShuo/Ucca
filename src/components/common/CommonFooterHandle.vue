@@ -41,7 +41,7 @@
       },
       // 参与活动
       participate () {
-        this.participate = true
+        this.isParticipate = true
         this.$emit('buyTicket', {'buyTicket': this.isParticipate, 'type': 'participate'})
       },
       onShareAppMessage (options) {
