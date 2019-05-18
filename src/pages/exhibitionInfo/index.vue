@@ -83,11 +83,6 @@
     </common-picker>
     <!-- 立即购票 -->
     <common-picker v-if="buyTicket">
-      <div class="exhibition-info__box">
-        <image @click="close" class='close' src='/static/images/close.png'></image>
-        <common-order-item :orderList="orderList" flag="buy"></common-order-item>
-        <choose-ticket-type></choose-ticket-type>
-      </div>
       <choose-ticket />
     </common-picker>
     <common-picker v-if="confirmSuccessFlag">
@@ -107,8 +102,8 @@
   import CommonPicker from '../../components/common/CommonPicker'
   import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
   import ChooseTicketType from '../../components/purchaseTickets/ChooseTicketType'
-  import GroupAppointment from '@/components/purchaseTickets/GroupAppointment'
-  import CommonOrderItem from '@/components/common/CommonOrderItem'
+  import GroupAppointment from '../../components/purchaseTickets/GroupAppointment'
+  import CommonOrderItem from '../../components/common/CommonOrderItem'
 
   export default {
     name: 'ExhibitionInfo',
@@ -245,7 +240,7 @@
       justify-content: space-between;
       align-items: center;
       margin: 30rpx auto 0;
-      width: 590rpx;
+      width: 670rpx;
       height: 80rpx;
       padding: 0 40rpx;
       border-radius: 0 20rpx 0 0;
