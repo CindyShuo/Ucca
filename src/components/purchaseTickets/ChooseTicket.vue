@@ -95,8 +95,9 @@
     &__content {
       position: absolute;
       left: 0;
-      bottom: 200rpx;
+      top: 232rpx;
       width: 100%;
+      height: 100%;
       padding-bottom: 12rpx;
       background-color: #fff;
       border-radius: 0 20rpx 0 0;

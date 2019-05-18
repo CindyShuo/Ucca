@@ -109,12 +109,12 @@
         height: 110rpx;
         line-height: 110rpx;
       }
-    }
-    &__line {
-      width: 100%;
-      height: 1rpx;
-      background: rgba(0, 0, 0, 0.1);
-      clear: both;
+      &__line {
+        width: 100%;
+        height: 1rpx;
+        background: rgba(0, 0, 0, 0.1);
+        clear: both;
+      }
     }
   }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="exhibition-confirm-order">
+    <common-header title="确认订单" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class='exhibition-confirm-order__top'>
       <image class='pic' :src='orderList.imgSrc'></image>
       <div class='font'>
@@ -23,7 +24,7 @@
     </div>
     <div class="exhibition-confirm-order__footer">
       <div class="choose-check">
-        同意<span>《UCCA用户协议》</span>
+        <checkbox checked color="#232323" class="box" />同意<span>《UCCA用户协议》</span>
       </div>
       <div class="footer-btn">
         <div class="price">
@@ -37,8 +38,10 @@
 </template>
 
 <script>
+  import CommonHeader from '@/components/common/CommonHeader'
   export default {
     name: 'ExhibitionConfirmOrder',
+    components: { CommonHeader },
     data () {
       return {
         orderList: {
@@ -57,16 +60,14 @@
 
 <style lang="less" scoped>
   .exhibition-confirm-order {
-    padding-top: 100rpx;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
     &__top {
       position: relative;
       padding: 40rpx;
       width: 670rp;
-      height: 285rpx;
       background: #fff;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
       .pic {
-        margin: auto;
+        margin: 0 auto 30rpx;
         width: 230rpx;
         height: 180rpx;
         float: left;
@@ -88,35 +89,34 @@
         }
       }
       .order-line{
-        position: absolute;
+        margin-bottom: 30rpx;
         width: 670rpx;
-        top: 232rpx;
+        clear: both;
       }
       .line {
-        margin-top: 20rpx;
         height: 1rpx;
         background: rgba(0, 0, 0, 0.1);
         clear: both;
       }
       .list {
-        margin-top: 70rpx;
         font-size: 30rpx;
         color: #232323;
         font-weight: bold;
+        line-height: 30rpx;
         .list-span {
           font-size: 30rpx;
+          line-height: 30rpx;
           float: right;
         }
         .list-span1 span {
           font-size: 30rpx;
+          line-height: 30rpx;
         }
       }
       .order-font {
-        position: absolute;
-        bottom: 0;
         width: 670rpx;
-        height: 110rpx;
-        line-height: 110rpx;
+        font-size: 30rpx;
+        line-height: 30rpx;
       }
     }
     &__line {
@@ -171,6 +171,9 @@
         font-size: 24rpx;
         line-height: 24rpx;
         color: #000012;
+        .box {
+          transform: scale(.6);
+        }
         span {
           color: #ED3024;
         }
