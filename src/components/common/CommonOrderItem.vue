@@ -13,8 +13,8 @@
       </div>
     </div>
   </div>
-  <div v-else>
-    <div class='order-index__top' style="padding-bottom: 20rpx;height: 180rpx">
+  <div class="order-index--top" v-else>
+    <div class="order-index--top__item">
       <image class='pic' :src='orderList[0].imgSrc'></image>
       <div class='font'>
         <div class='font-1'>{{ orderList[0].title }}</div>
@@ -22,7 +22,7 @@
         <div class='font-3'>{{ orderList[0].money }}</div>
       </div>
     </div>
-    <div class="order-index__line"></div>
+    <div class="order-index--top__line"></div>
   </div>
 </template>
 
@@ -43,12 +43,19 @@
 
 <style lang="less" scoped>
   .order-index {
-    &__top {
+    &--top {
       position: relative;
-      padding: 40rpx;
-      width: 670rp;
-      height: 285rpx;
+      padding: 40rpx 40rpx 0;
       background: #fff;
+      &__item {
+        height: 180rpx;
+      }
+      &__line {
+        margin-top: 20rpx;
+        width: 100%;
+        height: 1rpx;
+        background: rgba(0, 0, 0, 0.1);
+      }
       .pic {
         margin: auto;
         width: 230rpx;

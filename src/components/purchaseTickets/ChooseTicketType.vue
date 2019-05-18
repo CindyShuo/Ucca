@@ -1,30 +1,32 @@
 <template>
   <scroll-view scroll-y class='choose-ticket-type'>
-    <div class='choose-ticket-type__topic'>早鸟票
-      <div class='topic-span'>库存紧张</div>
-    </div>
-    <div class='choose-ticket-type__kuang'>
-      早鸟票全日期通票
-      <div class='kuang-span'>适用于展期内任何日期</div>
-    </div>
-    <div class='choose-ticket-type__kuang choose-ticket-type__kuang1'>
-      早鸟票全日期通票
-      <div class='kuang-span kuang1-span'>适用于展期内任何日期</div>
-    </div>
-    <div class='choose-ticket-type__kuang'>
-      早鸟票全日期通票
-      <div class='kuang-span'>适用于展期内任何日期</div>
-    </div>
-    <div class='choose-ticket-type__topic'>早鸟票
-      <div class='topic-span'>库存紧张</div>
-    </div>
-    <div class='choose-ticket-type__kuang'>
-      早鸟票全日期通票
-      <div class='kuang-span'>适用于展期内任何日期</div>
-    </div>
-    <div class='choose-ticket-type__kuang choose-ticket-type__kuang1'>
-      早鸟票全日期通票
-      <div class='kuang-span kuang1-span'>适用于展期内任何日期</div>
+    <div class="choose-ticket-type__content">
+      <div class='choose-ticket-type__topic'>早鸟票
+        <div class='topic-span'>库存紧张</div>
+      </div>
+      <div class='choose-ticket-type__kuang'>
+        早鸟票全日期通票
+        <div class='kuang-span'>适用于展期内任何日期</div>
+      </div>
+      <div class='choose-ticket-type__kuang choose-ticket-type__kuang1'>
+        早鸟票全日期通票
+        <div class='kuang-span kuang1-span'>适用于展期内任何日期</div>
+      </div>
+      <div class='choose-ticket-type__kuang'>
+        早鸟票全日期通票
+        <div class='kuang-span'>适用于展期内任何日期</div>
+      </div>
+      <div class='choose-ticket-type__topic'>早鸟票
+        <div class='topic-span'>库存紧张</div>
+      </div>
+      <div class='choose-ticket-type__kuang'>
+        早鸟票全日期通票
+        <div class='kuang-span'>适用于展期内任何日期</div>
+      </div>
+      <div class='choose-ticket-type__kuang choose-ticket-type__kuang1'>
+        早鸟票全日期通票
+        <div class='kuang-span kuang1-span'>适用于展期内任何日期</div>
+      </div>
     </div>
   </scroll-view>
 </template>
@@ -37,11 +39,11 @@
 
 <style lang="less" scoped>
   .choose-ticket-type {
-    padding-top: 20rpx;
-    width: 100%;
     height: 520rpx;
-    overflow: hidden;
-    border-radius: 0 20rpx 0 0;
+    padding: 0 40rpx;
+    &__content {
+      height: 100%;
+    }
     &__topic {
       margin-top: 40rpx;
       width: 100%;
@@ -54,8 +56,7 @@
       }
     }
     &__kuang {
-      width: 610rpx;
-      height: 100rpx;
+      height: 120rpx;
       border-radius: 0 20rpx 0 0;
       background: rgba(0, 0, 0, 0.1);
       font-size: 28rpx;
