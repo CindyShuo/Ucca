@@ -1,5 +1,5 @@
 <template>
-  <div class="common-exhibition-item">
+  <div @click="direction" class="common-exhibition-item">
     <image
       src="/static/images/banner.png"
       class="common-exhibition-item__image"
@@ -13,7 +13,14 @@
 
 <script>
   export default {
-    name: 'CommonExhibitionItem'
+    name: 'CommonExhibitionItem',
+    methods: {
+      direction () {
+        wx.navigateTo({
+          url: '/pages/exhibitionInfo/main'
+        })
+      }
+    }
   }
 </script>
 

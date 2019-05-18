@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
+    "pages/purchase/main",
     "pages/counter/main",
-    "pages/activeInfo/main"
+    "pages/activeInfo/main",
+    "pages/exhibitionInfo/main",
+    "pages/order/main"
   ],
   "window": {
     "navigationStyle": "custom"

@@ -46,7 +46,6 @@
       border-radius: 0 20rpx 0 0;
     }
     &__text {
-      box-sizing: border-box;
       position: absolute;
       left: 0;
       bottom: 0;
