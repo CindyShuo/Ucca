@@ -58,6 +58,9 @@
       },
       add () {
         this.count += 1
+      },
+      close () {
+        this.$emit('close')
       }
     }
   }

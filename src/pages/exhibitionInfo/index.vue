@@ -83,7 +83,7 @@
     </common-picker>
     <!-- 立即购票 -->
     <common-picker v-if="buyTicket">
-      <choose-ticket />
+      <choose-ticket @close="close" />
     </common-picker>
     <common-picker v-if="confirmSuccessFlag">
       <div class="exhibition-info__success">
