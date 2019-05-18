@@ -12,8 +12,8 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.6",
-	"appid": "wx72458a2c0b261e69",
+	"libVersion": "2.7.0",
+	"appid": "wx25331d4268392a6a",
 	"projectname": "wxss",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -66,6 +66,41 @@
 					"id": -1,
 					"name": "nowgo",
 					"pathName": "index/nowgo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "w1",
+					"pathName": "index/window1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "w2",
+					"pathName": "index/window2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "w3",
+					"pathName": "index/win3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "w4",
+					"pathName": "index/win4",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "index/order",
 					"scene": null
 				}
 			]

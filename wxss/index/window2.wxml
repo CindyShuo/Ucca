@@ -1,0 +1,29 @@
+<!--index/window2.wxml-->
+<view class='bg'></view>
+<view class='window'>
+  <image class='window-close' src='../images/close.png'></image>
+  <view class='win2-topic'>20人以上团体预约</view>
+  <view class='win2-p'>为了提供更好的服务，20人以上团体购票采取登记预约的形式，请登记您的信息，后续我们将会有专人联系您进行接待</view>
+  <view class='list'>联系人
+    <view class='list-span'>请输入联系人姓名</view>
+  </view>
+  <view class='list'>联系电话
+    <view class='list-span'>请输入联系人姓名</view>
+  </view>
+  <view class='list'>参观人数
+    <view class='list-span'>请输入您的联系电话</view>
+  </view>
+  <view class='list'>导览服务
+    <view class='list-kuang list-kuang-down'>需要</view>
+    <view class='list-kuang'>不需要</view>
+  </view>
+  <view class='list'>参观日期
+    <image class='win-icon' src='../images/arrow.png'></image>
+    <view class='list-span'>请选择参观日期
+    </view>
+  </view>
+  <view class='list list1'>备注(非必填)
+    <view class='list1-span'>您有什么想说的</view>
+  </view>
+</view>
+<view class='win2-button'>提交预约信息</view>

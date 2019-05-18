@@ -1,0 +1,16 @@
+<!--index/order.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-2'>2019.5.12-2019.6-21</view>
+    </view>
+    <view class='line order-line'></view>
+    <view class='list order-font'>早鸟票全日期通票
+      <view class='list-span list-span1'><span>￥138</span> X 1张</view>
+    </view>
+  </view>
+
+</scroll-view>

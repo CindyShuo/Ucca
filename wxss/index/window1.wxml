@@ -1,0 +1,53 @@
+<!--index/window1.wxml-->
+<view class='bg'></view>
+<view class='window'>
+  <image class='window-close' src='../images/close.png'></image>
+  <view class='window-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-3'>￥138</view>
+    </view>
+  </view>
+  <view class='line'></view>
+  <scroll-view scroll-y class='most'>
+    <view class='topic'>早鸟票
+      <view class='topic-span'>库存紧张</view>
+    </view>
+    <view class='kuang'>
+      早鸟票全日期通票
+      <view class='kuang-span'>适用于展期内任何日期</view>
+    </view>
+    <view class='kuang kuang1'>
+      早鸟票全日期通票
+      <view class='kuang-span kuang1-span'>适用于展期内任何日期</view>
+    </view>
+    <view class='kuang'>
+      早鸟票全日期通票
+      <view class='kuang-span'>适用于展期内任何日期</view>
+    </view>
+    <view class='topic'>早鸟票
+      <view class='topic-span'>库存紧张</view>
+    </view>
+    <view class='kuang'>
+      <view class='small-redfont'>UCCA会员</view>
+      早鸟票全日期通票
+      <view class='kuang-span'>适用于展期内任何日期</view>
+    </view>
+    <view class='kuang kuang1'>
+      早鸟票全日期通票
+      <view class='kuang-span kuang1-span'>适用于展期内任何日期</view>
+    </view>
+  </scroll-view>
+</view>
+<view class='bottom'>购买数量
+  <view class='bottom-count'>
+    <view class='count1'>-</view>
+    <span>1</span>
+    <view class='count1 count2'>+</view>
+  </view>
+</view>
+<view class='bottom bottom1'>合计<span>￥138</span>
+  <view class='bottom1-button'>下一步</view>
+</view>

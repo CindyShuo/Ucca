@@ -1,5 +1,6 @@
 <template>
   <div class="home-page">
+    <common-header />
     <home-top />
     <image
       src="/static/images/banner.png"
@@ -8,22 +9,21 @@
     <inner-exhibition />
     <near-activity />
     <visit-info />
-    <common-footer></common-footer>
-<!-- <common-footerHandle></common-footerHandle> -->
+    <common-footer selectNavIndex="0"></common-footer>
   </div>
 </template>
 
 <script>
+  import CommonHeader from '../../components/common/CommonHeader'
   import HomeTop from '../../components/homepage/HomeTop'
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
   import CommonFooter from '../../components/common/CommonFooter'
-  import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import VisitInfo from '../../components/homepage/VisitInfo'
 
 export default {
     name: 'HomePage',
-    components: { HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter, CommonFooterHandle },
+    components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
         motto: 'Hello miniprograme',
@@ -35,7 +35,7 @@ export default {
     },
     methods: {
       bindViewTap () {
-        const url = '../logs/main'
+        const url = '../purchase/main'
         if (mpvuePlatform === 'wx') {
           mpvue.switchTab({ url })
         } else {
@@ -53,7 +53,6 @@ export default {
 <style lang="less" scoped>
   .home-page {
     padding-bottom: 130rpx;
-    background-color: #fcfcfc;
     &__banner {
       display: block;
       margin: -212rpx auto 0;
