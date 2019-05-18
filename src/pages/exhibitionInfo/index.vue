@@ -274,7 +274,6 @@
         margin: 50rpx 40rpx 10rpx;
       }
       .most-p {
-        width: 670rpx;
         padding: 10rpx 40rpx;
         line-height: 54rpx;
       }
