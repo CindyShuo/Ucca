@@ -1,5 +1,5 @@
 <template>
-  <div class="exhibition-info">
+  <div class="exhibition-info" :class="{ 'disable-scroll': !isScroll }">
     <image
       src="/static/images/banner.png"
       class="exhibition-info__banner"
@@ -104,6 +104,7 @@
   import ChooseTicketType from '../../components/purchaseTickets/ChooseTicketType'
   import GroupAppointment from '../../components/purchaseTickets/GroupAppointment'
   import CommonOrderItem from '../../components/common/CommonOrderItem'
+  import store from '../../store'
 
   export default {
     name: 'ExhibitionInfo',
@@ -136,6 +137,11 @@
         buyTicket: false, // 立即购买
         participate: false, // 参与活动
         confirmSuccessFlag: false // 提交成功
+      }
+    },
+    computed: {
+      isScroll () {
+        return store.state.isScroll
       }
     },
     methods: {
