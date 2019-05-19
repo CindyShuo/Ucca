@@ -54,6 +54,14 @@
           number: '1张'
         }
       }
+    },
+    methods: {
+      // 弹微信支付窗口（暂跳购票成功页面）
+      nextStep () {
+        wx.navigateTo({
+          url: '/pages/purchaseSuccess/main'
+        })
+      }
     }
   }
 </script>
