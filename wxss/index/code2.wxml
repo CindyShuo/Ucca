@@ -1,0 +1,28 @@
+<!--index/code2.wxml-->
+<!--index/code2.wxml-->
+<scroll-view scroll-y class='body'>
+  <image class='code-bg' src='../images/code-bg.png'>
+    <image class='share' src='../images/share.png'></image>
+    <view class='font code-font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>2019.6.15-2019.9.1</view>
+      <view class='font-2'>UCCA尤伦斯当代艺术中心（北京798）</view>
+    </view>
+    <image class='ma' src='../images/ma.png'></image>
+    <view class='code-line'></view>
+    <view class='code-font1'>
+      <view class='code-font1-gray'>早鸟全日期通票</view>
+      <view class='code-font1-gray'>X1</view>
+      <view class='code-font2'>待参观</view>
+
+    </view>
+  </image>
+<view class='code-ps'>
+<view class='code-ps-topic'>注意事项</view>
+1、票务一经售出不退不换；
+</view>
+<view class='code-bottom'>
+<view class='code-bottom-div'>返回首页</view>
+<view class='code-bottom-div code-bottom-div1'>查看我的展览票</view>
+</view>
+</scroll-view>

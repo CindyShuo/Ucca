@@ -1,0 +1,94 @@
+/* index/code.wxss */
+@import "index.wxss";
+@import "window1.wxss";
+
+.code-bg {
+  position:relative;
+  width: 668rpx;
+  height: 1018rpx;
+  margin: 40rpx 41rpx;
+}
+.share{
+  width:34rpx;
+  height:34rpx;
+  position: absolute;
+  top:110rpx;
+  right:80rpx;
+}
+.code-font{
+  position: absolute;
+  top:250rpx;
+  left:50rpx;
+}
+.ma{
+  position:absolute;
+  width:340rpx;
+  height:340rpx;
+  left:160rpx;
+  top:430rpx;
+}
+.code-line{
+  width:540rpx;
+  height:2rpx;
+  background: rgba(0,0,0,.1);
+  position: absolute;
+  left:64rpx;
+  bottom:184rpx;
+}
+.code-font1{
+  position:absolute;
+  left:69rpx;
+  right:69rpx;
+  bottom:80rpx;
+  height:76rpx;
+  width:520rpx;
+}
+.code-font1-gray{
+  font-size:24rpx;
+  opacity: .6;
+  line-height:33rpx;
+  text-align: left;
+}
+.code-arrow{
+  position:absolute;
+  top:20rpx;
+  right:0;
+  margin:0;
+}
+.code-font2{
+  position:absolute;
+  font-size:28rpx;
+  top:14rpx;
+  right:38rpx;
+}
+.code-ps{
+  margin-top:-50rpx;
+  opacity: .6;
+  font-size:24rpx;
+  line-height: 33rpx;
+  width:560rpx;
+  margin-left:95rpx;
+}
+.code-ps-topic{
+  opacity: 1;
+  font-weight: bold;
+  line-height: 40rpx;
+}
+.code-bottom{
+  position: fixed;
+  width:100%;
+  height:100rpx;
+  background: #fff;
+  font-size:30rpx;
+  text-align:center;
+  line-height:100rpx;
+  bottom:0;
+}
+.code-bottom-div{
+  float:left;
+  width:375rpx;
+  border-right:1rpx solid rgba(0,0,0,.1);
+}
+.code-bottom-div1{
+  border:none;
+}

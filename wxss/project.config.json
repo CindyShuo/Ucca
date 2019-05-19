@@ -12,9 +12,9 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
-	"appid": "wx72458a2c0b261e69",
-	"projectname": "wxss",
+	"libVersion": "2.6.6",
+	"appid": "wx80bc2a15d6bbe9d8",
+	"projectname": "%E5%89%A7",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -101,6 +101,41 @@
 					"id": -1,
 					"name": "order",
 					"pathName": "index/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code",
+					"pathName": "index/code",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code2",
+					"pathName": "index/code2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code3",
+					"pathName": "index/code3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "code3",
+					"pathName": "index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me1",
+					"pathName": "index/me1",
 					"scene": null
 				}
 			]

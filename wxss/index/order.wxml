@@ -9,8 +9,30 @@
     </view>
     <view class='line order-line'></view>
     <view class='list order-font'>早鸟票全日期通票
-      <view class='list-span list-span1'><span>￥138</span> X 1张</view>
+      <view class='list-span list-span1'>
+        <span>￥138</span> X 1张</view>
     </view>
   </view>
-
+  <view class='order-title'>填写你的信息</view>
+  <view class='order-infor'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>验证码</view>
+      <view class='infor-p-right'>发送验证码</view>
+    </view>
+  </view>
+  <view class='order-bottom'>
+    <image class='order-bottom-icon' src='../images/box.png'></image>
+    同意
+    <span>《UCCA用户协议》</span>
+  </view>
+  <view class='bottom bottom1'>合计<span>￥138</span>
+  <view class='bottom1-button'>确认支付</view>
+</view>
 </scroll-view>
+<view></view>
