@@ -1,5 +1,5 @@
 <template>
-  <div class="exhibition-info">
+  <div class="exhibition-info" :class="{ 'disable-scroll': !isScroll }">
     <image
       src="/static/images/banner.png"
       class="exhibition-info__banner"
@@ -41,8 +41,14 @@
           next-margin="120rpx"
           class="swipe"
         >
-          <swiper-item>
-            <image v-for="(item, i) in 10" :key="i" class='exhibition-info__scroll-div' src='/static/images/pic.png'></image>
+          <swiper-item
+            v-for="(item, i) in 10"
+            :key="i"
+          >
+            <image
+              src='/static/images/pic.png'
+              class='exhibition-info__scroll-div'
+            ></image>
           </swiper-item>
         </swiper>
       </div>
@@ -67,7 +73,25 @@
         活动须知
       </div>
     </div>
-    <common-footer-handle></common-footer-handle>
+    <common-footer-handle @buyTicket="isBuyTicket"></common-footer-handle>
+    <!-- 团体活动 -->
+    <common-picker v-if="groupAppointment">
+      <div class="exhibition-info__box" style="top: 300rpx;padding: 0;">
+        <image @click="close" class='close' src='/static/images/close.png'></image>
+        <group-appointment @confirmSuccess="confirmSuccess"></group-appointment>
+      </div>
+    </common-picker>
+    <!-- 立即购票 -->
+    <common-picker v-if="buyTicket">
+      <choose-ticket @close="close" />
+    </common-picker>
+    <common-picker v-if="confirmSuccessFlag">
+      <div class="exhibition-info__success">
+        <image class='ok-icon' src='/static/images/ok.png'></image>
+        <div class='font'>提交成功</div>
+        <div class='font-span'>感谢您的预约，我们将在两个工作日内联系您进行确认</div>
+      </div>
+    </common-picker>
   </div>
 </template>
 
@@ -75,19 +99,72 @@
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
   import CommonTab from '../../components/common/CommonTab'
   import CommonEntry from '../../components/common/CommonEntry'
+  import CommonPicker from '../../components/common/CommonPicker'
+  import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
+  import ChooseTicketType from '../../components/purchaseTickets/ChooseTicketType'
+  import GroupAppointment from '../../components/purchaseTickets/GroupAppointment'
+  import CommonOrderItem from '../../components/common/CommonOrderItem'
+  import store from '../../store'
 
   export default {
     name: 'ExhibitionInfo',
-    components: { CommonFooterHandle, CommonTab, CommonEntry },
+    components: {
+      ChooseTicket,
+      CommonPicker,
+      CommonFooterHandle,
+      CommonTab,
+      CommonEntry,
+      ChooseTicketType,
+      CommonOrderItem,
+      GroupAppointment
+    },
     data () {
       return {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
-        showContent: 0
+        showContent: 0,
+        orderList: [
+          {
+            imgSrc: '/static/images/pic.png',
+            title: '王音：礼物',
+            status: '已选：早鸟全日期通票',
+            validityPeriod: '2019.5.12-2019.6-21',
+            type: '早鸟票全日期通票',
+            money: '￥138',
+            number: '1张'
+          }
+        ],
+        groupAppointment: false, // 团购票
+        buyTicket: false, // 立即购买
+        participate: false, // 参与活动
+        confirmSuccessFlag: false // 提交成功
+      }
+    },
+    computed: {
+      isScroll () {
+        return store.state.isScroll
       }
     },
     methods: {
       flagShow (val) {
         this.showContent = val
+      },
+      // 关闭弹框
+      close () {
+        this.groupAppointment = false
+        this.buyTicket = false
+        this.participate = false
+      },
+      isBuyTicket (val) {
+        this[val.type] = val.buyTicket
+      },
+      confirmSuccess (val) {
+        this.confirmSuccessFlag = val
+        setTimeout(() => {
+          this.groupAppointment = false
+          this.buyTicket = false
+          this.participate = false
+          this.confirmSuccessFlag = false
+        }, 3000)
       }
     }
   }
@@ -95,6 +172,7 @@
 
 <style lang="less" scoped>
   .exhibition-info {
+    position: relative;
     padding-bottom: 100rpx;
     &__banner {
       display: block;
@@ -168,7 +246,7 @@
       justify-content: space-between;
       align-items: center;
       margin: 30rpx auto 0;
-      width: 590rpx;
+      width: 670rpx;
       height: 80rpx;
       padding: 0 40rpx;
       border-radius: 0 20rpx 0 0;
@@ -202,7 +280,6 @@
         margin: 50rpx 40rpx 10rpx;
       }
       .most-p {
-        width: 670rpx;
         padding: 10rpx 40rpx;
         line-height: 54rpx;
       }
@@ -224,6 +301,55 @@
       height: 180rpx;
       border-radius: 0 20rpx 0 0;
       margin-right: 20rpx;
+    }
+    &__box {
+      position: absolute;
+      top: 234rpx;
+      left: 0;
+      bottom: 0;
+      padding: 40rpx;
+      background: #fff;
+      border-radius: 0 20rpx 0 0;
+      .close {
+        position: absolute;
+        top: 30rpx;
+        right: 30rpx;
+        z-index: 10;
+        width: 24rpx;
+        height: 24rpx;
+      }
+    }
+    &__success {
+      width: 560rpx;
+      height: 550rpx;
+      background: #fff;
+      border-radius: 10rpx;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -280rpx;
+      margin-top: -275rpx;
+      .ok-icon{
+        width: 200rpx;
+        height: 200rpx;
+        margin: 80rpx 0 0 180rpx;
+      }
+      .font{
+        font-size: 40rpx;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        clear: both;
+      }
+      .font-span{
+        clear: both;
+        float: left;
+        width: 380rpx;
+        font-size: 24rpx;
+        opacity: .4;
+        margin: 20rpx 90rpx;
+        text-align: center;
+      }
     }
   }
 </style>
