@@ -1,0 +1,11 @@
+/* index/code2.wxss */
+@import "code.wxss";
+.code-font1-gray{
+  float:right;
+  text-align: right;
+  clear:both;
+}
+.code-font2{
+  left:0;
+  right:auto;
+}

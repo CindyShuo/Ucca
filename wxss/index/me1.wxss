@@ -1,0 +1,91 @@
+/* index/me1.wxss */
+@import "index.wxss";
+
+.me1-top {
+  width: 750rpx;
+  height: 292rpx;
+  background: #232323;
+  border-radius: 0 0 90rpx 90rpx;
+  color: #fff;
+}
+
+.me-banner1 {
+  position: absolute;
+  left: 74rpx;
+  width: 600rpx;
+  height: 168rpx;
+  font-size: 30rpx;
+  color: #fff;
+  top: 200rpx;
+}
+
+.me-banner1-font {
+  position: absolute;
+  top: 38rpx;
+  left: 100rpx;
+}
+
+.me-banner1-number {
+  left: 30rpx;
+  bottom: 30rpx;
+  position: absolute;
+  font-size: 20rpx;
+}
+
+.me-photo {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+}
+
+.me-name {
+  font-size: 42rpx;
+  position: absolute;
+  top: 47rpx;
+  left: 190rpx;
+}
+
+.me-name-span {
+  position: absolute;
+  font-size: 24rpx;
+  opacity: 0.6;
+  top: 114rpx;
+  left: 190rpx;
+}
+
+.me-arrow {
+  position: absolute;
+  width: 20rpx;
+  height: 27rpx;
+  right: 48rpx;
+  top: 99rpx;
+}
+
+.me-list {
+  position: absolute;
+  top: 398rpx;
+  width: 590rpx;
+  height: 417rpx;
+  padding:50rpx 40rpx;
+  left: 40rpx;
+  background: #fff;
+  border-radius: 0 20rpx 0 0;
+  box-shadow: 3rpx 3rpx 35rpx rgba(0, 0, 0, 0.1);
+}
+.me-list-div{
+  width:590rpx;
+  height:55rpx;
+  line-height: 55rpx;
+  margin-bottom:60rpx;
+}
+.me-icon{
+  width:55rpx;
+  height:55rpx;
+  float:left;
+  margin-right:30rpx;
+}
+.me-list-arrow{
+  margin-top:8rpx;
+}

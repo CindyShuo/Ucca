@@ -9,11 +9,13 @@
     "index/window2",
     "index/win3",
     "index/win4",
-    "index/order"
+    "index/order",
+    "index/code",
+    "index/code2",
+    "index/code3",
+    "index/me1"
   ],
   "window": {
-
-    "backgroundColor": "#fcfcfc",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
