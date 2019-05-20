@@ -26,26 +26,25 @@ export default {
     components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
-        motto: 'Hello miniprograme',
-        userInfo: {
-          nickName: 'mpvue',
-          avatarUrl: 'http://mpvue.com/assets/logo.png'
-        }
+        info: {}
       }
     },
     methods: {
-      bindViewTap () {
-        const url = '../purchase/main'
-        if (mpvuePlatform === 'wx') {
-          mpvue.switchTab({ url })
-        } else {
-          mpvue.navigateTo({ url })
-        }
-      },
-      clickHandle (ev) {
-        console.log('clickHandle:', ev)
-        // throw {message: 'custom test'}
+      getHomePage () {
+        this.$http.getHomePage()
+          .then(res => {
+            console.log(res)
+          })
       }
+    },
+    mounted () {
+      this.getHomePage()
+      wx.request({
+        url: 'http://47.94.198.193:19516/api/homepage',
+        success: function (res) {
+          console.log(res)
+        }
+      })
     }
   }
 </script>
