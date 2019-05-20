@@ -11,9 +11,9 @@
         <image class='div1' src='/static/images/footerHandle/details-icon3.png'></image>
       </a>
     </div>
-    <div class='common-footer-handle__div common-footer-handle__div2' v-if="!type">团体预约<div class='content'>20人以上</div></div>
-    <div class='common-footer-handle__div common-footer-handle__div3' v-if="!type">立即购票</div>
-    <div class='common-footer-handle__div common-footer-handle__div3' style="width: 480rpx" v-else-if="type">参与活动</div>
+    <div @click="groupAppointment" class='common-footer-handle__div common-footer-handle__div2' v-if="!type">团体预约<div class='content'>20人以上</div></div>
+    <div @click="buyTicket" class='common-footer-handle__div common-footer-handle__div3' v-if="!type">立即购票</div>
+    <div @click="participate" class='common-footer-handle__div common-footer-handle__div3' style="width: 480rpx" v-else-if="type">参与活动</div>
   </div>
 </template>
 
@@ -21,7 +21,29 @@
   export default {
     name: 'CommonFooterHandle',
     props: ['type'],
+    data () {
+      return {
+        isGroupAppointment: false,
+        isBuyTicket: false,
+        isParticipate: false
+      }
+    },
     methods: {
+      // 团体预约
+      groupAppointment () {
+        this.isGroupAppointment = true
+        this.$emit('buyTicket', {'buyTicket': this.isGroupAppointment, 'type': 'groupAppointment'})
+      },
+      // 立即购票
+      buyTicket () {
+        this.isBuyTicket = true
+        this.$emit('buyTicket', {'buyTicket': this.isBuyTicket, 'type': 'buyTicket'})
+      },
+      // 参与活动
+      participate () {
+        this.isParticipate = true
+        this.$emit('buyTicket', {'buyTicket': this.isParticipate, 'type': 'participate'})
+      },
       onShareAppMessage (options) {
         // var that = this
         // 设置菜单中的转发按钮触发转发事件时的转发内容

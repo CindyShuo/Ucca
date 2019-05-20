@@ -1,0 +1,11 @@
+/* index/code3.wxss */
+@import "code2.wxss";
+.code-font2{
+  top:0rpx;
+}
+.code-font2-span{
+  position: absolute;
+  top:38rpx;
+  font-size:24rpx;
+  opacity: .6;
+}

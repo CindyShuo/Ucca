@@ -1,5 +1,5 @@
 <template>
-  <div class='order-index'>
+  <div class='order-index' v-if="!flag">
     <div class='order-index__top' v-for="(item, index) in orderList" :key="index">
       <image class='pic' :src='item.imgSrc'></image>
       <div class='font'>
@@ -13,6 +13,17 @@
       </div>
     </div>
   </div>
+  <div class="order-index--top" v-else>
+    <div class="order-index--top__item">
+      <image class='pic' :src='orderList[0].imgSrc'></image>
+      <div class='font'>
+        <div class='font-1'>{{ orderList[0].title }}</div>
+        <div class='font-2'>{{ orderList[0].status }}</div>
+        <div class='font-3'>{{ orderList[0].money }}</div>
+      </div>
+    </div>
+    <div class="order-index--top__line"></div>
+  </div>
 </template>
 
 <script>
@@ -22,6 +33,9 @@
       orderList: {
         type: Array,
         required: true
+      },
+      flag: {
+        type: String
       }
     }
   }
@@ -29,13 +43,19 @@
 
 <style lang="less" scoped>
   .order-index {
-    &__top {
+    &--top {
       position: relative;
-      padding: 40rpx;
-      width: 670rp;
-      height: 285rpx;
+      padding: 40rpx 40rpx 0;
       background: #fff;
-      border-top: 1rpx solid rgba(0,0,0,.1);
+      &__item {
+        height: 180rpx;
+      }
+      &__line {
+        margin-top: 20rpx;
+        width: 100%;
+        height: 1rpx;
+        background: rgba(0, 0, 0, 0.1);
+      }
       .pic {
         margin: auto;
         width: 230rpx;
@@ -52,6 +72,10 @@
         .font-2 {
           font-size: 24rpx;
           margin-top: 10rpx;
+        }
+        .font-3 {
+          font-size: 42rpx;
+          margin-top: 25rpx;
         }
       }
       .order-line{
@@ -84,6 +108,12 @@
         width: 670rpx;
         height: 110rpx;
         line-height: 110rpx;
+      }
+      &__line {
+        width: 100%;
+        height: 1rpx;
+        background: rgba(0, 0, 0, 0.1);
+        clear: both;
       }
     }
   }

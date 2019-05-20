@@ -5,8 +5,21 @@
 </template>
 
 <script>
+  import store from '../../store'
+
   export default {
-    name: 'CommonPicker'
+    name: 'CommonPicker',
+    computed: {
+      isScroll () {
+        return store.state.isScroll
+      }
+    },
+    created () {
+      store.commit('disableScroll')
+    },
+    destroyed () {
+      store.commit('ableScroll')
+    }
   }
 </script>
 
