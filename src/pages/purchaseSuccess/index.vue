@@ -41,6 +41,10 @@
         <!-- </div> -->
       </div>
     </div>
+    <div class="purchase-success__precautions">
+      <p class="tip">注意事项</p>
+      <p class="tip-content">1、票务一经售出不退不换；</p>
+    </div>
     <div class="purchase-success__footer">
       <a @click="goHome">返回首页</a>
       <a @click="">查看我的展览票</a>
@@ -66,10 +70,11 @@
 <style lang="less" scoped>
   .purchase-success {
     position: relative;
+    padding-bottom: 130rpx;
     height: 100%;
     &__content {
       position: relative;
-      padding: 40rpx 76rpx 130rpx;
+      padding: 40rpx 76rpx 30rpx;
       overflow: hidden;
       &:after {
         content: '';
@@ -163,6 +168,20 @@
             }
           }
         }
+      }
+    }
+    &__precautions {
+      padding: 0 76rpx;
+      p {
+        font-size: 24rpx;
+        line-height: 30rpx;
+        color: #232323;
+      }
+      .tip {
+        margin-bottom: 10rpx;
+      }
+      .tip-content {
+        opacity: 0.6;
       }
     }
     &__footer {

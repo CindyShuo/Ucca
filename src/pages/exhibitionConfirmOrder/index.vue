@@ -8,7 +8,7 @@
         <div class='font-2'>{{ orderList.status }}</div>
         <div class='font-2'>{{ orderList.validityPeriod }}</div>
       </div>
-      <div class='line order-line'></div>
+      <!-- <div class='line order-line'></div> -->
       <div class='list order-font'>{{ orderList.type }}
         <div class='list-span list-span1'><span>{{ orderList.money }}</span> X {{ orderList.number }}</div>
       </div>
@@ -175,10 +175,14 @@
       bottom: 0;
       width: 100%;
       .choose-check {
-        padding: 0 40rpx 20rpx;
+        padding-left: 40rpx;
+        width: 100%;
+        height: 100rpx;
+        line-height: 100rpx;
         font-size: 24rpx;
-        line-height: 24rpx;
         color: #000012;
+        background: #fff;
+        border-top: 1rpx solid rgba(0, 0, 0, .1);
         .box {
           transform: scale(.6);
         }

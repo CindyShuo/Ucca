@@ -7,7 +7,8 @@
     "pages/exhibitionInfo/main",
     "pages/order/main",
     "pages/exhibitionConfirmOrder/main",
-    "pages/purchaseSuccess/main"
+    "pages/purchaseSuccess/main",
+    "pages/me/main"
   ],
   "window": {
     "navigationStyle": "custom"
