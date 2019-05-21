@@ -8,7 +8,7 @@
         <div class='name-span'>普通用户</div>
         <image class='arrow' @click="goUserCenter" src='/static/images/arrow-white.png'></image>
         <!-- 会员 -->
-        <div class="card" >
+        <div class="card" @click="goMemberBenefits">
           <image class='card1' src='/static/images/me-banner1.png'></image>
           <div class='card-font'>VIP会员年卡</div>
           <div class='card-number'>NO.23492353</div>
@@ -54,8 +54,15 @@
     components: { CommonHeader, CommonFooter },
     methods: {
       goUserCenter () {
+        // 跳个人中心，昵称等显示
         wx.navigateTo({
           url: '/pages/userCenter/main'
+        })
+      },
+      goMemberBenefits () {
+        // 跳会员权益页面
+        wx.navigateTo({
+          url: '/pages/memberBenefits/main'
         })
       }
     }
