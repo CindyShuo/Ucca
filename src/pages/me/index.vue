@@ -6,11 +6,17 @@
         <image class='photo' src='/static/images/photo.png'></image>
         <div class='name'>Anapple</div>
         <div class='name-span'>普通用户</div>
-        <image class='arrow' src='/static/images/arrow-white.png'></image>
-        <div class="card">
+        <image class='arrow' @click="goUserCenter" src='/static/images/arrow-white.png'></image>
+        <!-- 会员 -->
+        <div class="card" >
           <image class='card1' src='/static/images/me-banner1.png'></image>
           <div class='card-font'>VIP会员年卡</div>
           <div class='card-number'>NO.23492353</div>
+        </div>
+        <!-- 普通用户 -->
+        <div v-if="false">
+          <image class="bg" src="/static/images/me-banner2.png"></image>
+          <p class="add-member">加入UCCA会员，免费畅享艺术展览</p>
         </div>
       </div>
       <div class='list'>
@@ -45,7 +51,14 @@
   import CommonFooter from '@/components/common/CommonFooter'
   export default {
     name: 'UserInfo',
-    components: { CommonHeader, CommonFooter }
+    components: { CommonHeader, CommonFooter },
+    methods: {
+      goUserCenter () {
+        wx.navigateTo({
+          url: '/pages/userCenter/main'
+        })
+      }
+    }
   }
 </script>
 
@@ -85,6 +98,22 @@
           height: 27rpx;
           right: 48rpx;
           top: 99rpx;
+        }
+        .bg {
+          position: absolute;
+          width: 600rpx;
+          height: 106rpx;
+          top: 232rpx;
+          left: 74rpx;
+        }
+        .add-member {
+          position: absolute;
+          top: 232rpx;
+          left: 104rpx;
+          height: 106rpx;
+          line-height: 106rpx;
+          font-size: 28rpx;
+          color: #FFF;
         }
         .card {
           position: absolute;
