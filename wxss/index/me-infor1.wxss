@@ -1,0 +1,9 @@
+/* index/me-infor1.wxss */
+@import "me-infor2.wxss";
+.body{
+  padding-bottom:100rpx!important;
+}
+
+.infor2{
+  margin-bottom:40rpx;
+}

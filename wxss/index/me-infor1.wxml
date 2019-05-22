@@ -1,0 +1,53 @@
+<!--index/me-infor1.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/me-banner4.png'></image>
+    <view class='font'>
+      <view class='font-1'>UCCA双人年卡</view>
+      <view class='font-2'>标准卡</view>
+      <view class='font-1 font-3'>￥800.00
+        <span>X1年</span>
+      </view>
+    </view>
+  </view>
+  <view class='order-title'>你的会员信息</view>
+  <view class='order-infor'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>出生日期</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>验证码</view>
+      <view class='infor-p-right'>发送验证码</view>
+    </view>
+  </view>
+  <view class='order-title'>同办人的会员信息</view>
+  <view class='order-infor infor2'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>出生日期</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>验证码</view>
+      <view class='infor-p-right'>发送验证码</view>
+    </view>
+  </view>
+</scroll-view>
+<view class='bottom-long-black'>下一步
+</view>

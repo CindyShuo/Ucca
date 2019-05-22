@@ -1,0 +1,27 @@
+<!--index/me-infor.wxml-->
+<view class='body'>
+  <view class='infor-list'>
+    <view class='infor-list-div infor-list-div1'>
+      <view class='infor-list-left'>头像</view>
+    <image class='infor-list-right' src='../images/photo.png'></image>
+    </view>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>昵称</view>
+      <view class='infor-list-right'>1993/07/11</view>
+    </view>
+  </view>
+  <view class='infor-list'>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>姓名</view>
+      <view class='infor-list-right'>曾庆丰</view>
+    </view>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>出生日期</view>
+      <view class='infor-list-right'>1993/07/11</view>
+    </view>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>手机号</view>
+      <view class='infor-list-right'>13980289019</view>
+    </view>
+  </view>
+</view>

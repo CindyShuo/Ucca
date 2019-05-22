@@ -222,3 +222,15 @@
   height:81rpx;
   margin: 12rpx 60rpx;
 }
+.bottom-long-black{
+  position: absolute;
+  width:100%;
+  bottom:0;
+  height:100rpx;
+  color: #fff;
+  background: #000;
+  text-align:center;
+  font-size:30rpx;
+  font-weight: bold;
+  line-height: 100rpx;
+}

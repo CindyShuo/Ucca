@@ -1,0 +1,24 @@
+<!--index/me-infor3.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='order-title'>验证会员信息</view>
+  <view class='order-infor'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>出生日期</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+      <view class='infor-p-right1'></view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>验证码</view>
+      <view class='infor-p-right'>发送验证码</view>
+    </view>
+  </view>
+</scroll-view>
+<view class='bottom-long-black'>立即验证
+</view>

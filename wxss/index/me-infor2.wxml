@@ -1,0 +1,53 @@
+<!--index/me-infor2.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/me-banner4.png'></image>
+    <view class='font'>
+      <view class='font-1'>UCCA双人年卡</view>
+      <view class='font-2'>标准卡</view>
+      <view class='font-1 font-3'>￥800.00
+        <span>X1年</span>
+      </view>
+    </view>
+  </view>
+  <view class='order-title'>你的会员信息</view>
+  <view class='order-infor'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+      <view class='infor-p-right1'>曾庆芬</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>出生日期</view>
+      <view class='infor-p-right1'>1993/02/15</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+      <view class='infor-p-right1'>19890286789</view>
+    </view>
+  </view>
+    <view class='order-title'>同办人的会员信息</view>
+  <view class='order-infor'>
+    <view class='infor-p'>
+      <view class='infor-p-left'>姓名</view>
+      <view class='infor-p-right1'>曾庆芬</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>出生日期</view>
+      <view class='infor-p-right1'>1993/02/15</view>
+    </view>
+    <view class='infor-p'>
+      <view class='infor-p-left'>手机号</view>
+      <view class='infor-p-right1'>19890286789</view>
+    </view>
+  </view>
+  <view class='ps'>该会员已是UCCA会员，会员有效期将延长一年</view>
+</scroll-view>
+<view class='order-bottom'>
+    <image class='order-bottom-icon' src='../images/box.png'></image>
+    同意
+    <span>《UCCA用户协议》</span>
+  </view>
+  <view class='bottom bottom1'>合计
+    <span>￥138</span>
+    <view class='bottom1-button'>下一步</view>
+  </view>

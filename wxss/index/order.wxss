@@ -41,23 +41,23 @@
   margin: 40rpx 40rpx 20rpx 40rpx;
   height:50rpx;
   line-height:50rpx;
-  font-weight:bold;
 }
 
 .order-infor {
   width: 590rpx;
-  height: 245rpx;
   margin: 0 40rpx;
   font-size: 34rpx;
   font-weight: bold;
   background: #fff;
   border-radius: 0 20rpx 0 0;
   box-shadow: 3rpx 3rpx 35rpx rgba(0, 0, 0, 0.1);
-  padding: 55rpx 40rpx 40rpx;
+  padding: 30rpx 40rpx 40rpx;
+  overflow: hidden;
 }
 
 .infor-p {
-  margin-bottom: 68rpx;
+  float:left;
+  margin: 34rpx 0;
   color: rgba(0, 0, 0, 0.4);
   font-size: 30rpx;
   width: 590rpx;
@@ -68,7 +68,11 @@
 
 .infor-p-left {
   float: left;
-  width: 200rpx;
+  width: 210rpx;
+}
+.infor-p-right1 {
+  float: left;
+  color:#000;
 }
 
 .infor-p-right {

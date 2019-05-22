@@ -1,0 +1,37 @@
+<!--index/me-win.wxml-->
+<!--index/window1.wxml-->
+<view class='bg'></view>
+<image class='me-banner4' src='../images/me-banner4.png'></image>
+<view class='window'>
+  <image class='window-close' src='../images/close.png'></image>
+  <view class='me4-topic'>UCCA单人年卡
+    <view class='me4-topic-span'>已选：单人年卡</view>
+  </view>
+
+  <view class='line'></view>
+  <scroll-view scroll-y class='most'>
+    <view class='topic'>会员卡种类
+    </view>
+    <view class='kuang'>
+      早鸟票全日期通票
+      <view class='kuang-span'>适用于展期内任何日期</view>
+      <view class='kuang-right'>￥800/年</view>
+    </view>
+    <view class='kuang kuang1'>
+      早鸟票全日期通票
+      <view class='kuang-span kuang1-span'>适用于展期内任何日期</view>
+      <view class='kuang-right kuang-right1'>￥800/年</view>
+    </view>
+  </scroll-view>
+</view>
+<view class='bottom'>购买年数
+  <view class='bottom-count'>
+    <view class='count1'>-</view>
+    <span>1</span>
+    <view class='count1 count2'>+</view>
+  </view>
+</view>
+<view class='bottom bottom1'>合计
+  <span>￥138</span>
+  <view class='bottom1-button'>下一步</view>
+</view>
