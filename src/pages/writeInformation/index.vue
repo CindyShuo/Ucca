@@ -40,8 +40,10 @@
       <h3>填写同办人的会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" style="margin: 40rpx 0;" placeholder="出生日期（非必填）" />
-        <input type="text" placeholder="手机号" />
+        <input type="text" style="margin-top: 40rpx;" placeholder="出生日期（非必填）" />
+        <input type="text" placeholder="手机号" style="margin: 40rpx 0;" />
+        <input type="text" placeholder="验证码" />
+        <a class="send">发送验证码</a>
       </div>
     </div>
     <div class="write-information__information" style="padding: 0 40rpx;" v-else-if="step">

@@ -91,10 +91,9 @@
       // height: 100%;
       background-color: #fff;
       border-radius: 0 20rpx 0 0;
-      overflow: hidden;
       .title-pic {
         position: absolute;
-        top: -110rpx;
+        top: -102rpx;
         left: 40rpx;
         width: 380rpx;
         height: 240rpx;

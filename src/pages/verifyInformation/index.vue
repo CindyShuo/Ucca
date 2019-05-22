@@ -13,12 +13,12 @@
     </div>
     <a class="verify-info__btn" @click="verify" v-if="!verifySuccess && !verifyFail">立即验证</a>
     <div v-if="verifySuccess && !verifyFail">
-      <a class="verify-info__img"></a>
+      <image class="verify-info__img" src="/static/images/ok.png"></image>
       <p class="verify-info__content">验证成功</p>
       <a class="verify-info__goBack" @click="goBack">返回</a>
     </div>
     <div v-if="!verifySuccess && verifyFail">
-      <a class="verify-info__img"></a>
+      <image class="verify-info__img" src="/static/images/result1.png"></image>
       <p class="verify-info__content">验证失败，会员信息不符</p>
       <div class="verify-info__tip">如有任何问题，您也可以联系我们</div>
       <div class="verify-info__tip">电话：+86 10 5780 0220</div>
@@ -125,7 +125,6 @@
       display: block;
       width: 200rpx;
       height: 186rpx;
-      border: 1px solid #232323;
     }
     &__content {
       margin-top: 60rpx;
