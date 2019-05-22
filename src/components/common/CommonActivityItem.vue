@@ -8,10 +8,9 @@
       class="common-activity-item__image"
     ></image>
     <div class="common-activity-item__text">
-      <p class="time">2019.3.9-2019.5.19</p>
+      <p class="time">{{ item.open }}</p>
       <h2 class="title">
-        影像艺术交流<br/>
-        VCD影促会2019春：流动的顿悟
+        {{ item.title }}
       </h2>
     </div>
   </div>
@@ -20,6 +19,9 @@
 <script>
   export default {
     name: 'CommonActivityItem',
+    props: {
+      item: Object
+    },
     methods: {
       direction () {
         wx.navigateTo({

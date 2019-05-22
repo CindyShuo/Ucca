@@ -1,12 +1,12 @@
 <template>
   <div @click="direction" class="common-exhibition-item">
     <image
-      src="/static/images/banner.png"
+      :src="item.image"
       class="common-exhibition-item__image"
     ></image>
     <div class="common-exhibition-item__text">
-      <h2 class="title">文明：当代生活启示录</h2>
-      <p class="time">2019.3.9-2019.5.19</p>
+      <h2 class="title">{{ item.title }}</h2>
+      <p class="time">{{ item.open }}</p>
     </div>
   </div>
 </template>
@@ -14,6 +14,9 @@
 <script>
   export default {
     name: 'CommonExhibitionItem',
+    props: {
+      item: Object
+    },
     methods: {
       direction () {
         wx.navigateTo({

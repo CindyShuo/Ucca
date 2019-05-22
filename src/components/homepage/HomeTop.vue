@@ -6,7 +6,7 @@
           src='/static/images/address.png'
           class='address__icon'
         ></image>
-        <span>北京市</span>
+        <span>{{ location }}</span>
       </a>
       <a class="locale">EN</a>
     </div>
@@ -15,7 +15,10 @@
 
 <script>
   export default {
-    name: 'HomeTop'
+    name: 'HomeTop',
+    props: {
+      location: String
+    }
   }
 </script>
 

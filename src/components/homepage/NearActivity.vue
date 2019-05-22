@@ -8,11 +8,11 @@
         class="swipe"
       >
         <swiper-item
-          v-for="(item, i) in 10"
+          v-for="(item, i) in list"
           :key="i"
           class="swipe-item"
         >
-          <common-activity-item />
+          <common-activity-item :item="item" />
         </swiper-item>
       </swiper>
     </div>
@@ -25,7 +25,10 @@
 
   export default {
     name: 'NearActivity',
-    components: { CommonEntry, CommonActivityItem }
+    components: { CommonEntry, CommonActivityItem },
+    props: {
+      list: Array
+    }
   }
 </script>
 

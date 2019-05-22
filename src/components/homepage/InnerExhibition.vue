@@ -8,10 +8,10 @@
         class="swipe"
       >
         <swiper-item
-          v-for="(item, i) in 10"
+          v-for="(item, i) in list"
           :key="i"
         >
-          <common-exhibition-item />
+          <common-exhibition-item :item="item" />
         </swiper-item>
       </swiper>
     </div>
@@ -24,7 +24,10 @@
 
   export default {
     name: 'InnerExhibition',
-    components: { CommonEntry, CommonExhibitionItem }
+    components: { CommonEntry, CommonExhibitionItem },
+    props: {
+      list: Array
+    }
   }
 </script>
 
