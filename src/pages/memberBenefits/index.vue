@@ -9,29 +9,29 @@
     <div class="member-benefits__interests">
       <div class="first-row">
         <div class="detail">
-          <a></a>
+          <image src="/static/images/mfgz.png"></image>
           <p>免费观展</p>
         </div>
         <div class="detail">
-          <a></a>
+          <image src="/static/images/zstd.png"></image>
           <p>专属通道</p>
         </div>
         <div class="detail">
-          <a></a>
+          <image src="/static/images/zshd.png"></image>
           <p>专属活动</p>
         </div>
       </div>
       <div class="first-row second-row">
         <div class="detail">
-          <a></a>
+          <image src="/static/images/jthk.png"></image>
           <p>家庭回馈</p>
         </div>
         <div class="detail">
-          <a></a>
+          <image src="/static/images/xfzk.png"></image>
           <p>消费折扣</p>
         </div>
         <div class="detail">
-          <a></a>
+          <image src="/static/images/qtyh.png"></image>
           <p>其他优惠</p>
         </div>
       </div>
@@ -47,14 +47,38 @@
       </div>
       <a class="button" @click="nextStep">立即办理会员</a>
     </div>
+    <common-picker v-if="handle">
+      <card @close="close"></card>
+    </common-picker>
   </div>
 </template>
 
 <script>
   import CommonHeader from '@/components/common/CommonHeader'
+  import CommonPicker from '@/components/common/CommonPicker'
+  import Card from '@/components/card/Card'
   export default {
     name: 'MemberBenefits',
-    components: { CommonHeader }
+    components: { CommonHeader, CommonPicker, Card },
+    data () {
+      return {
+        handle: false
+      }
+    },
+    methods: {
+      nextStep () {
+        this.handle = true
+      },
+      // 关闭弹框
+      close () {
+        this.handle = false
+      }
+    },
+    onLoad (option) {
+      if (option.handle) {
+        this.handle = Boolean(option.handle)
+      }
+    }
   }
 </script>
 
@@ -100,12 +124,10 @@
         justify-content: space-around;
         .detail {
           width: 100rpx;
-          a {
+          image {
             display: table;
             width: 100%;
             height: 100rpx;
-            background: pink;
-            opacity: .6;
             border-radius: 50%;
           }
           p {

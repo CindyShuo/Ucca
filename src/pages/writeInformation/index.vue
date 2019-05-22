@@ -1,28 +1,69 @@
 <template>
-  <div class="exhibition-confirm-order">
-    <common-header title="确认订单" navBackgroundColor="#fff" titleColor="#232323"></common-header>
-    <div class='exhibition-confirm-order__top'>
+  <div class="write-information" :style="step ? 'padding-bottom: 230rpx' : ''">
+    <common-header :title="step ? '确认会员信息' : '填写会员信息'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <div class='write-information__top'>
       <image class='pic' :src='orderList.imgSrc'></image>
       <div class='font'>
         <div class='font-1'>{{ orderList.title }}</div>
         <div class='font-2'>{{ orderList.status }}</div>
-        <div class='font-2'>{{ orderList.validityPeriod }}</div>
-      </div>
-      <div class='line order-line'></div>
-      <div class='list order-font'>{{ orderList.type }}
-        <div class='list-span list-span1'><span>{{ orderList.money }}</span> X {{ orderList.number }}</div>
+        <div class='font-3'>{{ orderList.money }} <span>X {{ orderList.number }}</span></div>
       </div>
     </div>
-    <div class="exhibition-confirm-order__information">
-      <h3>填写你的信息</h3>
+    <div class="write-information__information" v-if="!step">
+      <h3>填写你的会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" placeholder="手机号" />
+        <input type="text" style="margin-top: 40rpx;" placeholder="出生日期" />
+        <input type="text" style="margin: 40rpx 0;" placeholder="手机号" />
         <input type="text" placeholder="验证码" />
         <a class="send">发送验证码</a>
       </div>
     </div>
-    <div class="exhibition-confirm-order__footer">
+    <div class="write-information__information" v-else-if="step">
+      <h3>你的会员信息</h3>
+      <div class="confirm">
+        <div>
+          <span>姓名</span>
+          <p>曾庆芬</p>
+        </div>
+        <div style="margin: 40rpx 0;">
+          <span>出生日期</span>
+          <p>1993/07/11</p>
+        </div>
+        <div>
+          <span>手机号</span>
+          <p>15521328933</p>
+        </div>
+      </div>
+    </div>
+    <div class="write-information__information" style="padding-top: 0" v-if="!step">
+      <h3>填写同办人的会员信息</h3>
+      <div class="write">
+        <input type="text" placeholder="姓名" />
+        <input type="text" style="margin: 40rpx 0;" placeholder="出生日期（非必填）" />
+        <input type="text" placeholder="手机号" />
+      </div>
+    </div>
+    <div class="write-information__information" style="padding: 0 40rpx;" v-else-if="step">
+      <h3>同办人的会员信息</h3>
+      <div class="confirm">
+        <div>
+          <span>姓名</span>
+          <p>曾庆芬</p>
+        </div>
+        <div style="margin: 40rpx 0;">
+          <span>出生日期</span>
+          <p>1993/07/11</p>
+        </div>
+        <div>
+          <span>手机号</span>
+          <p>15521328933</p>
+        </div>
+      </div>
+    </div>
+    <p class="write-information__tip" v-if="step">该会员已是UCCA会员，会员有效期将延长一年</p>
+    <a class="write-information__btn" v-if="!step" @click="firstStep">下一步</a>
+    <div class="write-information__footer" v-else-if="step">
       <div class="choose-check">
         <checkbox checked color="#232323" class="box" />同意<span>《UCCA用户协议》</span>
       </div>
@@ -31,7 +72,7 @@
           <span class="title">合计</span>
           <span class="total">{{ orderList.money }}</span>
         </div>
-        <a class="button" @click="nextStep">确认支付</a>
+        <a class="button" @click="nextStep">下一步</a>
       </div>
     </div>
   </div>
@@ -40,15 +81,15 @@
 <script>
   import CommonHeader from '@/components/common/CommonHeader'
   export default {
-    name: 'ExhibitionConfirmOrder',
+    name: 'WriteInformation',
     components: { CommonHeader },
     data () {
       return {
+        step: false,
         orderList: {
-          imgSrc: '/static/images/pic.png',
-          title: '王音：礼物',
-          status: 'UCCA报告厅',
-          validityPeriod: '05.10（周五）18:00-21:00 学术交流',
+          imgSrc: '/static/images/me-banner3.png',
+          title: 'UCCA双人年卡',
+          status: '标准卡',
           type: '活动普通票',
           money: '￥138',
           number: '1张'
@@ -56,10 +97,12 @@
       }
     },
     methods: {
-      // 弹微信支付窗口（暂跳购票成功页面）
+      firstStep () {
+        this.step = true
+      },
       nextStep () {
         wx.navigateTo({
-          url: '/pages/purchaseSuccess/main'
+          url: '/pages/verifyInformation/main'
         })
       }
     }
@@ -67,11 +110,14 @@
 </script>
 
 <style lang="less" scoped>
-  .exhibition-confirm-order {
+  .write-information {
+    position: relative;
+    padding-bottom: 130rpx;
     &__top {
       position: relative;
-      padding: 40rpx;
+      padding: 30rpx 40rpx;
       width: 670rp;
+      height: 250rpx;
       background: #fff;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       .pic {
@@ -88,23 +134,17 @@
           font-size: 34rpx;
         }
         .font-2 {
-          font-size: 24rpx;
           margin-top: 10rpx;
+          font-size: 24rpx;
+          opacity: 0.7;
         }
         .font-3 {
-          font-size: 42rpx;
-          margin-top: 25rpx;
+          font-size: 30rpx;
+          margin-top: 20rpx;
+          span {
+            font-size: 24rpx;
+          }
         }
-      }
-      .order-line{
-        margin-bottom: 30rpx;
-        width: 670rpx;
-        clear: both;
-      }
-      .line {
-        height: 1rpx;
-        background: rgba(0, 0, 0, 0.1);
-        clear: both;
       }
       .list {
         font-size: 30rpx;
@@ -127,16 +167,11 @@
         line-height: 30rpx;
       }
     }
-    &__line {
-      width: 100%;
-      height: 1rpx;
-      background: rgba(0, 0, 0, 0.1);
-      clear: both;
-    }
     &__information {
       padding: 40rpx;
+      clear: both;
       h3 {
-        margin: 40rpx 0 20rpx;
+        margin: 0 0 20rpx;
         font-size: 34rpx;
         color: #232323;
       }
@@ -153,9 +188,6 @@
             font-size: 28rpx;
             color: #eee;
           }
-          &:nth-child(2) {
-            margin: 60rpx 0;
-          }
         }
         .send {
           position: absolute;
@@ -168,6 +200,45 @@
           color: #ED3024;
         }
       }
+      .confirm {
+        position: relative;
+        padding: 40rpx;
+        background: #fff;
+        div {
+          height: 40rpx;
+          line-height: 40rpx;
+          span {
+            display: inline-block;
+            min-width: 112rpx;
+            font-size: 28rpx;
+            opacity: 0.4;
+          }
+          p {
+            margin-left: 100rpx;
+            display: inline-block;
+            font-size: 28rpx;
+          }
+        }
+      }
+    }
+    &__tip {
+      margin-top: 20rpx;
+      padding: 0 40rpx;
+      font-size: 24rpx;
+      line-height: 24rpx;
+      color: #ED3024;
+    }
+    &__btn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100rpx;
+      line-height: 100rpx;
+      font-size: 30rpx;
+      text-align: center;
+      color: #FFF;
+      background: #232323;
     }
     &__footer {
       position: absolute;

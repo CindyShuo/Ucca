@@ -10,7 +10,10 @@
     "pages/purchaseSuccess/main",
     "pages/me/main",
     "pages/userCenter/main",
-    "pages/memberBenefits/main"
+    "pages/memberBenefits/main",
+    "pages/writeInformation/main",
+    "pages/verifyInformation/main",
+    "pages/memberCard/main"
   ],
   "window": {
     "navigationStyle": "custom"

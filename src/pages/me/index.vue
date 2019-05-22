@@ -8,13 +8,13 @@
         <div class='name-span'>普通用户</div>
         <image class='arrow' @click="goUserCenter" src='/static/images/arrow-white.png'></image>
         <!-- 会员 -->
-        <div class="card" @click="goMemberBenefits">
+        <div class="card" @click="goMyCard">
           <image class='card1' src='/static/images/me-banner1.png'></image>
           <div class='card-font'>VIP会员年卡</div>
           <div class='card-number'>NO.23492353</div>
         </div>
         <!-- 普通用户 -->
-        <div v-if="false">
+        <div v-if="false" @click="goMemberBenefits">
           <image class="bg" src="/static/images/me-banner2.png"></image>
           <p class="add-member">加入UCCA会员，免费畅享艺术展览</p>
         </div>
@@ -63,6 +63,12 @@
         // 跳会员权益页面
         wx.navigateTo({
           url: '/pages/memberBenefits/main'
+        })
+      },
+      goMyCard () {
+        // 跳我的会员卡页面
+        wx.navigateTo({
+          url: '/pages/memberCard/main'
         })
       }
     }
