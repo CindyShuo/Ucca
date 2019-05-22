@@ -5,7 +5,7 @@
       <div class="text">
         <h3 class="text--style-1">开放时间</h3>
         <div class="text__info">
-          <p class="text--style-2">周一至周日 10:00-19:00</p>
+          <p class="text--style-2"> {{ info.open }}</p>
           <span class="text--style-1">(最后入场时间：18:30)</span>
         </div>
       </div>
@@ -16,27 +16,27 @@
             src="/static/images/phone.png"
             class="info-image info-image--phone"
           ></image>
-          <p class="text--style-2">+86 10 5780 0220</p>
+          <p class="text--style-2">{{ info.phone }}</p>
         </div>
         <div class="text__info text__info--height-30">
           <image
             src="/static/images/email.png"
             class="info-image info-image--email"
           ></image>
-          <p class="text--style-2">ve@ucca.org.cn</p>
+          <p class="text--style-2">{{ info.email }}</p>
         </div>
       </div>
       <div class="text">
         <h3 class="text--style-1">参观地址</h3>
         <div class="text__info">
-          <p class="text--style-2">北京市朝阳区酒仙桥4号798艺术区</p>
+          <p class="text--style-2">{{ info.address }}</p>
         </div>
       </div>
       <map
         id="myMap"
         style="width: 670rpx; height: 360rpx;"
-        :latitude="latitude"
-        :longitude="longitude"
+        :latitude="info.lat"
+        :longitude="info.lng"
         :markers="markers"
         :covers="covers"
         show-location
@@ -50,7 +50,10 @@
 
   export default {
     name: 'VisitInfo',
-    components: { CommonEntry }
+    components: { CommonEntry },
+    props: {
+      info: Object
+    }
   }
 </script>
 

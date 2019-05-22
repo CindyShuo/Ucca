@@ -1,14 +1,11 @@
 <template>
   <div class="home-page">
     <common-header />
-    <home-top />
-    <image
-      src="/static/images/banner.png"
-      class="home-page__banner"
-    ></image>
-    <inner-exhibition />
-    <near-activity />
-    <visit-info />
+    <home-top :location="location" />
+    <index-banner :list="bannerList" />
+    <inner-exhibition :list="exhibitionList" />
+    <near-activity :list="activityList" />
+    <visit-info :info="info" />
     <common-footer selectNavIndex="0"></common-footer>
   </div>
 </template>
@@ -16,6 +13,7 @@
 <script>
   import CommonHeader from '../../components/common/CommonHeader'
   import HomeTop from '../../components/homepage/HomeTop'
+  import IndexBanner from '../../components/homepage/IndexBanner'
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
   import CommonFooter from '../../components/common/CommonFooter'
@@ -23,9 +21,13 @@
 
 export default {
     name: 'HomePage',
-    components: { CommonHeader, HomeTop, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
+    components: { CommonHeader, HomeTop, IndexBanner, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
+        location: '',
+        bannerList: '',
+        exhibitionList: [],
+        activityList: [],
         info: {}
       }
     },
@@ -34,17 +36,23 @@ export default {
         this.$http.getHomePage()
           .then(res => {
             console.log(res)
+            this.location = res.data.locations[0]
+            this.bannerList = res.data.banner
+            this.exhibitionList = res.data.exhibitions
+            this.activityList = res.data.events
+            this.info = {
+              open: res.data.open,
+              phone: res.data.phone,
+              email: res.data.email,
+              address: res.data.address,
+              lat: res.data.lat,
+              lng: res.data.lng
+            }
           })
       }
     },
     mounted () {
       this.getHomePage()
-      wx.request({
-        url: 'http://47.94.198.193:19516/api/homepage',
-        success: function (res) {
-          console.log(res)
-        }
-      })
     }
   }
 </script>
