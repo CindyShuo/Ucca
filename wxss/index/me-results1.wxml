@@ -1,0 +1,7 @@
+<!--index/me-results1.wxml-->
+<image class='result-icon' src='../images/result1.png'></image>
+<view class='result-topic'>验证失败，会员信息不符</view>
+<view class='result-span'>如有任何问题，您也可以联系我们</view>
+<view class='result-span'>电话：+86 10 5780 0220</view>
+<view class='result-span'>邮箱：ve@ucca.org.cn</view>
+<view class='result-button'>返回</view>

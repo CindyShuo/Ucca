@@ -1,0 +1,16 @@
+/* index/me2.wxss */
+@import "me1.wxss";
+
+.me-banner2 {
+  width: 600rpx;
+  height: 105rpx;
+  top: 232rpx;
+}
+
+.me-banner2 p {
+  position: absolute;
+  font-size: 28rpx;
+  line-height: 105rpx;
+  top:0;
+  left:40rpx;
+}

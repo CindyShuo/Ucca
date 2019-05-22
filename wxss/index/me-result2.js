@@ -1,4 +1,4 @@
-// index/window1.js
+// index/me-result2.js
 Page({
 
   /**

@@ -1,0 +1,17 @@
+<!--index/me-card.wxml-->
+<view class='body'>
+<image class='card-most' src='../images/me-card.png'>
+<view class='card-num'>NO.23890913</view>
+<image class='card-ma' src='../images/ma.png'></image>
+</image>
+<view class='infor-list'>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>会员权益</view>
+      <image class='arrow' src='../images/arrow.png'></image>
+    </view>
+    <view class='infor-list-div'>
+      <view class='infor-list-left'>会员续费</view>
+            <image class='arrow' src='../images/arrow.png'></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+@import "window1.wxss";
+.window{
+  top:345rpx;
+}
+.me-banner4{
+  position: absolute;
+  width:380rpx;
+  height:240rpx;
+  left:40rpx;
+  top:225rpx;
+  z-index: 10000;
+}
+.me4-topic{
+  margin-top:120rpx;
+  font-size:34rpx;
+  margin-bottom:10rpx;
+}
+.me4-topic-span{
+  font-size:24rpx;
+  opacity: .7;
+  line-height: 60rpx;
+}
+.kuang-right{
+opacity: 1;
+  font-weight: bold;
+}
+.kuang-right1{
+  color:red;
+}

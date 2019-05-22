@@ -26,7 +26,9 @@
     <view class='kuang'>
       早鸟票全日期通票
       <view class='kuang-span'>适用于展期内任何日期</view>
+       <view class='kuang-right'>售罄</view>
     </view>
+   
     <view class='topic'>早鸟票
       <view class='topic-span'>库存紧张</view>
     </view>

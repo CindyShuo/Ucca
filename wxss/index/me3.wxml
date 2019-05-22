@@ -1,0 +1,47 @@
+<!--index/me3.wxml-->
+<view class='body'>
+  <view class='me1-top me3-top'>
+    <image class='me-banner1 me-banner3' src='../images/me-banner3.png'>
+      <view class='me-banner1-font .me-banner3-font'>VIP会员年卡</view>
+      <view class='me-banner3-span'>办理UCCA会员卡，即享6大权益</view>
+    </image>
+  </view>
+  <view class='me3-most'>
+    <view class='me3-most-div'>
+      <image class='me3-icon' src='../images/me3-icon1.png'></image>
+      <view class='me3-icon-font'>免费观展</view>
+    </view>
+    <view class='me3-most-div me3-most-div1'>
+      <image class='me3-icon' src='../images/me3-icon2.png'></image>
+      <view class='me3-icon-font'>专属通道</view>
+    </view>
+    <view class='me3-most-div'>
+      <image class='me3-icon' src='../images/me3-icon3.png'></image>
+      <view class='me3-icon-font'>专属活动</view>
+    </view>
+    <view class='me3-most-div'>
+      <image class='me3-icon' src='../images/me3-icon4.png'></image>
+      <view class='me3-icon-font'>家庭回馈</view>
+    </view>
+    <view class='me3-most-div me3-most-div1'>
+      <image class='me3-icon' src='../images/me3-icon5.png'></image>
+      <view class='me3-icon-font'>消费折扣</view>
+    </view>
+    <view class='me3-most-div'>
+      <image class='me3-icon' src='../images/me3-icon6.png'></image>
+      <view class='me3-icon-font'>其他优惠</view>
+    </view>
+  </view>
+  <view class='me3-line'></view>
+  <view class='me3-font'>
+  <view class='me3-font-span'>免费观展</view>
+  免费观看 U CCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)
+  </view>
+  <view class='me3-bottom'>
+  <view class='me3-bottom-left'>
+  <view class='me3-bottom-left-font'>已是会员</view>
+  <view class='me3-bottom-left-span'>立即验证</view>
+  </view>
+  <view class='me3-bottom-right'>立即办理会员</view>
+  </view>
+</view>

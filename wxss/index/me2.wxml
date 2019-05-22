@@ -1,0 +1,45 @@
+<!--index/me2.wxml-->
+<view class='body'>
+<view class='me1-top'>
+  <image class='me-photo' src='../images/photo.png'></image>
+  <view class='me-name'>Anapple</view>
+  <view class='me-name-span'>普通用户</view>
+  <image class='me-arrow' src='../images/arrow-white.png'></image>
+</view>
+<image class='me-banner1 me-banner2' src='../images/me-banner2.png'>
+<p>加入UCCA会员，免费畅享艺术展览</p>
+</image>
+<view class='me-list'>
+  <view class='me-list-div'>
+    <image class='me-icon' src='../images/me-icon1.png'></image>
+    我的票
+    <image class='topic-icon me-list-arrow' src='../images/arrow.png'>
+    </image>
+  </view>
+    <view class='me-list-div'>
+    <image class='me-icon' src='../images/me-icon2.png'></image>
+    我的收藏
+    <image class='topic-icon me-list-arrow' src='../images/arrow.png'>
+    </image>
+  </view>
+    <view class='me-list-div'>
+    <image class='me-icon' src='../images/me-icon3.png'></image>
+    意见反馈
+    <image class='topic-icon me-list-arrow' src='../images/arrow.png'>
+    </image>
+  </view>
+    <view class='me-list-div'>
+    <image class='me-icon' src='../images/me-icon4.png'></image>
+    关于我们
+    <image class='topic-icon me-list-arrow' src='../images/arrow.png'>
+    </image>
+  </view>
+</view>
+  <view class='bottom-memu'>
+    <image class='bottom-div' src='../images/bottom1.png'></image>
+    <image class='bottom-div' src='../images/bottom2.png'></image>
+    <image class='bottom-div' src='../images/bottom3.png'></image>
+    <image class='bottom-div' src='../images/bottom4-.png'></image>
+  </view>
+</view>
+

@@ -83,6 +83,7 @@
 }
 
 .kuang {
+  position:relative;
   width: 610rpx;
   height: 100rpx;
   border-radius: 0 20rpx 0 0;
@@ -92,7 +93,14 @@
   margin-top: 20rpx;
   font-weight: bold;
 }
-
+.kuang-right{
+  font-size:28rpx;
+  font-weight: normal;
+  top:20rpx;
+  right:30rpx;
+  position: absolute;
+  opacity: .6
+}
 .kuang-span {
   font-size: 24rpx;
   color: rgba(0, 0, 0, 0.4);

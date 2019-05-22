@@ -4,27 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"uglifyFileName": true,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.0",
-	"appid": "wx25331d4268392a6a",
-	"projectname": "wxss",
+	"libVersion": "2.6.6",
+	"appid": "wx80bc2a15d6bbe9d8",
+	"projectname": "%E5%89%A7",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -49,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -108,7 +98,7 @@
 					"scene": null
 				},
 				{
-					"id": 8,
+					"id": -1,
 					"name": "order",
 					"pathName": "index/order",
 					"query": "",
@@ -137,9 +127,85 @@
 				},
 				{
 					"id": -1,
+					"name": "code3",
+					"pathName": "index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "me1",
 					"pathName": "index/me1",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me2",
+					"pathName": "index/me2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me3",
+					"pathName": "index/me3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-win",
+					"pathName": "index/me-win",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-infor2",
+					"pathName": "index/me-infor2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-infor1",
+					"pathName": "index/me-infor1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-infor",
+					"pathName": "index/me-infor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-card",
+					"pathName": "index/me-card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-infor3",
+					"pathName": "index/me-infor3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-result1",
+					"pathName": "index/me-results1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "me-result2",
+					"pathName": "index/me-result2",
 					"scene": null
 				}
 			]

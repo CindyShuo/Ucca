@@ -1,0 +1,5 @@
+<!--index/me-result2.wxml-->
+<!--index/me-results1.wxml-->
+<image class='result-icon' src='../images/ok.png'></image>
+<view class='result-topic'>验证成功</view>
+<view class='result-button'>返回</view>
