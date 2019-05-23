@@ -13,7 +13,12 @@
     "pages/memberBenefits/main",
     "pages/writeInformation/main",
     "pages/verifyInformation/main",
-    "pages/memberCard/main"
+    "pages/memberCard/main",
+    "pages/myExhibition/main",
+    "pages/myTicket/main",
+    "pages/reservation/main",
+    "pages/guide/main",
+    "pages/exhibitionHall/main"
   ],
   "window": {
     "navigationStyle": "custom"

@@ -19,7 +19,7 @@
   import CommonFooter from '../../components/common/CommonFooter'
   import VisitInfo from '../../components/homepage/VisitInfo'
 
-export default {
+  export default {
     name: 'HomePage',
     components: { CommonHeader, HomeTop, IndexBanner, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {

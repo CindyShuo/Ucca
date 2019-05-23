@@ -56,7 +56,7 @@
 <script>
   import CommonHeader from '@/components/common/CommonHeader'
   import CommonPicker from '@/components/common/CommonPicker'
-  import Card from '@/components/card/Card'
+  import Card from '@/components/user/Card'
   export default {
     name: 'MemberBenefits',
     components: { CommonHeader, CommonPicker, Card },

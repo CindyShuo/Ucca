@@ -1,6 +1,6 @@
 <template>
   <div class="purchase-success">
-    <common-header title="购票成功" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header :title="flag === 'exhibition' ? '我的展览票' : flag === 'activity' ? '我的活动' : '购票成功'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class="purchase-success__content">
       <image class="pic" src="/static/images/pic.png"></image>
       <div class="details">
@@ -15,7 +15,7 @@
             <p>x1</p>
           </div>
           <div class="operating">
-            <a>去预约 ></a>
+            <a @click="goReservation">去预约 ></a>
           </div>
         </div>
         <!-- 已预约状态 -->
@@ -47,7 +47,7 @@
     </div>
     <div class="purchase-success__footer">
       <a @click="goHome">返回首页</a>
-      <a @click="">查看我的展览票</a>
+      <a @click="goMyTicket">查看我的展览票</a>
     </div>
   </div>
 </template>
@@ -57,11 +57,34 @@
   export default {
     name: 'PurchaseSuccess',
     components: { CommonHeader },
+    data () {
+      return {
+        flag: ''
+      }
+    },
     methods: {
       goHome () {
+        // 返回首页
         wx.navigateTo({
           url: '/pages/index/main'
         })
+      },
+      goMyTicket () {
+        // 跳转 查看我的展览票
+        wx.navigateTo({
+          url: '/pages/myTicket/main'
+        })
+      },
+      goReservation () {
+        // 去预约
+        wx.navigateTo({
+          url: '/pages/reservation/main'
+        })
+      }
+    },
+    onLoad (option) {
+      if (option.type) {
+        this.flag = option.type
       }
     }
   }
