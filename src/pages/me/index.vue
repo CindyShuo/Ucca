@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <common-header title="UCCA" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="UCCA"></common-header>
     <div class="user-info__content">
       <div class='avatar'>
         <image class='photo' src='/static/images/photo.png'></image>

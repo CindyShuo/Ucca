@@ -1,6 +1,6 @@
 <template>
   <div class="exhibition-hall">
-    <common-header title="当代文明启示录" :navBackgroundColor="showOrHiddenPic ? '#6F5654' : '#000'" titleColor="#fff" />
+    <common-header backToPrevious="true" title="当代文明启示录" :navBackgroundColor="showOrHiddenPic ? '#6F5654' : '#000'" titleColor="#fff" />
     <div class="exhibition-hall__map" v-if="showOrHiddenPic">
       <image src="" class="img"></image>
       <div class="arrow" @click="hiddenPic">

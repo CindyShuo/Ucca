@@ -1,6 +1,6 @@
 <template>
   <div class="my-ticket">
-    <common-header title="我的票" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="我的票" backToPrevious="true" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
     <my-ticket-exhibition v-if="showContent === 0"></my-ticket-exhibition>
     <my-ticket-activity v-else></my-ticket-activity>
