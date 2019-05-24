@@ -1,6 +1,6 @@
 <template>
   <div class="purchase-success">
-    <common-header :title="flag === 'exhibition' ? '我的展览票' : flag === 'activity' ? '我的活动' : '购票成功'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header backToPrevious="true" :title="flag === 'exhibition' ? '我的展览票' : flag === 'activity' ? '我的活动' : '购票成功'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class="purchase-success__content">
       <image class="pic" src="/static/images/pic.png"></image>
       <div class="details">

@@ -8,6 +8,7 @@
       <cover-view class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></cover-view>
       <!-- 标题栏 -->
       <cover-view class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
+        <cover-view v-if="backToPrevious" class="title arrow" :style="{ color:titleColor }" @click="goBack">{{ '<' }}</cover-view>
         <!-- 标题 -->
         <cover-view class="title" :style="{ color:titleColor }">{{ title }}</cover-view>
       </cover-view>
@@ -41,6 +42,11 @@
       homePath: {
         required: false,
         default: ''
+      },
+      // 返回箭头
+      backToPrevious: {
+        required: false,
+        default: false
       }
     },
     data () {
@@ -74,6 +80,13 @@
         }
       })
     },
+    methods: {
+      goBack () {
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    },
     mounted () {
       console.log(`this.backVisible:`, this.backVisible)
     }
@@ -98,6 +111,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        .arrow {
+          position: absolute;
+          left: 24px;
+          top: 10px;
+          z-index: 1000;
+          font-size: 22px !important;
+          font-weight: 300;
+        }
         .title {
           font-size: 14px;
           text-align: center;

@@ -1,6 +1,6 @@
 <template>
   <div class="write-information" :style="step ? 'padding-bottom: 230rpx' : ''">
-    <common-header :title="step ? '确认会员信息' : '填写会员信息'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header backToPrevious="true" :title="step ? '确认会员信息' : '填写会员信息'" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class='write-information__top'>
       <image class='pic' :src='orderList.imgSrc'></image>
       <div class='font'>

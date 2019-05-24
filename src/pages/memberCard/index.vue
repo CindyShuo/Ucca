@@ -1,6 +1,6 @@
 <template>
   <div class="member-card">
-    <common-header title="我的会员卡" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="我的会员卡" backToPrevious="true" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class="member-card__card">
       <image class="pic" src="/static/images/me-banner3.png"></image>
       <div class="erweima">

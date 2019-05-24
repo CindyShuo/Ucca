@@ -1,6 +1,6 @@
 <template>
   <div class="user-center">
-    <common-header title="个人信息" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header backToPrevious="true" title="个人信息" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <div class="user-center__info">
       <div class="avatar">
         <p>头像</p>
