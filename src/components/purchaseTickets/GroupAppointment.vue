@@ -36,15 +36,20 @@
         <div class='list-span list-span1'>2019/08/19</div>
       </div>
       <div class='line'></div>
-      <div class='date'></div>
+      <div class='date'>
+        <in-calendar />
+      </div>
     </div>
     <div class='win3-button' @click="confirmSubmit">选好了</div>
   </div>
 </template>
 
 <script>
+  import InCalendar from '../common/calendar/src/calendar'
+
   export default {
     name: 'GroupAppointment',
+    components: {InCalendar},
     data () {
       return {
         isOrNoNeed: 1,

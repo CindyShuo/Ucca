@@ -1,7 +1,7 @@
 <template>
   <div @click="direction" class="common-exhibition-item">
     <image
-      :src="item.image"
+      src="/static/images/banner.png"
       class="common-exhibition-item__image"
     ></image>
     <div class="common-exhibition-item__text">

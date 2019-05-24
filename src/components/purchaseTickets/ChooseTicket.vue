@@ -68,15 +68,6 @@
         this.$emit('close')
       },
       nextStep () {
-        // if (this.buyType === 'active') {
-        //   wx.navigateTo({
-        //     url: '/pages/activityConfirmOrder/main'
-        //   })
-        // } else {
-        //   wx.navigateTo({
-        //     url: '/pages/exhibitionConfirmOrder/main'
-        //   })
-        // }
         wx.navigateTo({
           url: '/pages/exhibitionConfirmOrder/main'
         })
@@ -95,9 +86,8 @@
     &__content {
       position: absolute;
       left: 0;
-      top: 232rpx;
+      bottom: 200rpx;
       width: 100%;
-      height: 100%;
       padding-bottom: 12rpx;
       background-color: #fff;
       border-radius: 0 20rpx 0 0;
