@@ -76,14 +76,16 @@
     <common-footer-handle @buyTicket="isBuyTicket"></common-footer-handle>
     <!-- 团体活动 -->
     <common-picker v-if="groupAppointment">
-      <div class="exhibition-info__box" style="top: 300rpx;padding: 0;">
-        <image @click="close" class='close' src='/static/images/close.png'></image>
+      <div class="exhibition-info__box" v-if="groupAppointment" :animation="animationData">
+        <image @click="hideModal" class='close' src='/static/images/close.png'></image>
         <group-appointment @confirmSuccess="confirmSuccess"></group-appointment>
       </div>
     </common-picker>
     <!-- 立即购票 -->
     <common-picker v-if="buyTicket">
-      <choose-ticket buyType="exhibition" @close="close" />
+      <div v-if="buyTicket" style="position: absolute;left: 0;bottom: 0;width: 100%;height: 100%;" :animation="animationData">
+        <choose-ticket buyType="exhibition" @close="hideModal" />
+      </div>
     </common-picker>
     <common-picker v-if="confirmSuccessFlag">
       <div class="exhibition-info__success">
@@ -136,7 +138,8 @@
         groupAppointment: false, // 团购票
         buyTicket: false, // 立即购买
         participate: false, // 参与活动
-        confirmSuccessFlag: false // 提交成功
+        confirmSuccessFlag: false, // 提交成功
+        animationData: {}
       }
     },
     computed: {
@@ -155,16 +158,89 @@
         this.participate = false
       },
       isBuyTicket (val) {
-        this[val.type] = val.buyTicket
+        console.log(val, 'val')
+        // this[val.type] = val.buyTicket
+        if (val.type === 'groupAppointment') {
+          this.chooseGroupAppointment()
+        }
+        if (val.type === 'buyTicket') {
+          this.chooseBuyTicket()
+        }
+      },
+      chooseGroupAppointment () {
+        // 用that取代this，防止不必要的情况发生
+        let that = this
+        // 创建一个动画实例
+        let animation = wx.createAnimation({
+          // 动画持续时间
+          duration: 600,
+          // 定义动画效果，当前是匀速
+          timingFunction: 'linear'
+        })
+        // 将该变量赋值给当前动画
+        that.animation = animation
+        // 先在y轴偏移，然后用step()完成一个动画
+        animation.translateY(300).step()
+        // 通过export()方法导出数据
+        that.animationData = animation.export()
+        // 改变view里面的Wx：if
+        that.groupAppointment = true
+        // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+        }, 100)
+      },
+      chooseBuyTicket () {
+        // 用that取代this，防止不必要的情况发生
+        let that = this
+        // 创建一个动画实例
+        let animation = wx.createAnimation({
+          // 动画持续时间
+          duration: 600,
+          // 定义动画效果，当前是匀速
+          timingFunction: 'linear'
+        })
+        // 将该变量赋值给当前动画
+        that.animation = animation
+        // 先在y轴偏移，然后用step()完成一个动画
+        animation.translateY(300).step()
+        // 通过export()方法导出数据
+        that.animationData = animation.export()
+        // 改变view里面的Wx：if
+        that.buyTicket = true
+        // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+        }, 100)
+      },
+      hideModal () {
+        let that = this
+        let animation = wx.createAnimation({
+          duration: 600,
+          timingFunction: 'linear'
+        })
+        that.animation = animation
+        animation.translateY(500).step()
+        that.animationData = animation.export()
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+          that.groupAppointment = false
+          that.buyTicket = false
+          that.participate = false
+          that.confirmSuccessFlag = false
+        }, 500)
       },
       confirmSuccess (val) {
+        this.groupAppointment = false
+        this.buyTicket = false
+        this.participate = false
         this.confirmSuccessFlag = val
         setTimeout(() => {
-          this.groupAppointment = false
-          this.buyTicket = false
-          this.participate = false
           this.confirmSuccessFlag = false
-        }, 3000)
+        }, 1000)
       }
     }
   }
@@ -304,10 +380,9 @@
     }
     &__box {
       position: absolute;
-      top: 234rpx;
+      top: 300rpx;
       left: 0;
       bottom: 0;
-      padding: 40rpx;
       background: #fff;
       border-radius: 0 20rpx 0 0;
       .close {
