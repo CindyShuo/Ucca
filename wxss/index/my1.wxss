@@ -1,0 +1,146 @@
+/* index/my1.wxss */
+@import "aa.wxss";
+@import "details.wxss";
+.body{
+  padding-bottom:50rpx;
+}
+.my-list {
+  position: relative;
+  width: 670rpx;
+  height: 377rpx;
+  border-radius: 10rpx;
+  margin: 30rpx 40rpx 0;
+}
+
+.my-list-image {
+  position: absolute;
+  top: 0;
+  width: 670rpx;
+  height: 214rpx;
+  border-radius: 10rpx;
+  background: #fff;
+}
+
+.my-list-mask {
+  border-radius: 10rpx;
+  width: 100%;
+  height: 214rpx;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.small-ma {
+  position: absolute;
+  width: 54rpx;
+  height: 54rpx;
+  top: 80rpx;
+  right: 50rpx;
+}
+
+.mask-font {
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+  color: #fff;
+}
+
+.brief-span {
+  opacity: 0.8;
+}
+
+.my-list-font {
+  position: absolute;
+  bottom: 0;
+  width: 590rpx;
+  height: 83rpx;
+  padding: 40rpx;
+  background: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.image-left-bottom, .image-right-bottom, .font-left-top, .font-right-top {
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  background: #f8f8f8;
+}
+
+.image-left-bottom {
+  left: -1rpx;
+  bottom: -1rpx;
+  border-radius: 0 20rpx 0 0;
+}
+
+.image-right-bottom {
+  right: -1rpx;
+  bottom: -1rpx;
+  border-radius: 20rpx 0 0 0;
+}
+
+.font-left-top {
+  left: -1rpx;
+  top: -1rpx;
+  border-radius: 0 0 20rpx 0;
+}
+
+.font-right-top {
+  right: -1rpx;
+  top: -1rpx;
+  border-radius: 0 0 0 20rpx;
+}
+
+.font-left {
+  float: left;
+  height: 100%;
+}
+
+.font-right {
+  float: right;
+  height: 100%;
+}
+
+.font1 {
+  line-height: 45rpx;
+  font-size: 24rpx;
+  opacity: 0.6;
+  text-align: left;
+}
+.font1-right {
+  text-align: right;
+}
+
+.font2 {
+  font-size: 28rpx;
+  line-height: 83rpx;
+  text-align: right;
+  min-width:200rpx;
+}
+.font2-left {
+  text-align: left;
+}
+.font2-left-span {
+  color: red;
+}
+.font2-left1{
+  line-height:45rpx;
+}
+.font2-left1-span{
+  color:red;
+  font-size:24rpx;
+}
+.font2-left1-span1{
+  opacity: .6;
+  color: #000;
+}
+.font-arrow {
+  width: 15rpx;
+  height: 27rpx;
+  float: right;
+  margin: 28rpx 0 0 15rpx;
+}
+.ucca-p4{
+  float:right;
+  margin-top:10rpx;
+}

@@ -1,4 +1,4 @@
-// index/me-card.js
+// index/booking-time.js
 Page({
 
   /**

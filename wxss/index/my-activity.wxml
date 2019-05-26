@@ -1,0 +1,32 @@
+<!--index/my-activity.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='top-menu'>
+    <view class='top-menu-p1'>展览</view>
+    <view class='top-menu-p'>活动</view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>我收藏的活动</view>
+  </view>
+  <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+  </view>
+    <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+  </view>
+    <view class='unit'>
+    <view class='unit-bg'></view>
+    <image class='unit-pic' src='../images/pic.png'></image>
+    <view class='unit-span'>2019.5.12-2019.5.28</view>
+    <view class='unit-p'>影像艺术交流</view>
+    <view class='unit-p'>文明：人类的影像</view>
+  </view>
+  
+</scroll-view>

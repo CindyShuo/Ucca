@@ -1,0 +1,34 @@
+<!--index/guide.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='guide-image'></view>
+  <view class='guide-list'>
+    <image class='list-image' src='../images/pic.png'></image>
+    <view class='list-font'>
+      <view class='list-font1'>大展厅</view>
+      <view class='list-font2'>文明：当代生活启示录</view>
+      <view class='list-font3'>34件作品</view>
+    </view>
+  </view>
+  <view class='guide-list'>
+    <image class='list-image' src='../images/pic.png'></image>
+    <view class='list-font'>
+      <view class='list-font1'>大展厅</view>
+      <view class='list-font2'>文明：当代生活启示录</view>
+      <view class='list-font3'>34件作品</view>
+    </view>
+  </view>
+    <view class='guide-list'>
+    <image class='list-image' src='../images/pic.png'></image>
+    <view class='list-font'>
+      <view class='list-font1'>大展厅</view>
+      <view class='list-font2'>文明：当代生活启示录</view>
+      <view class='list-font3'>34件作品</view>
+    </view>
+  </view>
+    <view class='bottom-memu'>
+    <image class='bottom-div' src='../images/bottom1.png'></image>
+    <image class='bottom-div' src='../images/bottom2.png'></image>
+    <image class='bottom-div' src='../images/bottom3-.png'></image>
+    <image class='bottom-div' src='../images/bottom4.png'></image>
+  </view>
+</scroll-view>

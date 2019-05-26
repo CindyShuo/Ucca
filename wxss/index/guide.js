@@ -1,4 +1,4 @@
-// index/me-card.js
+// index/guide.js
 Page({
 
   /**

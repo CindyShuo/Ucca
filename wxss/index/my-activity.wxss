@@ -1,0 +1,3 @@
+/* index/my-activity.wxss */
+@import"aa1.wxss";
+@import"my-show.wxss";

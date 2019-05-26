@@ -1,0 +1,24 @@
+<!--index/my-show.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='top-menu'>
+    <view class='top-menu-p'>展览</view>
+    <view class='top-menu-p1'>活动</view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>我收藏的展览</view>
+  </view>
+  <view class='ucca'>
+    <image class='ucca-pic' src='../images/pic.png'></image>
+    <view class='ucca-p'>
+      <view class='ucca-p1'>2019.6.15-2019.9.1</view>
+      <view class='ucca-p2'>毕加索：一位天才的降生</view>
+    </view>
+  </view>
+  <view class='ucca'>
+    <image class='ucca-pic' src='../images/pic.png'></image>
+    <view class='ucca-p'>
+      <view class='ucca-p1'>2019.6.15-2019.9.1</view>
+      <view class='ucca-p2'>毕加索：一位天才的降生</view>
+    </view>
+  </view>
+</scroll-view>

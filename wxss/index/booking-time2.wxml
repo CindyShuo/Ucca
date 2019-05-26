@@ -1,0 +1,27 @@
+<!--index/booking-time2.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-2'>2019.5.12-2019.6-21</view>
+    </view>
+  </view>
+  <view class='order-title'>已预约观展时间</view>
+  <view class='time-list'>
+    <view class='list-icon'>1</view>
+    展票_1
+    <view class='list-time'>2019.08.12 10:00-12:00</view>
+  </view>
+    <view class='time-list'>
+    <view class='list-icon'>1</view>
+    展票_1
+    <view class='list-time'>2019.08.12 10:00-12:00</view>
+  </view>
+    <view class='time-list'>
+    <view class='list-icon'>1</view>
+    展票_1
+    <view class='list-time'>2019.08.12 10:00-12:00</view>
+  </view>
+</scroll-view>

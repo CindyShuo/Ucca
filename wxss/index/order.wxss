@@ -41,6 +41,7 @@
   margin: 40rpx 40rpx 20rpx 40rpx;
   height:50rpx;
   line-height:50rpx;
+  font-size:34rpx;
 }
 
 .order-infor {

@@ -1,4 +1,4 @@
-// index/me-card.js
+// index/share-card2.js
 Page({
 
   /**

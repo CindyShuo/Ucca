@@ -1,0 +1,18 @@
+/* index/booking-time3.wxss */
+@import "booking-time2.wxss";
+.mode{
+  width:670rpx;
+  height:100rpx;
+  font-size:30rpx;
+  background: #fff;
+  line-height:100rpx;
+  text-align: center; 
+  margin:auto;
+  margin-top:30rpx;
+  box-shadow: 0rpx 0rpx 1rpx rgba(0,0,0,.05);
+
+}
+.mode-down{
+  background: #000;
+  color: #fff;
+}

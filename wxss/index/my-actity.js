@@ -1,4 +1,4 @@
-// index/me-card.js
+// index/my-actity.js
 Page({
 
   /**
