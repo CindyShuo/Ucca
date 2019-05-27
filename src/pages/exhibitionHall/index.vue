@@ -9,6 +9,8 @@
     </div>
     <guide-list @playerId="player" :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
     <audio-player></audio-player>
+    <image class='go-icon go-home' @click="goHome" src='/static/images/go-home.png'></image>
+    <image class='go-icon go-top' @click="goTop" src='/static/images/go-top.png'></image>
   </div>
 </template>
 
@@ -44,7 +46,13 @@
       },
       getShowOrHiddenFlag () {
         this.showOrHiddenPic = true
-      }
+      },
+      goHome () {
+        wx.navigateTo({
+          url: '/pages/index/main'
+        })
+      },
+      goTop () {}
     }
   }
 </script>
@@ -83,6 +91,18 @@
           transform: translate(-50%, -50%) rotate(-90deg) scale(.4);
         }
       }
+    }
+    .go-icon{
+      width: 70rpx;
+      height: 70rpx;
+      position: fixed;
+      right: 30rpx;
+    }
+    .go-home{
+      bottom: 130rpx;
+    }
+    .go-top{
+      bottom: 220rpx;
     }
   }
 </style>

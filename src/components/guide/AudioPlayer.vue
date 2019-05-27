@@ -19,9 +19,9 @@
           <h2 class="right">《墨西哥城鸟瞰图，XIII》</h2>
         </div>
         <div class="state">
-          <image class="state_chose" bindtap="before" src="/static/images/audio/pre.png"></image>
+          <image class="state_chose" bindtap="before" src="/static/images/audio/play-left.png"></image>
           <image class="state_play" @click="playAndPause" :src="!isPlaying ? '/static/images/audio/pause.png' : '/static/images/audio/play.png'"></image>
-          <image class="state_chose" bindtap="next" src="/static/images/audio/next.png"></image>
+          <image class="state_chose" bindtap="next" src="/static/images/audio/play-right.png"></image>
         </div>
       </div>
     </audio>

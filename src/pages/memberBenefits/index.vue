@@ -41,7 +41,7 @@
       <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
     </div>
     <div class="member-benefits__footer">
-      <div class="left">
+      <div class="left" @click="goVerify">
         <span class="already">已是会员？</span>
         <span class="confirm">立即验证</span>
       </div>
@@ -75,6 +75,12 @@
       // 关闭弹框
       close () {
         this.handle = false
+      },
+      goVerify () {
+        // 验证会员身份
+        wx.navigateTo({
+          url: '/pages/verifyInformation/main'
+        })
       },
       chooseHandle () {
         // 用that取代this，防止不必要的情况发生

@@ -103,9 +103,7 @@
         this.step = true
       },
       nextStep () {
-        wx.navigateTo({
-          url: '/pages/verifyInformation/main'
-        })
+
       }
     }
   }
