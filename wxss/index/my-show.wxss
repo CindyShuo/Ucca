@@ -1,0 +1,12 @@
+/* index/my-show.wxss */
+@import"aa.wxss";
+.ucca{
+  margin:30rpx auto;
+  height:auto;
+}
+.ucca-p2{
+  margin:10rpx 0 20rpx;
+}
+.body{
+  padding-bottom:0;
+}

@@ -1,0 +1,163 @@
+<!--index/my1.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='top-menu'>
+    <view class='top-menu-p'>展览</view>
+    <view class='top-menu-p1'>活动</view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>待参观的展览</view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font2 font2-left'>待参观</view>
+      </view>
+      <view class='font-right'>
+        <view class='font1 font1-right'>早鸟全日期通票</view>
+        <view class='font1 font1-right'>x1</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font2 font2-left font2-left1'>已约待参观</view>
+        <view class='font2 font2-left font2-left1 font2-left1-span'>查看预约详情</view>
+      </view>
+      <view class='font-right'>
+        <view class='font1 font1-right'>早鸟全日期通票</view>
+        <view class='font1 font1-right'>x1</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font2 font2-left font2-left1'>已约待参观</view>
+        <view class='font2 font2-left font2-left1 font2-left1-span font2-left1-span1'>时间：19/08/01 14:00-16:00</view>
+      </view>
+      <view class='font-right'>
+        <view class='font1 font1-right'>早鸟全日期通票</view>
+        <view class='font1 font1-right'>x1</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font1'>早鸟全日期通票</view>
+        <view class='font1'>x1</view>
+      </view>
+      <view class='font-right'>
+        <image class='font-arrow' src='../images/arrow.png'></image>
+        <view class='font2'>去预约</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font2 font2-left font2-left-span'>即将过期</view>
+      </view>
+      <view class='font-right'>
+        <view class='font1 font1-right'>早鸟全日期通票</view>
+        <view class='font1 font1-right'>x1</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+  <view class='topic'>
+    <view class='topic-p'>历史展票</view>
+  </view>
+  <view class='my-list'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='small-ma' src='../images/small-ma.png'></image>
+      <view class='mask-font'>
+        <view class='brief-topic'>王音：礼物</view>
+        <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+        <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+      </view>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='my-list-font'>
+      <view class='font-left'>
+        <view class='font2 font2-left font2-left1'>已参观</view>
+        <view class='font2 font2-left font2-left1 font2-left1-span font2-left1-span1'>时间：19/08/01 14:00-16:00</view>
+      </view>
+      <view class='font-right'>
+ 
+        <view class='font1 font1-right' style='float:right'>会员票</view>
+             <view class='ucca-p4'>UCCA会员</view>
+        <view class='font1 font1-right' style='clear:both;'>x1</view>
+      </view>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
+    </view>
+  </view>
+</scroll-view>

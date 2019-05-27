@@ -1,6 +1,6 @@
 <template>
   <div class="member-benefits">
-    <common-header />
+    <common-header backToPrevious="true" />
     <div class="member-benefits__title">
       <image class="card" src="/static/images/me-banner4.png"></image>
       <h3>VIP 会员年卡</h3>
@@ -56,7 +56,7 @@
 <script>
   import CommonHeader from '@/components/common/CommonHeader'
   import CommonPicker from '@/components/common/CommonPicker'
-  import Card from '@/components/card/Card'
+  import Card from '@/components/user/Card'
   export default {
     name: 'MemberBenefits',
     components: { CommonHeader, CommonPicker, Card },

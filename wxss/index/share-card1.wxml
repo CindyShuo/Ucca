@@ -1,0 +1,24 @@
+<!--index/share-card1.wxml-->
+<view class='body mask'>
+<view class='share'>
+  <image class='share-card' src='../images/pic.png'>
+  <image class='logo' src='../images/logo.png'></image>
+    <view class='image-left-bottom'></view>
+    <view class='image-right-bottom'></view>
+  </image>
+  <view class='share-con'>
+    <view class='font-left-top'></view>
+    <view class='font-right-top'></view>
+    <view class='brief-topic'>王音：礼物</view>
+    <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+    <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+    <view class='share-line'></view>
+    <image class='photo' src='../images/photo.png'></image>
+    <view class='photo-name'>Anapple</view>
+    <view class='photo-name-span'>早鸟全日期通票</view>
+    <image class='ma2' src='../images/ma2.png'></image>
+  </view>
+  <view class='share-ps'>长按图片，保持到手机分享朋友圈或点击右上角分享给好</view>
+    <image class='close1' src='../images/close1.png'></image>
+</view>
+</view>

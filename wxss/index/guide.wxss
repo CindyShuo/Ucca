@@ -1,0 +1,48 @@
+/* index/guide.wxss */
+@import "index.wxss";
+.guide-image{
+  width:650rpx;
+  height:573rpx;
+  margin:40rpx 50rpx;
+  background: #757575;
+}
+.guide-list{
+  width:630rpx;
+  height:165rpx;
+  padding:20rpx;
+  margin:0 40rpx 20rpx;
+  border-radius: 0 20rpx 0 0;
+  background: #fff;
+  box-shadow: 3rpx 3rpx 10rpx rgba(0,0,0,.04);
+}
+.list-image{
+  width:165rpx;
+  height:165rpx;
+  float:left;
+  margin-right: 30rpx;
+}
+.list-font{
+  float:left;
+}
+.list-font1{
+  height:24rpx;
+  width:64rpx;
+  line-height: 24rpx;
+  margin-top:20rpx;
+  font-size:16rpx;
+  color: #fff;
+  background: #000;
+  border-radius: 0 4rpx 0 0;
+  text-align: center;
+}
+.list-font2{
+  font-size:34rpx;
+  line-height: 48rpx;
+  margin:10rpx 0;
+}
+.list-font3{
+  font-size: 24rpx;
+  opacity: .6;
+  height: 33rpx;
+line-height: 33rpx;
+}

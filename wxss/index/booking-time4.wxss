@@ -1,0 +1,18 @@
+/* index/booking-time4.wxss */
+@import "booking-time2.wxss";
+.date-time{
+  font-size:24rpx;
+  opacity: .4;
+  float:right;
+}
+.date-time-down{
+  font-size:24rpx;
+  opacity: 1;
+}
+.arrow{
+  width:15rpx;
+  height:27rpx;
+  float:right;
+  margin-top:56rpx;
+  margin-left: 10rpx;
+}

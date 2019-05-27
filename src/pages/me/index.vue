@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <common-header title="UCCA" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="UCCA"></common-header>
     <div class="user-info__content">
       <div class='avatar'>
         <image class='photo' src='/static/images/photo.png'></image>
@@ -20,12 +20,12 @@
         </div>
       </div>
       <div class='list'>
-        <div class='list-content'>
+        <div class='list-content' @click="goMyTicket">
           <image class='me-icon' src='/static/images/me-icon1.png'></image>
           我的票
           <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
         </div>
-        <div class='list-content'>
+        <div class='list-content' @click="goMyExhibition">
           <image class='me-icon' src='/static/images/me-icon2.png'></image>
           我的收藏
           <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
@@ -69,6 +69,18 @@
         // 跳我的会员卡页面
         wx.navigateTo({
           url: '/pages/memberCard/main'
+        })
+      },
+      goMyTicket () {
+        // 跳到我的票页面
+        wx.navigateTo({
+          url: '/pages/myTicket/main'
+        })
+      },
+      goMyExhibition () {
+        // 跳到我的收藏
+        wx.navigateTo({
+          url: '/pages/myExhibition/main'
         })
       }
     }

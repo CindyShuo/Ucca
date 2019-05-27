@@ -1,0 +1,30 @@
+<!--index/booking-time1-.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-2'>2019.5.12-2019.6-21</view>
+    </view>
+  </view>
+  <view class='order-title'>请选择【展票_1】预约时间</view>
+  <view class='time'>
+    <view class='date'>
+      <view class='date-font'>2019年8月18日</view>
+      <image class='date-icon' src='../images/date.png'></image>
+    </view>
+    <view class='choice-topic'>选择时段</view>
+    <view class='choice-bg choice-bg1'>10:00-12:00</view>
+    <view class='choice-bg choice-bg2'>10:00-12:00
+      <view class='choice-bg2-span'>约满</view>
+    </view>
+    <view class='choice-bg choice-bg3'>10:00-12:00
+      <view class='choice-bg3-span'>约满</view>
+    </view>
+    <view class='choice-bg choice-bg3'>10:00-12:00
+    </view>
+  </view>
+  <view class='booking-button'>确认时间</view>
+</scroll-view>
+

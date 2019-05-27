@@ -48,9 +48,9 @@
             selectedIconPath: '/static/images/footerMenu/bottom2-.png'
           },
           {
-            pagePath: '/pages/index/main',
+            pagePath: '/pages/guide/main',
             iconPath: '/static/images/footerMenu/bottom3.png',
-            selectedIconPath: '/static/images/footerMenu/bottom3.png'
+            selectedIconPath: '/static/images/footerMenu/bottom3-.png'
           },
           {
             pagePath: '/pages/me/main',

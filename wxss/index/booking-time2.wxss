@@ -1,0 +1,29 @@
+/* index/booking-time2.wxss */
+@import "booking-time.wxss";
+.time-list{
+  width:670rpx;
+  height:140rpx;
+  margin:auto;
+  font-size:28rpx;
+  line-height: 140rpx;
+  border-radius: 6rpx;
+  border-left:6rpx solid #000;
+  background: #fff;
+  box-shadow: 3rpx 3rpx 25rpx rgba(0,0,0,.1);
+  margin-bottom:20rpx;
+}
+.list-icon{
+  width:36rpx;
+  height:36rpx;
+  float:left;
+  margin:52rpx 15rpx 52rpx 40rpx;
+  border-radius: 100rpx;
+  background: #000;
+  color: #fff;
+  line-height: 36rpx;
+  text-align: center;
+}
+.list-time{
+  float:right;
+  margin-right: 50rpx;
+}
