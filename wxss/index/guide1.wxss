@@ -53,6 +53,7 @@
   line-height: 33rpx;
   color: #fff;
   height:33rpx;
+  font-weight: bold;
 }
 
 .list-image-play-font {
@@ -110,6 +111,7 @@
   font-size: 28rpx;
   line-height: 36rpx;
   margin-top: 42rpx;
+  font-weight: bold;
 }
 
 .list-font2 {
@@ -177,4 +179,16 @@
   height: 24rpx;
   float: right;
   margin: 38rpx 0 0 0;
+}
+.go-icon{
+  width:70rpx;
+  height:70rpx;
+  position: fixed;
+  right:30rpx;
+}
+.go-home{
+  bottom:130rpx;
+}
+.go-top{
+  bottom:220rpx;
 }

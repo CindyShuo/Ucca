@@ -38,7 +38,9 @@
     "index/share-card1",
     "index/share-card2",
     "index/guide",
-    "index/guide1"
+    "index/guide1",
+    "index/guide2",
+    "index/guide3"
   ],
   "window": {
     "backgroundTextStyle": "light",

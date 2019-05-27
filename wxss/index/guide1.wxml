@@ -72,4 +72,6 @@
 <image class='play' src='../images/play.png'></image>
 <image class='play-left' src='../images/play-left-.png'></image>
 </view>
+<image class='go-icon go-home' src='../images/go-home.png'></image>
+<image class='go-icon go-top' src='../images/go-top.png'></image>
 </scroll-view>

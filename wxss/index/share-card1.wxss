@@ -62,6 +62,7 @@
 .photo-name {
   font-size: 28rpx;
   line-height: 40rpx;
+  font-weight:bold;
 }
 
 .photo-name-span {
@@ -109,4 +110,8 @@
   line-height: 80rpx;
   margin:40rpx auto 0;
   color:#fff;
+}
+.brief-topic{
+  font-size:42rpx;
+  line-height: 59rpx;
 }
