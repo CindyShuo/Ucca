@@ -7,19 +7,35 @@
         <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
       </div>
     </div>
-    <guide-list :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
+    <guide-list @playerId="player" :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
+    <audio-player></audio-player>
   </div>
 </template>
 
 <script>
   import CommonHeader from '@/components/common/CommonHeader'
   import GuideList from '@/components/guide/GuideList'
+  import AudioPlayer from '@/components/guide/AudioPlayer'
   export default {
     name: 'ExhibitionHall',
-    components: { CommonHeader, GuideList },
+    components: { CommonHeader, GuideList, AudioPlayer },
     data () {
       return {
-        showOrHiddenPic: true
+        showOrHiddenPic: true,
+        list: [
+          {
+            poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+            name: '此时此刻111111',
+            author: '许巍',
+            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
+          },
+          {
+            poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+            name: '此时此刻222222',
+            author: '许巍',
+            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
+          }
+        ]
       }
     },
     methods: {
@@ -35,6 +51,7 @@
 
 <style lang="less" scoped>
   .exhibition-hall {
+    padding-bottom: 130rpx;
     &__map {
       position: relative;
       padding: 40rpx 62rpx;

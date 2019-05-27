@@ -12,18 +12,18 @@
     <h2 class="title">一、蜂巢</h2>
     <div style="position: relative" @click="goDetail">
       <div class="item noBoxShadow">
-        <image class="pic" src="/static/images/pic.png"></image>
+        <image class="pic" src="/static/images/pic.png" @click="player(0)"></image>
         <div class="card">
           <h2><span class="hall">1</span>《墨西哥城鸟瞰图，XIII》</h2>
           <p>帕布罗·洛佩兹·鲁兹 | 2006</p>
         </div>
       </div>
-      <image src="/static/images/arrow.png" class="guide-list__pointer"></image>
+      <image src="/static/images/arrow.png" @click="goGuideContent" class="guide-list__pointer"></image>
       <div class="line"></div>
     </div>
     <div style="position: relative">
       <div class="item noBoxShadow" style="clear: both">
-        <image class="pic" src="/static/images/pic.png"></image>
+        <image class="pic" src="/static/images/pic.png" @click="player(1)"></image>
         <div class="card">
           <h2><span class="hall">2</span>《无题》</h2>
           <p>帕布罗·洛佩兹·鲁兹 | 2006</p>
@@ -102,6 +102,15 @@
         wx.navigateTo({
           url: ''
         })
+      },
+      player (id) {
+        // 切换播放音频
+        this.$emit('playerId', id)
+      },
+      goGuideContent () {
+        wx.navigateTo({
+          url: '/pages/guideContent/main'
+        })
       }
     }
   }
@@ -179,7 +188,7 @@
       .line {
         margin-top: -1rpx;
         float: right;
-        width: 530rpx;
+        width: 500rpx;
         height: 1rpx;
         border-bottom: 2rpx solid #232323;
         opacity: 0.1;

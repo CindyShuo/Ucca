@@ -18,7 +18,8 @@
     "pages/myTicket/main",
     "pages/reservation/main",
     "pages/guide/main",
-    "pages/exhibitionHall/main"
+    "pages/exhibitionHall/main",
+    "pages/guideContent/main"
   ],
   "window": {
     "navigationStyle": "custom"
