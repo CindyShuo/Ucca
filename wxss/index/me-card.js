@@ -1,4 +1,4 @@
-// index/me-user.js
+// index/me-card.js
 Page({
 
   /**

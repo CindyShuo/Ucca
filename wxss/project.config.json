@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 38,
 			"list": [
 				{
 					"id": -1,
@@ -126,8 +126,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "code3",
+					"id": 12,
+					"name": "index",
 					"pathName": "index/index",
 					"query": "",
 					"scene": null
@@ -206,6 +206,111 @@
 					"id": -1,
 					"name": "me-result2",
 					"pathName": "index/me-result2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my1",
+					"pathName": "index/my1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "booking-time",
+					"pathName": "index/booking-time",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "booking-time1",
+					"pathName": "index/booking-time1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 27,
+					"name": "booking-time2",
+					"pathName": "index/booking-time2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "booking-time3",
+					"pathName": "index/booking-time3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "booking-time4",
+					"pathName": "index/booking-time4",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "booking-time1-",
+					"pathName": "index/booking-time1-",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "my-show",
+					"pathName": "index/my-show",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 32,
+					"name": "my-activity",
+					"pathName": "index/my-activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "share-card1",
+					"pathName": "index/share-card1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "share-card2",
+					"pathName": "index/share-card2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide",
+					"pathName": "index/guide",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide1",
+					"pathName": "index/guide1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide2",
+					"pathName": "index/guide2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide3",
+					"pathName": "index/guide3",
 					"scene": null
 				}
 			]

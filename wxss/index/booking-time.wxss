@@ -1,0 +1,16 @@
+/* index/booking-time.wxss */
+@import "order.wxss";
+.order-top{
+  height:auto;
+  overflow: hidden; 
+}
+.time{
+  width:690rpx;
+  margin-top:30rpx;
+  height:645rpx;
+  border-radius: 0 20rpx 0 0;
+  padding:50rpx 30rpx;
+  background: #fff;
+  box-shadow: 3rpx 3rpx 25rpx rgba(0,0,0,.1);
+
+}

@@ -1,0 +1,43 @@
+/* index/guide3.wxss */
+@import "guide1.wxss";
+.guide3-image{
+  width:750rpx;
+  height:534rpx;
+}
+.guide3-topic{
+  font-size:34rpx;
+  margin:30rpx 40rpx 10rpx;
+  line-height: 60rpx;
+  height:60rpx;
+  font-weight: bold;
+}
+.guide3-topic-span{
+  font-size:24rpx;
+  margin:0 0 30rpx 40rpx;
+  height:33rpx;
+  line-height: 33rpx;
+  opacity: .6;
+  font-weight: bold;
+}
+.guide3-list{
+  border-left:4rpx solid #000;
+}
+.arrow-black{
+  width:20rpx;
+  height:20rpx;
+  float:right;
+  margin:50rpx 30rpx 0 20rpx;
+}
+.list-right-font{
+  font-size:28rpx;
+  line-height: 125rpx;
+  float:right;
+  font-weight: bold;
+}
+.guide3-info{
+width:670rpx;
+margin:40rpx;
+font-size:30rpx;
+font-weight: bold;
+line-height: 54rpx;
+}

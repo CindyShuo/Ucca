@@ -1,7 +1,16 @@
 <!--index/code.wxml-->
 <scroll-view scroll-y class='body'>
-  <image class='code-bg' src='../images/code-bg.png'>
-    <image class='share' src='../images/share.png'></image>
+  <view class='code-bg'>
+    <image class='my-list-image' src='../images/pic.png'>
+      <view class='my-list-mask'></view>
+      <image class='share' src='../images/share.png'></image>
+       <image class='logo' src='../images/logo.png'></image>
+      <view class='image-left-bottom'></view>
+      <view class='image-right-bottom'></view>
+    </image>
+    <view class='code-con'>
+      <view class='font-left-top'></view>
+      <view class='font-right-top'></view>
     <view class='font code-font'>
       <view class='font-1'>王音：礼物</view>
       <view class='font-2'>2019.6.15-2019.9.1</view>
@@ -15,15 +24,15 @@
       <image class='topic-icon code-arrow' src='../images/arrow.png'>
       </image>
       <view class='code-font2'>去预约</view>
-
     </view>
-  </image>
-<view class='code-ps'>
-<view class='code-ps-topic'>注意事项</view>
-1、票务一经售出不退不换；
-</view>
-<view class='code-bottom'>
-<view class='code-bottom-div'>返回首页</view>
-<view class='code-bottom-div code-bottom-div1'>查看我的展览票</view>
-</view>
+      </view>
+  </view>
+  <view class='code-ps'>
+    <view class='code-ps-topic'>注意事项</view>
+    1、票务一经售出不退不换；
+  </view>
+  <view class='code-bottom'>
+    <view class='code-bottom-div'>返回首页</view>
+    <view class='code-bottom-div code-bottom-div1'>查看我的展览票</view>
+  </view>
 </scroll-view>

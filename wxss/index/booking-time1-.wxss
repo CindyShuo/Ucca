@@ -1,0 +1,13 @@
+/* index/booking-time1-.wxss */
+@import "booking-time1.wxss";
+.booking-button{
+  width:220rpx;
+  height:80rpx;
+  border:1rpx solid #000;
+  margin:auto;
+  margin-top:50rpx;
+  font-size:30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #000;
+}

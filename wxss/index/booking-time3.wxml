@@ -1,0 +1,14 @@
+<!--index/booking-time3.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-2'>2019.5.12-2019.6-21</view>
+    </view>
+  </view>
+  <view class='order-title'>您购买了3张展票，请选择预约观展的时间</view>
+  <view class='mode'>与朋友一起，预约相同时间观展</view>
+  <view class='mode mode-down'>与朋友分开，预约不同时间观展</view>
+</scroll-view>

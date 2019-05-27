@@ -1,0 +1,24 @@
+<!--index/share-card2.wxml-->
+<view class='body mask'>
+<view class='share'>
+  <image class='share-card' src='../images/pic.png'>
+  <image class='logo' src='../images/logo.png'></image>
+    <view class='image-left-bottom'></view>
+    <view class='image-right-bottom'></view>
+  </image>
+  <view class='share-con'>
+    <view class='font-left-top'></view>
+    <view class='font-right-top'></view>
+    <view class='brief-topic'>“邱志杰：寰宇全图”系列</view>
+    <view class='brief-topic'>何波娜、邱志杰与于渺：绘制纠缠物的地图</view>
+    <view class='brief-span'>2019.6.15 - 2019.9.1</view>
+    <view class='brief-span'>UCCA尤伦斯当代艺术中心（北京798）</view>
+    <view class='share-line'></view>
+    <image class='photo' src='../images/photo.png'></image>
+    <view class='photo-name'>Anapple</view>
+    <view class='photo-name-span'>早鸟全日期通票</view>
+    <image class='ma2' src='../images/ma2.png'></image>
+  </view>
+  <view class='share-button'>查看该展览</view>
+</view>
+</view>

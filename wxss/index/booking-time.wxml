@@ -1,0 +1,14 @@
+<!--index/booking-time.wxml-->
+<scroll-view scroll-y class='body'>
+  <view class='window-top order-top'>
+    <image class='pic' src='../images/pic.png'></image>
+    <view class='font'>
+      <view class='font-1'>王音：礼物</view>
+      <view class='font-2'>已选：早鸟全日期通票</view>
+      <view class='font-2'>2019.5.12-2019.6-21</view>
+    </view>
+  </view>
+    <view class='order-title'>请选择预约日期</view>
+    <view class='time'></view>
+</scroll-view>
+<view></view>

@@ -1,0 +1,77 @@
+<!--index/guide1.wxml-->
+<scroll-view scroll-y class='body'>
+  <image class='guide1-image' src='../images/pic.png'>
+    <image class='btn-arrow' src='../images/btn-arrow.png'></image>
+  </image>
+  <view class='guide1-list'>
+    <view class='guide1-list1'>
+      <image class='list-image' src='../images/pic.png'>
+      <view class='list-image-play'>
+      <view class='list-image-play-font'>01:23</view>
+      <image class='list-image-play-icon' src='../images/arrow-white1.png'></image>
+      </view>
+      </image>
+      <view class='list-right list-right1'>
+        <image class='list-arrow' src='../images/arrow.png'></image>
+        <view class='list-icon list-icon1'>1</view>
+        <view class='list-font'>展览介绍</view>
+      </view>
+    </view>
+  </view>
+  <view class='list-topic'>一、蜂巢</view>
+  <view class='guide1-list'>
+    <view class='guide1-list1'>
+      <image class='list-image' src='../images/pic.png'>
+      <view class='list-image-play'>
+      <view class='list-image-play-font'>01:23</view>
+      <image class='list-image-play-icon' src='../images/arrow-white1.png'></image>
+      </view>
+      </image>
+
+      <view class='list-right'>
+        <image class='list-arrow' src='../images/arrow.png'></image>
+        <view class='list-icon list-icon2'>1</view>
+        <view class='list-font list-font2'>展览介绍</view>
+        <view class='list-font3'>帕布罗·洛佩兹·鲁兹 | 2006</view>
+      </view>
+    </view>
+    <view class='guide1-list1'>
+      <image class='list-image' src='../images/pic.png'>
+      <view class='list-image-play'>
+      <view class='list-image-play-font'>01:23</view>
+      <image class='list-image-play-icon' src='../images/arrow-white1.png'></image>
+      </view>
+      </image>
+      <view class='list-right'>
+        <image class='list-arrow' src='../images/arrow.png'></image>
+        <view class='list-icon list-icon2'>1</view>
+        <view class='list-font list-font2'>展览介绍</view>
+        <view class='list-font3'>帕布罗·洛佩兹·鲁兹 | 2006</view>
+      </view>
+    </view>
+    <view class='guide1-list1'>
+      <image class='list-image' src='../images/pic.png'>
+      <view class='list-image-play'>
+      <view class='list-image-play-font'>01:23</view>
+      <image class='list-image-play-icon' src='../images/arrow-white1.png'></image>
+      </view>
+      </image>
+      <view class='list-right list-right1'>
+        <image class='list-arrow' src='../images/arrow.png'></image>
+        <view class='list-icon list-icon2'>1</view>
+        <view class='list-font list-font2'>展览介绍</view>
+        <view class='list-font3'>帕布罗·洛佩兹·鲁兹 | 2006</view>
+      </view>
+    </view>
+  </view>
+<view class='guide1-bottom'>
+<view class='guide1-bottom-line'></view>
+<image class='guide1-bottom-image' src='../images/pic.png'></image>
+《墨西哥城鸟瞰图》
+<image class='play-right' src='../images/play-right.png'></image>
+<image class='play' src='../images/play.png'></image>
+<image class='play-left' src='../images/play-left-.png'></image>
+</view>
+<image class='go-icon go-home' src='../images/go-home.png'></image>
+<image class='go-icon go-top' src='../images/go-top.png'></image>
+</scroll-view>
