@@ -1,6 +1,6 @@
 <template>
   <div class="my-exhibition">
-    <common-header title="我的收藏" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header backToPrevious="true" title="我的收藏" navBackgroundColor="#fff" titleColor="#232323"></common-header>
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>

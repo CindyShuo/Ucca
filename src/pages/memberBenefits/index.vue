@@ -45,10 +45,12 @@
         <span class="already">已是会员？</span>
         <span class="confirm">立即验证</span>
       </div>
-      <a class="button" @click="nextStep">立即办理会员</a>
+      <a class="button" @click="chooseHandle">立即办理会员</a>
     </div>
     <common-picker v-if="handle">
-      <card @close="close"></card>
+      <div v-if="handle" :animation="animationData" style="position: absolute;left: 0;bottom: 0;width: 100%;height: 100%;">
+        <card @close="hideModal"></card>
+      </div>
     </common-picker>
   </div>
 </template>
@@ -62,7 +64,8 @@
     components: { CommonHeader, CommonPicker, Card },
     data () {
       return {
-        handle: false
+        handle: false,
+        animationData: {}
       }
     },
     methods: {
@@ -72,6 +75,45 @@
       // 关闭弹框
       close () {
         this.handle = false
+      },
+      chooseHandle () {
+        // 用that取代this，防止不必要的情况发生
+        let that = this
+        // 创建一个动画实例
+        let animation = wx.createAnimation({
+          // 动画持续时间
+          duration: 600,
+          // 定义动画效果，当前是匀速
+          timingFunction: 'linear'
+        })
+        // 将该变量赋值给当前动画
+        that.animation = animation
+        // 先在y轴偏移，然后用step()完成一个动画
+        animation.translateY(300).step()
+        // 通过export()方法导出数据
+        that.animationData = animation.export()
+        // 改变view里面的Wx：if
+        that.handle = true
+        // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+        }, 100)
+      },
+      hideModal () {
+        let that = this
+        let animation = wx.createAnimation({
+          duration: 600,
+          timingFunction: 'linear'
+        })
+        that.animation = animation
+        animation.translateY(500).step()
+        that.animationData = animation.export()
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+          that.handle = false
+        }, 500)
       }
     },
     onLoad (option) {
