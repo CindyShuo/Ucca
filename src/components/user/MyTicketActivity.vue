@@ -199,6 +199,9 @@
         align-items: center;
         width: 100%;
         height: 214rpx;
+        background: #000;
+        opacity: 0.5;
+        border-radius: 10rpx 10rpx 0rpx 0rpx;
         h3 {
           font-size: 34rpx;
           line-height: 34rpx;
