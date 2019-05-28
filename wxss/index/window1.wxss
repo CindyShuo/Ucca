@@ -43,6 +43,7 @@
 .font-1 {
   margin-top: 5rpx;
   font-size: 34rpx;
+  font-weight: bold;
 }
 
 .font-2 {

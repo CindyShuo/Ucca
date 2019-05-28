@@ -94,6 +94,9 @@
         <div class='font-span'>感谢您的预约，我们将在两个工作日内联系您进行确认</div>
       </div>
     </common-picker>
+    <common-picker v-if="share">
+      <share-box @close="close"></share-box>
+    </common-picker>
   </div>
 </template>
 
@@ -104,6 +107,7 @@
   import CommonPicker from '../../components/common/CommonPicker'
   import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
   import ChooseTicketType from '../../components/purchaseTickets/ChooseTicketType'
+  import ShareBox from '../../components/purchaseTickets/ShareBox'
   import GroupAppointment from '../../components/purchaseTickets/GroupAppointment'
   import CommonOrderItem from '../../components/common/CommonOrderItem'
   import store from '../../store'
@@ -118,7 +122,8 @@
       CommonEntry,
       ChooseTicketType,
       CommonOrderItem,
-      GroupAppointment
+      GroupAppointment,
+      ShareBox
     },
     data () {
       return {
@@ -139,6 +144,7 @@
         buyTicket: false, // 立即购买
         participate: false, // 参与活动
         confirmSuccessFlag: false, // 提交成功
+        share: false, // 分享
         animationData: {}
       }
     },
@@ -156,18 +162,17 @@
         this.groupAppointment = false
         this.buyTicket = false
         this.participate = false
+        this.share = false
       },
       isBuyTicket (val) {
-        console.log(val, 'val')
-        // this[val.type] = val.buyTicket
-        if (val.type === 'groupAppointment') {
-          this.chooseGroupAppointment()
-        }
-        if (val.type === 'buyTicket') {
-          this.chooseBuyTicket()
+        if (val.type === 'groupAppointment' || val.type === 'buyTicket') {
+          this.chooseGroupAppointment(val.type)
+        } else {
+          this[val.type] = val.buyTicket
+          console.log(val, 'val')
         }
       },
-      chooseGroupAppointment () {
+      chooseGroupAppointment (val) {
         // 用that取代this，防止不必要的情况发生
         let that = this
         // 创建一个动画实例
@@ -184,31 +189,7 @@
         // 通过export()方法导出数据
         that.animationData = animation.export()
         // 改变view里面的Wx：if
-        that.groupAppointment = true
-        // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
-        setTimeout(function () {
-          animation.translateY(0).step()
-          that.animationData = animation.export()
-        }, 100)
-      },
-      chooseBuyTicket () {
-        // 用that取代this，防止不必要的情况发生
-        let that = this
-        // 创建一个动画实例
-        let animation = wx.createAnimation({
-          // 动画持续时间
-          duration: 600,
-          // 定义动画效果，当前是匀速
-          timingFunction: 'linear'
-        })
-        // 将该变量赋值给当前动画
-        that.animation = animation
-        // 先在y轴偏移，然后用step()完成一个动画
-        animation.translateY(300).step()
-        // 通过export()方法导出数据
-        that.animationData = animation.export()
-        // 改变view里面的Wx：if
-        that.buyTicket = true
+        that[val] = true
         // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
         setTimeout(function () {
           animation.translateY(0).step()
@@ -231,11 +212,13 @@
           that.buyTicket = false
           that.participate = false
           that.confirmSuccessFlag = false
+          this.share = false
         }, 500)
       },
       confirmSuccess (val) {
         this.groupAppointment = false
         this.buyTicket = false
+        this.share = false
         this.participate = false
         this.confirmSuccessFlag = val
         setTimeout(() => {

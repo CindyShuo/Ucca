@@ -1,0 +1,12 @@
+/* index/guide2.wxss */
+@import "guide1.wxss";
+.btn-arrow2{
+  width:100rpx;
+  height:30rpx;
+  position: fixed;
+  top:0;
+  left:325rpx;
+}
+.guide2-list{
+  margin-top:50rpx;
+}

@@ -55,8 +55,8 @@
 }
 .topic-icon{
   float:right;
-  width:22rpx;
-  height:28rpx;
+  width:14rpx;
+  height:27rpx;
   margin-top:20rpx;
 }
 .topic-icon1{

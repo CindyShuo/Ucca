@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 36,
+			"current": 38,
 			"list": [
 				{
 					"id": -1,
@@ -298,6 +298,19 @@
 					"name": "guide1",
 					"pathName": "index/guide1",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide2",
+					"pathName": "index/guide2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guide3",
+					"pathName": "index/guide3",
 					"scene": null
 				}
 			]

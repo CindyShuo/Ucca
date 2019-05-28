@@ -27,6 +27,7 @@
 .brief-topic {
   font-size: 34rpx;
   line-height: 48rpx;
+  font-weight: bold;
 }
 
 .brief-span {
@@ -46,6 +47,7 @@
   position: relative;
   margin: 25rpx 25rpx 0 0;
   font-size: 42rpx;
+  font-weight: bold;
 }
 
 .ucca-p4 {
@@ -73,6 +75,7 @@
   font-size: 24rpx;
   line-height: 80rpx;
   padding: 0 40rpx;
+  font-weight: bold;
 }
 
 .tips span {
@@ -81,8 +84,8 @@
 
 .tips-arrow {
   float: right;
-  width: 22rpx;
-  height: 28rpx;
+  width: 14rpx;
+  height: 27rpx;
   margin-top: 28rpx;
 }
 
@@ -126,6 +129,7 @@
 
 .details-menu-div1 {
   border-bottom: 4rpx solid red;
+  font-weight:bold;
 }
 
 .details-most-topic {
@@ -137,6 +141,7 @@
   width: 670rpx;
   padding: 10rpx 40rpx;
   line-height: 54rpx;
+  font-weight: bold;
 }
 
 .details-bottom {
@@ -155,6 +160,7 @@
   height: 100%;
   border-right: 1rpx solid rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-weight: bold;
 }
 
 .details-bottom-div1 {
