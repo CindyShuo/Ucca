@@ -8,7 +8,9 @@
       <cover-view class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></cover-view>
       <!-- 标题栏 -->
       <cover-view class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
-        <cover-view v-if="backToPrevious" class="title arrow" :style="{ color:titleColor }" @click="goBack">{{ '<' }}</cover-view>
+        <a v-if="backToPrevious && !showOrHidden" class="arrow" :class="titleColor !== '#fff' ? 'arrow-black' : 'arrow-white'" @click="goBack"></a>
+        <a v-else-if="backToPrevious && showOrHidden" class="arrow" :class="!showOrHidden ? 'arrow-black' : 'hall'" @click="goBack"></a>
+        <common-language :flag="backToPrevious" :colorFlag="titleColor"></common-language>
         <!-- 标题 -->
         <cover-view class="title" :style="{ color:titleColor }">{{ title }}</cover-view>
       </cover-view>
@@ -17,8 +19,10 @@
 </template>
 
 <script>
+  import CommonLanguage from '@/components/common/CommonLanguage'
   export default {
     name: 'CommonHeader',
+    components: { CommonLanguage },
     props: {
       // 导航栏背景色
       navBackgroundColor: {
@@ -45,6 +49,11 @@
       },
       // 返回箭头
       backToPrevious: {
+        required: false,
+        default: false
+      },
+      // 导览模块title
+      showOrHidden: {
         required: false,
         default: false
       }
@@ -109,17 +118,105 @@
       &__main {
         position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
         .arrow {
           position: absolute;
-          left: 24px;
-          top: 10px;
-          z-index: 1000;
-          font-size: 22px !important;
-          font-weight: 300;
+          position: absolute;
+          left: 24rpx;
+          top: 36rpx;
+        }
+        .hall {
+          &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 20rpx solid #fff;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            border-radius: 5rpx;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10rpx;
+            top: 6rpx;
+            z-index: 100;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 16rpx solid #6F5654;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+          }
+        }
+        .arrow-white {
+          &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 20rpx solid white;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            border-radius: 5rpx;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10rpx;
+            top: 6rpx;
+            z-index: 100;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 16rpx solid #232323;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+          }
+        }
+        .arrow-black {
+          &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 0;
+            border: 20rpx solid #232323;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            border-radius: 5rpx;
+          }
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10rpx;
+            top: 6rpx;
+            z-index: 100;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 16rpx solid white;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+          }
         }
         .title {
+          margin: 0 auto;
           font-size: 14px;
           text-align: center;
         }

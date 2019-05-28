@@ -32,10 +32,11 @@
 </template>
 
 <script>
+  import CommonHeader from '@/components/common/CommonHeader'
   import AudioPlayer from '@/components/guide/AudioPlayer'
   export default {
     name: 'GuideContent',
-    components: { AudioPlayer },
+    components: { AudioPlayer, CommonHeader },
     methods: {
       goHome () {
         wx.navigateTo({

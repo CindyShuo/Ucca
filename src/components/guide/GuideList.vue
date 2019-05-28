@@ -1,5 +1,5 @@
 <template>
-  <scroll-view scroll-y class="guide-list">
+  <scroll-view scroll-y class="guide-list" v-bind:style="!showOrHiddenPic ? 'height: 100%' : ''">
     <div class="guide-list__arrow" @click="showPic" v-if="!showOrHiddenPic">
       <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
     </div>
