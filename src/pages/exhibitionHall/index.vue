@@ -7,8 +7,8 @@
         <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
       </div>
     </div>
-    <guide-list @playerId="player" :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
-    <audio-player></audio-player>
+    <guide-list @playerId="changeMusic" :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
+    <audio-player :playAudio="audioItem"></audio-player>
     <image class='go-icon go-home' @click="goHome" src='/static/images/go-home.png'></image>
     <image class='go-icon go-top' @click="goTop" src='/static/images/go-top.png'></image>
   </div>
@@ -24,6 +24,7 @@
     data () {
       return {
         showOrHiddenPic: true,
+        audioItem: null,
         list: [
           {
             poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
@@ -52,7 +53,11 @@
           url: '/pages/index/main'
         })
       },
-      goTop () {}
+      goTop () {},
+      changeMusic (val) {
+        console.log(val, 'val')
+        this.audioItem = val
+      }
     }
   }
 </script>

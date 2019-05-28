@@ -1,5 +1,5 @@
 <template>
-  <scroll-view scroll-y class="guide-list__content">
+  <scroll-view scroll-y class="guide-list">
     <div class="guide-list__arrow" @click="showPic" v-if="!showOrHiddenPic">
       <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
     </div>
@@ -120,7 +120,6 @@
         </div>
       </div>
       <image src="/static/images/arrow.png" class="guide-list__pointer"></image>
-      <div class="line"></div>
     </div>
   </scroll-view>
 </template>
@@ -153,6 +152,91 @@
 
 <style lang="less" scoped>
   .guide-list {
+    padding: 30rpx 30rpx 0;
+    height: 800rpx;
+    box-shadow: 20rpx 10rpx 25rpx rgba(0, 0, 0, 0.03);
+    overflow-y: hidden;
+    .item {
+      padding: 20rpx;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
+      .pic {
+        position: relative;
+        width: 166rpx;
+        height: 166rpx;
+        .list-image-play {
+          position: absolute;
+          bottom: 10rpx;
+          width: 100%;
+          font-size: 24rpx;
+          line-height: 33rpx;
+          color: #fff;
+          height: 33rpx;
+          font-weight: bold;
+          text-align: center;
+        }
+        .list-image-play-font {
+          position:absolute;
+          left: 10rpx;
+          right: 30rpx;
+          margin-left: 10rpx;
+        }
+        .list-image-play-icon {
+          width: 16rpx;
+          height: 16rpx;
+          position: absolute;
+          top: 8rpx;
+          right: 15rpx;
+        }
+      }
+      .card {
+        margin-left: 30rpx;
+        display: flex;
+        flex-direction: column;
+        .hall {
+          margin-right: 4rpx;
+          display: inline-block;
+          width: 32rpx;
+          height: 32rpx;
+          font-size: 16rpx;
+          line-height: 32rpx;
+          color: #FFF;
+          text-align: center;
+          background: #232323;
+          border-radius: 50%;
+          vertical-align: top;
+        }
+        h2 {
+          margin: 14rpx 0 20rpx;
+          font-size: 28rpx;
+          line-height: 28rpx;
+        }
+        p {
+          padding-left: 36rpx;
+          font-size: 24rpx;
+          line-height: 24rpx;
+          opacity: 0.6;
+        }
+      }
+    }
+    .noBoxShadow {
+      box-shadow: none;
+    }
+    .line {
+      margin-top: -1rpx;
+      float: right;
+      width: 500rpx;
+      height: 1rpx;
+      border-bottom: 2rpx solid #232323;
+      opacity: 0.1;
+    }
+    .title {
+      margin: 30rpx 0;
+      font-size: 30rpx;
+      line-height: 30rpx;
+    }
     &__arrow {
       position: fixed;
       top: 68px;
@@ -173,90 +257,6 @@
         width: 30rpx;
         height: 54rpx;
         transform: translate(-50%, -50%) rotate(90deg) scale(.4);
-      }
-    }
-    &__content {
-      padding: 30rpx;
-      .item {
-        padding: 20rpx;
-        display: flex;
-        align-items: center;
-        background: #fff;
-        box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
-        .pic {
-          position: relative;
-          width: 166rpx;
-          height: 166rpx;
-          .list-image-play {
-            position: absolute;
-            bottom: 10rpx;
-            width: 100%;
-            font-size: 24rpx;
-            line-height: 33rpx;
-            color: #fff;
-            height: 33rpx;
-            font-weight: bold;
-            text-align: center;
-          }
-          .list-image-play-font {
-            position:absolute;
-            left: 10rpx;
-            right: 30rpx;
-            margin-left: 10rpx;
-          }
-          .list-image-play-icon {
-            width: 16rpx;
-            height: 16rpx;
-            position: absolute;
-            top: 8rpx;
-            right: 15rpx;
-          }
-        }
-        .card {
-          margin-left: 30rpx;
-          display: flex;
-          flex-direction: column;
-          .hall {
-            margin-right: 4rpx;
-            display: inline-block;
-            width: 32rpx;
-            height: 32rpx;
-            font-size: 16rpx;
-            line-height: 32rpx;
-            color: #FFF;
-            text-align: center;
-            background: #232323;
-            border-radius: 50%;
-            vertical-align: top;
-          }
-          h2 {
-            margin: 14rpx 0 20rpx;
-            font-size: 28rpx;
-            line-height: 28rpx;
-          }
-          p {
-            padding-left: 36rpx;
-            font-size: 24rpx;
-            line-height: 24rpx;
-            opacity: 0.6;
-          }
-        }
-      }
-      .noBoxShadow {
-        box-shadow: none;
-      }
-      .line {
-        margin-top: -1rpx;
-        float: right;
-        width: 500rpx;
-        height: 1rpx;
-        border-bottom: 2rpx solid #232323;
-        opacity: 0.1;
-      }
-      .title {
-        margin: 30rpx 0;
-        font-size: 30rpx;
-        line-height: 30rpx;
       }
     }
     &__pointer {

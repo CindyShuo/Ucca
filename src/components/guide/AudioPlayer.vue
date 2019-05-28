@@ -31,6 +31,7 @@
 <script>
   export default {
     name: 'AudioPlayer',
+    props: ['playAudio'],
     data () {
       return {
         audioCtx: null,
@@ -139,6 +140,9 @@
           that.songLrc(that.datalist[that.songIndex].song_id)
         }
       }
+    },
+    created () {
+      console.log(this.playAudio, 'playAudio')
     },
     onReady () {
       // 使用 wx.createAudioContext 获取 audio 上下文 context
