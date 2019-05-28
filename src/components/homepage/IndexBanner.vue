@@ -1,8 +1,8 @@
 <template>
   <div class="index-banner">
     <swiper
-      duration="2000"
-      next-margin="180rpx"
+      autoplay="true"
+      circular="true"
       class="swipe"
     >
       <swiper-item
@@ -10,7 +10,7 @@
         :key="i"
       >
         <image
-          src="/static/images/banner.png"
+          :src="item"
           class="image"
         ></image>
       </swiper-item>
@@ -33,5 +33,12 @@
     margin: -212rpx auto 0;
     width: 670rpx;
     height: 340rpx;
+    .swipe {
+      height: 340rpx;
+      .image {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 </style>

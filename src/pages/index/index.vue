@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <common-header />
-    <home-top :location="location" />
+    <home-top :location="location" :banner="banner" />
     <index-banner :list="bannerList" />
     <inner-exhibition :list="exhibitionList" />
     <near-activity :list="activityList" />
@@ -16,14 +16,15 @@
   import IndexBanner from '../../components/homepage/IndexBanner'
   import InnerExhibition from '../../components/homepage/InnerExhibition'
   import NearActivity from '../../components/homepage/NearActivity'
-  import CommonFooter from '../../components/common/CommonFooter'
   import VisitInfo from '../../components/homepage/VisitInfo'
+  import CommonFooter from '../../components/common/CommonFooter'
 
   export default {
     name: 'HomePage',
     components: { CommonHeader, HomeTop, IndexBanner, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
+        banner: '',
         location: '',
         bannerList: '',
         exhibitionList: [],
@@ -36,6 +37,7 @@
         this.$http.getHomePage()
           .then(res => {
             console.log(res)
+            this.banner = res.data.background
             this.location = res.data.locations[0]
             this.bannerList = res.data.banner
             this.exhibitionList = res.data.exhibitions

@@ -34,12 +34,21 @@
     methods: {
       flagShow (val) {
         this.showContent = val
+      },
+      getList () {
+        this.$http.getList('exhibition', '', 1)
+          .then(res => {
+            console.log(res)
+          })
       }
     },
     onLoad (option) {
       if (option.type) {
         this.showContent = Number(option.type)
       }
+    },
+    mounted () {
+      this.getList()
     }
   }
 </script>

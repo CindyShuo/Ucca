@@ -3,18 +3,16 @@ import fly from '../config/fly'
 const BaseApi = {
   getHomePage: () => {
     return fly.get('/api/homepage')
+  },
+  getList: (type, year, filterLike, location, language) => {
+    return fly.get('/api/exhibition/list', {
+      type, // exhibition = 展览, event = 活动
+      year, // 如果不带年份，返回首页所需内容，如果带年份，返回当年的数据
+      filterLike, // 是否查询收藏的内容，0=是， 1=否。如果选是，year参数将被忽略
+      location,
+      language
+    })
   }
-  // getList: (type, year, filter_like, location, language) => {
-  //   return fly.get('/api/exhibition/list', {
-  //     params: {
-  //       type, // exhibition = 展览, event = 活动
-  //       year, // 如果不带年份，返回首页所需内容，如果带年份，返回当年的数据
-  //       filter_like, // 是否查询收藏的内容，0=是， 1=否。如果选是，year参数将被忽略
-  //       location,
-  //       language
-  //     }
-  //   })
-  // },
   // getItemInfo: (exhibition_id, language) => {
   //   return fly.get('/api/exhibition/info', {
   //     params: {

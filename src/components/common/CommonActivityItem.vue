@@ -4,7 +4,7 @@
     class="common-activity-item"
   >
     <image
-      src="/static/images/banner.png"
+      :src="item.image"
       class="common-activity-item__image"
     ></image>
     <div class="common-activity-item__text">

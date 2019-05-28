@@ -1,5 +1,8 @@
 <template>
-  <div class="home-top">
+  <image
+    :src="banner || ''"
+    class="home-top"
+  >
     <div class="home-top__content">
       <a class="address">
         <image
@@ -10,13 +13,14 @@
       </a>
       <a class="locale">EN</a>
     </div>
-  </div>
+  </image>
 </template>
 
 <script>
   export default {
     name: 'HomeTop',
     props: {
+      banner: String,
       location: String
     }
   }
