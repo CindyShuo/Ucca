@@ -1,5 +1,6 @@
 <template>
-  <div class="exhibition-info" :class="{ 'disable-scroll': !isScroll }">
+  <scroll-view scroll-y  class="exhibition-info" :class="{ 'disable-scroll': !isScroll }" @scroll="scrollHandle">
+    <common-scroll-header title="UCAA" :is-top="isTop" />
     <image
       src="/static/images/banner.png"
       class="exhibition-info__banner"
@@ -54,7 +55,7 @@
       </div>
     </div>
     <div class='exhibition-info__most'>
-      <common-tab :arr="arrList" @flag="flagShow" tabFontStyle="true"></common-tab>
+      <common-info-tab :tab-list="arrList" @handleChange="tabHandle" v-model="showContent" />
       <div v-if="showContent === 0">
         <div class='most-topic'>活动流程</div>
         <div class='most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</div>
@@ -97,12 +98,11 @@
     <common-picker v-if="share">
       <share-box @close="close"></share-box>
     </common-picker>
-  </div>
+  </scroll-view>
 </template>
 
 <script>
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
-  import CommonTab from '../../components/common/CommonTab'
   import CommonEntry from '../../components/common/CommonEntry'
   import CommonPicker from '../../components/common/CommonPicker'
   import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
@@ -111,14 +111,17 @@
   import GroupAppointment from '../../components/purchaseTickets/GroupAppointment'
   import CommonOrderItem from '../../components/common/CommonOrderItem'
   import store from '../../store'
+  import CommonInfoTab from '../../components/common/CommonInfoTab'
+  import CommonScrollHeader from '../../components/common/CommonScrollHeader'
 
-  export default {
+export default {
     name: 'ExhibitionInfo',
     components: {
+      CommonScrollHeader,
+      CommonInfoTab,
       ChooseTicket,
       CommonPicker,
       CommonFooterHandle,
-      CommonTab,
       CommonEntry,
       ChooseTicketType,
       CommonOrderItem,
@@ -127,6 +130,7 @@
     },
     data () {
       return {
+        isTop: true,
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
         showContent: 0,
         orderList: [
@@ -154,7 +158,10 @@
       }
     },
     methods: {
-      flagShow (val) {
+      scrollHandle (e) {
+        this.isTop = e.mp.detail.scrollTop < 20
+      },
+      tabHandle (val) {
         this.showContent = val
       },
       // 关闭弹框
@@ -232,6 +239,7 @@
 <style lang="less" scoped>
   .exhibition-info {
     position: relative;
+    height: 100%;
     padding-bottom: 100rpx;
     &__banner {
       display: block;

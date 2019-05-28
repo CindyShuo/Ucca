@@ -81,6 +81,7 @@
           opacity: .6;
         }
         &--style-2 {
+          line-height: 30rpx;
           font-size: 30rpx;
           color: #232323;
         }

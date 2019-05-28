@@ -28,7 +28,6 @@
         </div>
       </div>
     </div>
-    <common-footer selectNavIndex="2"></common-footer>
   </div>
 </template>
 
@@ -50,7 +49,7 @@
 
 <style lang="less" scoped>
   .guide-index {
-    padding-bottom: 130rpx;
+    padding-bottom: 30rpx;
     &__content {
       padding: 40rpx 40rpx 0;
       .map {

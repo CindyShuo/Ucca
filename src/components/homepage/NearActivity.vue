@@ -1,6 +1,6 @@
 <template>
   <div class="near-activity">
-    <common-entry title="近期活动" goLink="/pages/purchase/main?type=1" />
+    <common-entry title="近期活动" type="arrow" @navigate="navigate" />
     <div class="near-activity__content">
       <swiper
         duration="2000"
@@ -28,6 +28,13 @@
     components: { CommonEntry, CommonActivityItem },
     props: {
       list: Array
+    },
+    methods: {
+      navigate () {
+        wx.switchTab({
+          url: '/pages/purchase/main?type=1'
+        })
+      }
     }
   }
 </script>

@@ -23,5 +23,33 @@
   ],
   "window": {
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#232323",
+    "selectedColor": "#ed3024",
+    "borderStyle": "white",
+    "list": [{
+      "text": "首页",
+      "pagePath": "pages/index/main",
+      "iconPath": "static/images/footerMenu/bottom-1.png",
+      "selectedIconPath": "static/images/footerMenu/bottom-1-active.png"
+    }, {
+      "text": "购票",
+      "pagePath": "pages/purchase/main",
+      "iconPath": "static/images/footerMenu/bottom-2.png",
+      "selectedIconPath": "static/images/footerMenu/bottom-2-active.png"
+    }, {
+      "text": "导览",
+      "pagePath": "pages/guide/main",
+      "iconPath": "static/images/footerMenu/bottom-3.png",
+      "selectedIconPath": "static/images/footerMenu/bottom-3-active.png"
+    }, {
+      "text": "我的",
+      "pagePath": "pages/me/main",
+      "iconPath": "static/images/footerMenu/bottom-4.png",
+      "selectedIconPath": "static/images/footerMenu/bottom-4-active.png"
+    }],
+    "position": "bottom"
   }
 }
