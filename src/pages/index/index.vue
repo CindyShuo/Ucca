@@ -1,13 +1,12 @@
 <template>
-  <div class="home-page">
-    <common-header />
+  <scroll-view scroll-y class="home-page" @scroll="scrollHandle">
+    <common-scroll-header title="UCAA" :is-top="isTop" />
     <home-top :location="location" :banner="banner" />
     <index-banner :list="bannerList" />
     <inner-exhibition :list="exhibitionList" />
     <near-activity :list="activityList" />
     <visit-info :info="info" />
-    <common-footer selectNavIndex="0"></common-footer>
-  </div>
+  </scroll-view>
 </template>
 
 <script>
@@ -18,12 +17,14 @@
   import NearActivity from '../../components/homepage/NearActivity'
   import VisitInfo from '../../components/homepage/VisitInfo'
   import CommonFooter from '../../components/common/CommonFooter'
+  import CommonScrollHeader from '../../components/common/CommonScrollHeader'
 
   export default {
     name: 'HomePage',
-    components: { CommonHeader, HomeTop, IndexBanner, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
+    components: { CommonScrollHeader, CommonHeader, HomeTop, IndexBanner, InnerExhibition, NearActivity, VisitInfo, CommonFooter },
     data () {
       return {
+        isTop: true,
         banner: '',
         location: '',
         bannerList: '',
@@ -51,6 +52,9 @@
               lng: res.data.lng
             }
           })
+      },
+      scrollHandle (e) {
+        this.isTop = e.mp.detail.scrollTop < 20
       }
     },
     mounted () {
@@ -61,7 +65,8 @@
 
 <style lang="less" scoped>
   .home-page {
-    padding-bottom: 130rpx;
+    height: 100%;
+    padding-bottom: 30rpx;
     &__banner {
       display: block;
       margin: -212rpx auto 0;

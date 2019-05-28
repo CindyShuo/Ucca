@@ -1,7 +1,7 @@
 <template>
   <div class="common-entry">
     <p class="common-entry__title" v-bind:style="titleFontStyle">{{ title }}</p>
-    <a class="common-entry__arrow" v-if="!type" :href="goLink">
+    <a class="common-entry__arrow" v-if="type === 'arrow'" @click="navigate">
       <p v-if="description" class="description-content">共24件作品</p>
       <image
         src="/static/images/arrow.png"
@@ -53,6 +53,9 @@
       }
     },
     methods: {
+      navigate () {
+        this.$emit('navigate')
+      },
       bindDateChange (e) {
         console.log(e.detail, 'e.detail')
         this.setData({
@@ -77,7 +80,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      // width: 32rpx;
       height: 32rpx;
       line-height: 32rpx;
       .description-content {

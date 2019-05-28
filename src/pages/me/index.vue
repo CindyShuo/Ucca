@@ -42,7 +42,6 @@
         </div>
       </div>
     </div>
-    <common-footer selectNavIndex="3"></common-footer>
   </div>
 </template>
 

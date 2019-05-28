@@ -1,5 +1,6 @@
 <template>
-  <div class="active-info">
+  <scroll-view scroll-y  class="active-info" :class="{ 'disable-scroll': !isScroll }" @scroll="scrollHandle">
+    <common-scroll-header title="UCAA" :is-top="isTop" />
     <image
       src="/static/images/banner.png"
       class="active-info__banner"
@@ -32,7 +33,7 @@
       </a>
     </div>
     <div class='active-info__most'>
-      <common-tab :arr="arrList" @flag="flagShow" tabFontStyle="true"></common-tab>
+      <common-info-tab :tab-list="arrList" @handleChange="tabHandle" v-model="showContent" />
       <div v-if="showContent === 0">
         <div class='most-topic'>活动流程</div>
         <div class='most-p'>15:00 – 15:15  讲座背景及嘉宾介绍</div>
@@ -60,22 +61,26 @@
       </div>
       <choose-ticket buyType="active" />
     </common-picker>
-  </div>
+  </scroll-view>
 </template>
 
 <script>
   import CommonFooterHandle from '../../components/common/CommonFooterHandle'
-  import CommonTab from '../../components/common/CommonTab'
   import CommonPicker from '../../components/common/CommonPicker'
   import ChooseActivity from '../../components/purchaseTickets/ChooseActivity'
   import CommonOrderItem from '../../components/common/CommonOrderItem'
   import ChooseTicket from '../../components/purchaseTickets/ChooseTicket'
+  import CommonInfoTab from '../../components/common/CommonInfoTab'
+  import CommonHeader from '../../components/common/CommonHeader'
+  import store from '../../store'
+  import CommonScrollHeader from '../../components/common/CommonScrollHeader'
 
-  export default {
+export default {
     name: 'ActiveInfo',
-    components: { CommonFooterHandle, CommonTab, CommonPicker, ChooseTicket, CommonOrderItem, ChooseActivity },
+    components: { CommonScrollHeader, CommonHeader, CommonFooterHandle, CommonInfoTab, CommonPicker, ChooseTicket, CommonOrderItem, ChooseActivity },
     data () {
       return {
+        isTop: true,
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
         showContent: 0,
         participate: false, // 参与活动
@@ -92,8 +97,16 @@
         ]
       }
     },
+    computed: {
+      isScroll () {
+        return store.state.isScroll
+      }
+    },
     methods: {
-      flagShow (val) {
+      scrollHandle (e) {
+        this.isTop = e.mp.detail.scrollTop < 20
+      },
+      tabHandle (val) {
         this.showContent = val
       },
       // 关闭弹框
@@ -103,6 +116,13 @@
       isBuyTicket (val) {
         this[val.type] = val.buyTicket
       }
+    },
+    mounted () {
+      wx.setNavigationBarColor({
+        frontColor: '#000000',
+        backgroundColor: '',
+        animation: {}
+      })
     }
   }
 </script>
@@ -110,6 +130,7 @@
 <style lang="less" scoped>
   .active-info {
     position: relative;
+    height: 100%;
     padding-bottom: 100rpx;
     &__banner {
       display: block;

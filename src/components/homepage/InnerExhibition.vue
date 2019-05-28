@@ -1,19 +1,7 @@
 <template>
   <div class="inner-exhibition">
-    <common-entry title="馆内展览" goLink="/pages/purchase/main?type=0" />
+    <common-entry title="馆内展览" type="arrow" @navigate="navigate" />
     <div class="inner-exhibition__content">
-      <!--<swiper-->
-        <!--duration="2000"-->
-        <!--next-margin="180rpx"-->
-        <!--class="swipe"-->
-      <!--&gt;-->
-        <!--<swiper-item-->
-          <!--v-for="(item, i) in list"-->
-          <!--:key="i"-->
-        <!--&gt;-->
-          <!--<common-exhibition-item :item="item" />-->
-        <!--</swiper-item>-->
-      <!--</swiper>-->
       <scroll-view scroll-x class="inner-exhibition__scroll">
         <div v-for="(item, i) in list" :key="i" class="item">
           <common-exhibition-item :item="item" />
@@ -32,6 +20,13 @@
     components: { CommonEntry, CommonExhibitionItem },
     props: {
       list: Array
+    },
+    methods: {
+      navigate () {
+        wx.switchTab({
+          url: '/pages/purchase/main?type=0'
+        })
+      }
     }
   }
 </script>
