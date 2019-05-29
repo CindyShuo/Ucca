@@ -14,6 +14,7 @@
 <script>
   import CommonEntry from '../common/CommonEntry'
   import CommonExhibitionItem from '../common/CommonExhibitionItem'
+  import store from '../../store'
 
   export default {
     name: 'InnerExhibition',
@@ -23,8 +24,9 @@
     },
     methods: {
       navigate () {
+        store.commit('changePurchaseType', 0)
         wx.switchTab({
-          url: '/pages/purchase/main?type=0'
+          url: '/pages/purchase/main'
         })
       }
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="my-ticket">
     <common-header title="我的票" :back-visible="true" />
-    <common-tab :arr="arrList" @flag="flagShow"></common-tab>
+    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <my-ticket-exhibition v-if="showContent === 0"></my-ticket-exhibition>
     <my-ticket-activity v-else></my-ticket-activity>
   </div>
@@ -23,7 +23,7 @@
       }
     },
     methods: {
-      flagShow (val) {
+      tabHandle (val) {
         this.showContent = val
       }
     }

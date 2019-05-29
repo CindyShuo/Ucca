@@ -1,10 +1,11 @@
 <template>
-  <div class="common-tab" v-bind:style="[!tabFontStyle ? 'padding: 0 194rpx' : '']">
-    <a v-for="(item, index) in arr" :key="index"
-       @click="tabFlag(index)"
-       class="common-tab__p"
-       v-bind:style="{ 'opacity: .6;': !tabFontStyle && index !== flag  }"
-       v-bind:class="[ tabFontStyle ? 'common-tab__small' : '', index === flag ? 'common-tab__active' : '', index === flag && !tabFontStyle ? 'common-tab__font-select-active' : '']"
+  <div class="common-tab">
+    <a
+      v-for="(item, i) in tabList"
+      :key="i"
+      @click="tabFlag(i)"
+      class="common-tab__item"
+      :class="{ 'is-active': i === value }"
     >{{ item }}</a>
   </div>
 </template>
@@ -13,30 +14,18 @@
   export default {
     name: 'CommonTab',
     props: {
-      arr: {
-        type: String,
+      tabList: {
+        type: Array,
         required: true
       },
-      tabFontStyle: {
-        type: String
-      }
-    },
-    data () {
-      return {
-        flag: 0
+      value: {
+        type: Number,
+        default: 0
       }
     },
     methods: {
       tabFlag (index) {
-        this.flag = index
-        this.$emit('flag', this.flag)
-      }
-    },
-    onLoad (options) {
-      if (options.type) {
-        this.flag = Number(options.type)
-      } else {
-        this.tabFlag(0)
+        this.$emit('handleChange', index)
       }
     }
   }
@@ -44,34 +33,34 @@
 
 <style lang="less" scoped>
   .common-tab {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 0 70rpx;
-    width: 750rpx;
-    height: 93rpx;
+    align-items: center;
+    height: 94rpx;
+    padding: 0 194rpx;
+    border-bottom: 1rpx solid rgba(0, 0, 0, .1);
     background: #fff;
-    border-bottom: 1rpx solid rgba(0,0,0,.1);
-    box-sizing: border-box;
-    &__p {
-     float: left;
-     padding: 0;
+    &__item {
+      position: relative;
+      line-height: 94rpx;
       font-size: 28rpx;
-     line-height: 80rpx;
-    }
-    &__small {
-      float: left;
-      font-weight: bold;
-      color: #232323;
-      line-height: 80rpx;
-      opacity: 1 !important;
-    }
-    &__active {
-      border-bottom: solid 4rpx red;
-    }
-    &__font-select-active {
-      font-size: 42rpx;
-      color: #232323;
-      opacity: 1 !important;
+      color: rgba(0, 0, 0, .6);
+      transition: all ease-in-out .3s;
+      &.is-active{
+        font-size: 42rpx;
+        color: #000;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1rpx;
+          display: block;
+          width: 100%;
+          height: 4rpx;
+          background-color: #ed3024;
+        }
+      }
     }
   }
 </style>

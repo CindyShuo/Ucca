@@ -1,7 +1,7 @@
 <template>
   <div class="my-exhibition">
     <common-header :back-visible="true" title="我的收藏" />
-    <common-tab :arr="arrList" @flag="flagShow"></common-tab>
+    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
   </div>
@@ -23,7 +23,7 @@
       }
     },
     methods: {
-      flagShow (val) {
+      tabHandle (val) {
         this.showContent = val
       }
     }

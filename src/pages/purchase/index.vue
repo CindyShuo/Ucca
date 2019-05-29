@@ -1,9 +1,9 @@
 <template>
   <div class="purchase-index">
     <common-header />
-    <common-tab :arr="arrList" @flag="flagShow" />
+    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
-    <activity v-else></activity>
+    <activity v-if="showContent === 1"></activity>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
   import CommonTab from '../../components/common/CommonTab'
   import Exhibition from '../../components/purchaseTickets/Exhibition'
   import Activity from '../../components/purchaseTickets/Activity'
-  import CommonFooter from '../../components/common/CommonFooter'
+  import store from '../../store'
 
   export default {
     name: 'PurchaseIndex',
@@ -20,18 +20,22 @@
       CommonHeader,
       CommonTab,
       Exhibition,
-      Activity,
-      CommonFooter
+      Activity
     },
 
     data () {
       return {
         arrList: ['展览', '活动'],
-        showContent: 0
+        showContent: null
+      }
+    },
+    computed: {
+      purchaseType () {
+        return store.state.purchaseType
       }
     },
     methods: {
-      flagShow (val) {
+      tabHandle (val) {
         this.showContent = val
       },
       getList () {
@@ -41,13 +45,12 @@
           })
       }
     },
-    onLoad (option) {
-      if (option.type) {
-        this.showContent = Number(option.type)
-      }
+    onShow () {
+      this.showContent = this.purchaseType || 0
     },
-    mounted () {
-      this.getList()
+    onHide () {
+      this.showContent = null
+      store.commit('changePurchaseType', null)
     }
   }
 </script>

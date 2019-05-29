@@ -6,7 +6,8 @@ vue.use(vuex)
 const store = new vuex.Store({
   state: {
     isScroll: true,
-    language: 'EN'
+    language: 'EN',
+    purchaseType: null
   },
   mutations: {
     disableScroll (state) {
@@ -17,6 +18,9 @@ const store = new vuex.Store({
     },
     changeLanguage (state, payload) {
       state.language = payload
+    },
+    changePurchaseType (state, payload) {
+      state.purchaseType = payload
     }
   }
 })
