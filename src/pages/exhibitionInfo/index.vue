@@ -1,6 +1,6 @@
 <template>
   <scroll-view scroll-y  class="exhibition-info" :class="{ 'disable-scroll': !isScroll }" @scroll="scrollHandle">
-    <common-scroll-header title="UCAA" :is-top="isTop" />
+    <common-scroll-header title="UCAA" :is-top="isTop" :back-visible="true" />
     <image
       src="/static/images/banner.png"
       class="exhibition-info__banner"

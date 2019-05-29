@@ -6,7 +6,17 @@
       <div class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></div>
       <!-- 标题栏 -->
       <div class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
-        <div v-if="backToPrevious" class="title arrow" :style="{ color: titleColor }" @click="goBack">{{ '<' }}</div>
+        <!-- 后退 -->
+        <a
+          class="arrow"
+          @click="goBack"
+          v-if="backVisible"
+        >
+          <image
+            :src="arrow"
+            class="arrow__icon"
+          ></image>
+        </a>
         <!-- 多语言 -->
         <div class="language">
           <common-language :text-color="titleColor" />
@@ -37,17 +47,7 @@
       },
       // 是否显示后退按钮
       backVisible: {
-        required: false,
-        default: false
-      },
-      // home按钮的路径
-      homePath: {
-        required: false,
-        default: ''
-      },
-      // 返回箭头
-      backToPrevious: {
-        required: false,
+        type: Boolean,
         default: false
       }
     },
@@ -57,13 +57,15 @@
         titleBarHeight: '', // 标题栏高度
         navBarHeight: '', // 导航栏总高度
         navBackgroundColor: '', // 导航栏背景色
-        titleColor: '#fff' // 标题颜色
+        titleColor: '#ffffff', // 标题颜色
+        arrow: '/static/images/arrow-white.png' // 箭头
       }
     },
     watch: {
       isTop (bool) {
         this.navBackgroundColor = bool ? '' : '#ffffff'
         this.titleColor = bool ? '#ffffff' : '#000000'
+        this.arrow = bool ? '/static/images/arrow-white.png' : '/static/images/arrow.png'
         wx.setNavigationBarColor({
           frontColor: bool ? '#ffffff' : '#000000',
           backgroundColor: '',
@@ -71,6 +73,13 @@
             duration: 300,
             timingFunc: 'easeIn'
           }
+        })
+      }
+    },
+    methods: {
+      goBack () {
+        wx.navigateBack({
+          delta: 1
         })
       }
     },
@@ -111,12 +120,14 @@
         align-items: center;
         padding: 0 24rpx;
         .arrow {
-          position: absolute;
-          left: 24px;
-          top: 10px;
-          z-index: 1000;
-          font-size: 22px !important;
-          font-weight: 300;
+          width: 36rpx;
+          margin-right: 40rpx;
+          &__icon {
+            display: block;
+            width: 20rpx;
+            height: 36rpx;
+            transform: rotate(180deg);
+          }
         }
         .title {
           position: absolute;

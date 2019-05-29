@@ -151,13 +151,6 @@
             transform: rotate(180deg);
           }
         }
-        .arrow-white {
-          border: 20rpx solid white;
-          border-left-color: transparent;
-          border-bottom-color: transparent;
-          border-top-color: transparent;
-          border-radius: 5rpx;
-        }
         .title {
           position: absolute;
           top: 50%;
