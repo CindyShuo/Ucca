@@ -1,6 +1,6 @@
 <template>
   <div class="verify-info">
-    <common-header backToPrevious="true" title="验证会员信息" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header :back-visible="true" title="验证会员信息" />
     <div class="verify-info__information" v-if="!verifySuccess && !verifyFail">
       <h3>验证会员信息</h3>
       <div class="write">

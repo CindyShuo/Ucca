@@ -1,22 +1,29 @@
 <template>
   <div class="common-scroll-header">
     <!-- 导航栏主体 -->
-    <cover-view class="nav-bar" :style="{ height: navBarHeight + 'px', backgroundColor: navBackgroundColor }">
+    <div class="nav-bar" :style="{ height: navBarHeight + 'px', backgroundColor: navBackgroundColor }">
       <!-- 状态栏 -->
-      <cover-view class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></cover-view>
+      <div class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></div>
       <!-- 标题栏 -->
-      <cover-view class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
-        <cover-view v-if="backToPrevious" class="title arrow" :style="{ color: titleColor }" @click="goBack">{{ '<' }}</cover-view>
+      <div class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
+        <div v-if="backToPrevious" class="title arrow" :style="{ color: titleColor }" @click="goBack">{{ '<' }}</div>
+        <!-- 多语言 -->
+        <div class="language">
+          <common-language :text-color="titleColor" />
+        </div>
         <!-- 标题 -->
-        <cover-view class="title" :style="{ color:titleColor }">{{ title }}</cover-view>
-      </cover-view>
-    </cover-view>
+        <h2 class="title" :style="{ color:titleColor }">{{ title }}</h2>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+  import CommonLanguage from './CommonLanguage'
+
   export default {
     name: 'CommonScrollHeader',
+    components: { CommonLanguage },
     props: {
       // 是否在顶部
       isTop: {
@@ -101,8 +108,8 @@
       &__main {
         position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
+        padding: 0 24rpx;
         .arrow {
           position: absolute;
           left: 24px;
@@ -112,6 +119,11 @@
           font-weight: 300;
         }
         .title {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 45%;
           font-size: 14px;
           text-align: center;
         }

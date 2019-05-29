@@ -1,6 +1,6 @@
 <template>
   <div class="reservation-index">
-    <common-header backToPrevious="true" title="展览预约" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header :back-visible="true" title="展览预约" />
     <div class='reservation-index__top'>
       <image class='pic' src='/static/images/pic.png'></image>
       <div class='font'>

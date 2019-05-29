@@ -1,6 +1,6 @@
 <template>
   <div class="guide-content">
-    <common-header backToPrevious="true" title="《墨西哥城鸟瞰图，XIII》" navBackgroundColor="#fff" titleColor="#000" />
+    <common-header :back-visible="true" title="《墨西哥城鸟瞰图，XIII》" />
     <image class="guide-content__banner" src="/static/images/pic.png"></image>
     <div class="guide-content__bottom">
       <h2 class="title">《墨西哥城鸟瞰图，XIII》</h2>

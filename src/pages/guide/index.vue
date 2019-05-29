@@ -1,6 +1,6 @@
 <template>
   <div class="guide-index">
-    <common-header title="UCCA尤伦斯当代艺术中心" navBackgroundColor="#fff" titleColor="#232323" />
+    <common-header title="UCCA尤伦斯当代艺术中心" />
     <div class="guide-index__content">
       <image class="map"></image>
       <div class="item" @click="goExhibitionHall">

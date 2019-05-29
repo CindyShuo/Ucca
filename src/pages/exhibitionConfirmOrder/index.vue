@@ -1,6 +1,6 @@
 <template>
   <div class="exhibition-confirm-order">
-    <common-header title="确认订单" backToPrevious="true" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="确认订单" :back-visible="true" />
     <div class='exhibition-confirm-order__top'>
       <image class='pic' :src='orderList.imgSrc'></image>
       <div class='font'>

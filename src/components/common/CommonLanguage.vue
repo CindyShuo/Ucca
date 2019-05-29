@@ -1,22 +1,34 @@
 <template>
-  <div class="common-language" v-bind:style="flag ? 'left: 100rpx' : ''">
-    <p class="common-language__en" v-if="langugeFlag === 0" :style="{ color: colorFlag }" @click="changeLanguage(1)">EN</p>
-    <p class="common-language__en" v-if="langugeFlag === 1" :style="{ color: colorFlag }" @click="changeLanguage(0)">CN</p>
+  <div class="common-language">
+    <a class="common-language__text" :style="{ color: textColor }" @click="changeLanguage">{{ language }}</a>
   </div>
 </template>
 
 <script>
+  import store from '../../store'
+
   export default {
     name: 'CommonLanguage',
-    props: ['colorFlag', 'flag'],
-    data () {
-      return {
-        langugeFlag: 0
+    props: {
+      textColor: String
+    },
+    computed: {
+      language () {
+        return store.state.language
       }
     },
     methods: {
-      changeLanguage (val) {
-        this.langugeFlag = val
+      changeLanguage () {
+        switch (this.language) {
+          case 'EN':
+            store.commit('changeLanguage', 'CN')
+            break
+          case 'CN':
+            store.commit('changeLanguage', 'EN')
+            break
+          default:
+            store.commit('changeLanguage', 'EN')
+        }
       }
     }
   }
@@ -24,10 +36,7 @@
 
 <style lang="less" scoped>
   .common-language {
-    position: absolute;
-    left: 74rpx;
-    top: 40rpx;
-    &__en {
+    &__text {
       font-size: 28rpx;
     }
   }

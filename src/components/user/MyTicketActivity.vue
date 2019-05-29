@@ -1,6 +1,6 @@
 <template>
   <div class="my-ticket-activity">
-    <common-entry title="待参观的展览" type="none" />
+    <common-entry title="待参观的活动" type="none" />
     <div style="margin-bottom: 60rpx">
       <div class="my-ticket-activity__item">
         <image class="pic" src="/static/images/pic.png"></image>

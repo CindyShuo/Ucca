@@ -1,6 +1,6 @@
 <template>
   <div class="my-exhibition">
-    <common-header backToPrevious="true" title="我的收藏" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header :back-visible="true" title="我的收藏" />
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
@@ -12,6 +12,7 @@
   import CommonTab from '@/components/common/CommonTab'
   import Exhibition from '@/components/user/Exhibition'
   import Activity from '@/components/user/Activity'
+
   export default {
     name: 'MyExhibition',
     components: { CommonHeader, CommonTab, Exhibition, Activity },

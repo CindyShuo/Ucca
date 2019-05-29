@@ -1,55 +1,52 @@
 <template>
   <div class="common-header">
     <!-- 占位栏 -->
-    <cover-view class="placeholder-bar" :style="{ height: navBarHeight + 'px'}"> </cover-view>
+    <div class="placeholder-bar" :style="{ height: navBarHeight + 'px'}"> </div>
     <!-- 导航栏主体 -->
-    <cover-view class="nav-bar" :style="{ height: navBarHeight + 'px', backgroundColor: navBackgroundColor }">
+    <div class="nav-bar" :style="{ height: navBarHeight + 'px', backgroundColor: themeInfo.backgroundColor }">
       <!-- 状态栏 -->
-      <cover-view class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></cover-view>
+      <div class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></div>
       <!-- 标题栏 -->
-      <cover-view class="nav-bar__main" :style="{ height: titleBarHeight + 'px' }">
-        <a v-if="backToPrevious && !showOrHidden" class="arrow" :class="titleColor !== '#fff' ? 'arrow-black' : 'arrow-white'" @click="goBack"></a>
-        <a v-else-if="backToPrevious && showOrHidden" class="arrow" :class="!showOrHidden ? 'arrow-black' : 'hall'" @click="goBack"></a>
-        <common-language :flag="backToPrevious" :colorFlag="titleColor"></common-language>
+      <div class="nav-bar__main" :style="{ height: titleBarHeight + 'px', borderBottom: themeInfo.borderBottom }">
+        <a
+          class="arrow"
+          @click="goBack"
+          v-if="backVisible"
+        >
+          <image
+            :src="themeInfo.arrow"
+            class="arrow__icon"
+          ></image>
+        </a>
+        <!-- 多语言 -->
+        <div class="language">
+          <common-language :text-color="themeInfo.textColor"></common-language>
+        </div>
         <!-- 标题 -->
-        <cover-view class="title" :style="{ color:titleColor }">{{ title }}</cover-view>
-      </cover-view>
-    </cover-view>
+        <h2 class="title" :style="{ color: themeInfo.textColor }">{{ title }}</h2>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-  import CommonLanguage from '@/components/common/CommonLanguage'
+  import CommonLanguage from './CommonLanguage'
   export default {
     name: 'CommonHeader',
     components: { CommonLanguage },
     props: {
-      // 导航栏背景色
-      navBackgroundColor: {
-        default: '#232323'
-      },
-      // 标题颜色
-      titleColor: {
-        default: '#fff'
+      theme: {
+        type: String,
+        default: 'white'
       },
       // 标题文字
       title: {
-        required: false,
+        type: String,
         default: 'UCAA'
       },
       // 是否显示后退按钮
       backVisible: {
-        required: false,
-        default: false
-      },
-      // home按钮的路径
-      homePath: {
-        required: false,
-        default: ''
-      },
-      // 返回箭头
-      backToPrevious: {
-        required: false,
+        type: Boolean,
         default: false
       },
       // 导览模块title
@@ -62,11 +59,41 @@
       return {
         statusBarHeight: '', // 状态栏高度
         titleBarHeight: '', // 标题栏高度
-        navBarHeight: '', // 导航栏总高度
-        platform: '',
-        model: '',
-        brand: '',
-        system: ''
+        navBarHeight: '' // 导航栏总高度
+      }
+    },
+    computed: {
+      themeInfo () {
+        switch (this.theme) {
+          case 'white':
+            wx.setNavigationBarColor({
+              frontColor: '#000000',
+              backgroundColor: '',
+              animation: {}
+            })
+            return {
+              backgroundColor: '#fff',
+              textColor: '#000',
+              borderBottom: '1rpx solid rgba(0, 0, 0, .1);',
+              arrow: '/static/images/arrow.png'
+            }
+          case 'black':
+            return {
+              backgroundColor: '#232323',
+              textColor: '#ffffff',
+              borderBottom: 'none',
+              arrow: '/static/images/arrow-white.png'
+            }
+          case 'brown':
+            return {
+              backgroundColor: '#6f5654',
+              textColor: '#ffffff',
+              borderBottom: 'none',
+              arrow: '/static/images/arrow-white.png'
+            }
+          default:
+            return {}
+        }
       }
     },
     beforeMount () {
@@ -95,9 +122,6 @@
           delta: 1
         })
       }
-    },
-    mounted () {
-      console.log(`this.backVisible:`, this.backVisible)
     }
   }
 </script>
@@ -119,104 +143,30 @@
         position: relative;
         display: flex;
         align-items: center;
+        padding: 0 24rpx;
         .arrow {
-          position: absolute;
-          position: absolute;
-          left: 24rpx;
-          top: 36rpx;
-        }
-        .hall {
-          &:after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 0;
-            border: 20rpx solid #fff;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
-            border-radius: 5rpx;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            left: 10rpx;
-            top: 6rpx;
-            z-index: 100;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border: 16rpx solid #6F5654;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
+          width: 36rpx;
+          margin-right: 40rpx;
+          &__icon {
+            display: block;
+            width: 20rpx;
+            height: 36rpx;
+            transform: rotate(180deg);
           }
         }
         .arrow-white {
-          &:after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 0;
-            border: 20rpx solid white;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
-            border-radius: 5rpx;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            left: 10rpx;
-            top: 6rpx;
-            z-index: 100;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border: 16rpx solid #232323;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
-          }
-        }
-        .arrow-black {
-          &:after {
-            content: '';
-            display: inline-block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 0;
-            border: 20rpx solid #232323;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
-            border-radius: 5rpx;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            left: 10rpx;
-            top: 6rpx;
-            z-index: 100;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border: 16rpx solid white;
-            border-left-color: transparent;
-            border-bottom-color: transparent;
-            border-top-color: transparent;
-          }
+          border: 20rpx solid white;
+          border-left-color: transparent;
+          border-bottom-color: transparent;
+          border-top-color: transparent;
+          border-radius: 5rpx;
         }
         .title {
-          margin: 0 auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 45%;
           font-size: 14px;
           text-align: center;
         }

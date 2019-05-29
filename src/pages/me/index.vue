@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <common-header title="UCCA"></common-header>
+    <common-header title="UCCA" theme="black" />
     <div class="user-info__content">
       <div class='avatar'>
         <image class='photo' src='/static/images/photo.png'></image>
@@ -172,6 +172,7 @@
         .list-content {
           height: 55rpx;
           line-height: 55rpx;
+          font-size: 28rpx;
           margin-bottom: 60rpx;
         }
         .me-icon {

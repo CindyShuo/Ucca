@@ -1,6 +1,6 @@
 <template>
   <div class="my-ticket">
-    <common-header title="我的票" backToPrevious="true" navBackgroundColor="#fff" titleColor="#232323"></common-header>
+    <common-header title="我的票" :back-visible="true" />
     <common-tab :arr="arrList" @flag="flagShow"></common-tab>
     <my-ticket-exhibition v-if="showContent === 0"></my-ticket-exhibition>
     <my-ticket-activity v-else></my-ticket-activity>
@@ -12,6 +12,7 @@
   import CommonTab from '@/components/common/CommonTab'
   import MyTicketExhibition from '@/components/user/MyTicketExhibition'
   import MyTicketActivity from '@/components/user/MyTicketActivity'
+
   export default {
     name: 'MyTicket',
     components: { CommonHeader, CommonTab, MyTicketExhibition, MyTicketActivity },
