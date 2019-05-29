@@ -81,6 +81,10 @@ export default {
     futureDayHide: {
       type: String,
       default: `2554387200`
+    },
+    // 区分有的日历选完是否自动关闭
+    calendarFlag: {
+      type: Boolean
     }
   },
   created () {
@@ -104,6 +108,9 @@ export default {
         item.otherMonth === 'preMonth'
           ? this.PreMonth(item.date)
           : this.NextMonth(item.date)
+      }
+      if (this.calendarFlag) {
+        this.$emit('flag', false)
       }
     },
     ChoseMonth (date, isChosedDay = true) {

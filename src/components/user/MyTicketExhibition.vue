@@ -10,7 +10,7 @@
            <p class="time">2019.6.15 - 2019.9.1</p>
            <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
          </div>
-         <image class="erweima" src="/static/images/ma.png" @click="goPurchaseSuccess"></image>
+         <image class="erweima" src="/static/images/small-ma.png" @click="goPurchaseSuccess"></image>
        </div>
        <div class="status">
          <div class="ticket">
@@ -30,7 +30,7 @@
            <p class="time">2019.6.15 - 2019.9.1</p>
            <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
          </div>
-         <image class="erweima" src="/static/images/ma.png"></image>
+         <image class="erweima" src="/static/images/small-ma.png"></image>
        </div>
        <!-- 已预约状态 -->
        <div class="status">
@@ -52,7 +52,7 @@
            <p class="time">2019.6.15 - 2019.9.1</p>
            <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
          </div>
-         <image class="erweima" src="/static/images/ma.png"></image>
+         <image class="erweima" src="/static/images/small-ma.png"></image>
        </div>
        <!-- 普通票状态 -->
        <div class="status">
@@ -73,7 +73,7 @@
            <p class="time">2019.6.15 - 2019.9.1</p>
            <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
          </div>
-         <image class="erweima" src="/static/images/ma.png"></image>
+         <image class="erweima" src="/static/images/small-ma.png"></image>
        </div>
        <!-- 普通票状态 -->
        <div class="status">
@@ -97,7 +97,7 @@
             <p class="time">2019.6.15 - 2019.9.1</p>
             <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
           </div>
-          <image class="erweima" src="/static/images/ma.png"></image>
+          <image class="erweima" src="/static/images/small-ma.png"></image>
         </div>
         <!-- 已预约状态 -->
         <div class="status">
@@ -119,7 +119,7 @@
             <p class="time">2019.6.15 - 2019.9.1</p>
             <p class="time">UCCA尤伦斯当代艺术中心（北京798）</p>
           </div>
-          <image class="erweima" src="/static/images/ma.png"></image>
+          <image class="erweima" src="/static/images/small-ma.png"></image>
         </div>
         <div class="status">
           <div class="operating">
@@ -244,12 +244,14 @@
               margin-top: 10rpx;
             }
             .ucca {
+              margin-right: 10rpx;
               display: inline-block;
               padding: 0 4rpx;
               font-size: 16rpx;
               line-height: 20rpx;
               color: #ED3024;
               border: 1px solid #ed3024;
+              opacity: 1;
             }
           }
         }

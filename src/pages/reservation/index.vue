@@ -9,9 +9,9 @@
         <div class='font-2'>2019.6.15-2019.9.1</div>
       </div>
     </div>
-    <common-entry title="请选择预约日期" type="none" />
+    <common-entry titleFontStyle="font-size: 34rpx" title="请选择预约日期" type="none" />
     <div v-if="calendar" :animation="animationData" class='reservation-index__date'>
-      <in-calendar />
+      <in-calendar :calendarFlag="calendar" @flag="selectCalendar" />
     </div>
     <div class='reservation-index__time'>
       <div class='time'>
@@ -41,7 +41,7 @@
     components: { CommonHeader, CommonEntry, InCalendar },
     data () {
       return {
-        calendar: false,
+        calendar: true,
         animationData: {}
       }
     },
@@ -84,6 +84,10 @@
           that.animationData = animation.export()
           that.calendar = false
         }, 500)
+      },
+      selectCalendar (val) {
+        // 选择完日期后关闭日历框
+        this.hideModal()
       }
     }
   }
@@ -106,6 +110,7 @@
         width: 230rpx;
         height: 180rpx;
         float: left;
+        border-radius: 4rpx;
       }
       .font {
         float: left;
@@ -117,6 +122,7 @@
         .font-2 {
           font-size: 24rpx;
           margin-top: 10rpx;
+          opacity: 0.6;
         }
         .font-3 {
           font-size: 42rpx;
