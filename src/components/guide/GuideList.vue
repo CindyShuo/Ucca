@@ -153,7 +153,7 @@
 <style lang="less" scoped>
   .guide-list {
     padding: 30rpx 30rpx 0;
-    height: 800rpx;
+    height: 650rpx;
     box-shadow: 20rpx 10rpx 25rpx rgba(0, 0, 0, 0.03);
     overflow-y: hidden;
     .item {
