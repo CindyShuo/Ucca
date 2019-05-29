@@ -88,7 +88,7 @@
           if (platformReg.test(system.platform)) {
             self.titleBarHeight = 44
           } else {
-            self.titleBarHeight = 48
+            self.titleBarHeight = 44
           }
           self.navBarHeight = self.statusBarHeight + self.titleBarHeight
         }

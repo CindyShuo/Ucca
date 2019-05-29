@@ -1,9 +1,9 @@
 <template>
   <div class='common-footer-handle'>
     <div class='common-footer-handle__div' v-bind:style="[type? 'width: 270rpx': '']">
-      <a href="/pages/index/main" class="common-footer-handle__a">
+      <navigator url="/pages/index/main" open-type="switchTab" class="common-footer-handle__a">
         <image class='div1' src='/static/images/footerHandle/details-icon1.png'></image>
-      </a>
+      </navigator>
       <a class="common-footer-handle__a">
         <image class='div1' src='/static/images/footerHandle/details-icon2.png'></image>
       </a>

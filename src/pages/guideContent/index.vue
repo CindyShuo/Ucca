@@ -27,7 +27,7 @@
       </p>
     </div>
     <image class='go-icon go-home' @click="goHome" src='/static/images/go-home.png'></image>
-    <audio-player></audio-player>
+    <!--<audio-player></audio-player>-->
   </div>
 </template>
 
@@ -39,7 +39,7 @@
     components: { AudioPlayer, CommonHeader },
     methods: {
       goHome () {
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/index/main'
         })
       }

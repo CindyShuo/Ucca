@@ -65,7 +65,7 @@
     methods: {
       goHome () {
         // 返回首页
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/index/main'
         })
       },

@@ -1,13 +1,6 @@
 <template>
   <div class="audio-player">
-    <audio
-      :poster="list[0].poster"
-      :name="list[0].name"
-      :author="list[0].author"
-      :src="list[0].src"
-      id="myAudio"
-      style="width: 100%"
-    >
+    <div id="myAudio">
       <div class="audio-player__controller">
         <div class="time-bar">
           <div class="time-play" v-bind:style="{ transform: 'translateX(' + songState.progress + '%)' }"></div>
@@ -24,7 +17,7 @@
           <image class="state_chose" bindtap="next" src="/static/images/audio/play-right.png"></image>
         </div>
       </div>
-    </audio>
+    </div>
   </div>
 </template>
 
@@ -35,14 +28,6 @@
     data () {
       return {
         audioCtx: null,
-        list: [
-          {
-            poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-            name: '此时此刻',
-            author: '许巍',
-            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
-          }
-        ],
         isPlaying: true,
         currentIndex: 0,
         marginTop: 0,
@@ -57,107 +42,14 @@
       }
     },
     methods: {
-      requestDataSong (songId) {
-        var that = this
-        // app.requestData('http://ting.baidu.com/data/music/links?songIds=' + songId, {}, (err, data) => {
-        //   that.pic = data.data.songList[0].songPicRadio
-        //   that.bigData = data.data.songList[0]
-        //   wx.playBackgroundAudio({
-        //     dataUrl: data.data.songList[0].songLink
-        //   })
-        // })
-        that.playSong()
-      },
-      playSong () {
-        var that = this
-        let inv = setInterval(function () {
-          wx.getBackgroundAudioPlayerState({
-            success: function (res) {
-              if (res.status === 1) {
-                that.isPlaying = true
-                that.songState = {
-                  progress: res.currentPosition / res.duration * 100,
-                  currentPosition: that.timeToString(res.currentPosition),
-                  duration: that.timeToString(res.duration)
-                }
-                var i = that.currentIndex
-                if (i < that.lry.length) {
-                  if (res.currentPosition - 4 >= parseInt(that.lry[i][0])) {
-                    that.currentIndex = i + 1
-                  }
-                }
-                if (that.currentIndex >= 6) {
-                  that.marginTop = -(that.currentIndex - 6) * 20
-                  that.lrcHeight = 200 + (that.currentIndex - 6) * 20
-                }
-              } else {
-                that.isPlaying = false
-                clearInterval(inv)
-              }
-            }
-          })
-        }, 1000)
-      },
-      playAndPause () {
-        var that = this
-        if (that.isPlaying) {
-          that.audioCtx.play()
-        } else {
-          that.audioCtx.pause()
-        }
-        // that.playSong()
-        that.isPlaying = !that.isPlaying
-      },
+      requestDataSong (songId) {},
+      playSong () {},
+      playAndPause () {},
       // 上一首
       before () {
-        var that = this
-        that.currentIndex = 0
-        that.marginTop = 0
-        that.lrcHeight = 200
-        if (that.songIndex === 0) {
-          // that.requestDataSong(that.datalist[that.datalist.length - 1].song_id)
-          that.songLrc(that.datalist[that.datalist.length - 1].song_id)
-          that.songIndex = that.datalist.length - 1
-        } else {
-          // that.requestDataSong(that.datalist[that.songIndex - 1].song_id)
-          that.songLrc(that.datalist[that.songIndex - 1].song_id)
-          that.songIndex = that.songIndex - 1
-        }
       },
       // 下一首
-      next: function () {
-        var that = this
-        that.currentIndex = 0
-        that.marginTop = 0
-        that.lrcHeight = 200
-        if (that.songIndex === that.datalist.length - 1) {
-          that.requestDataSong(that.datalist[0].song_id)
-          that.songLrc(that.datalist[0].song_id)
-          that.songIndex = 0
-        } else {
-          that.songIndex = parseInt(that.songIndex) + 1
-          that.requestDataSong(that.datalist[that.songIndex].song_id)
-          that.songLrc(that.datalist[that.songIndex].song_id)
-        }
-      }
-    },
-    created () {
-      console.log(this.playAudio, 'playAudio')
-    },
-    onReady () {
-      // 使用 wx.createAudioContext 获取 audio 上下文 context
-      this.audioCtx = wx.createAudioContext('myAudio')
-    },
-    onLoad (options) {
-      var that = this
-      that.datalist = wx.getStorageSync('song')
-      that.songIndex = options.songIndex
-      that.requestDataSong(options.songId)
-      that.songLrc(options.songId)
-      // 自动播放下一首
-      wx.onBackgroundAudioStop(function () {
-        that.next()
-      })
+      next: function () {}
     }
   }
 </script>

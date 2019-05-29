@@ -1,29 +1,35 @@
 <template>
   <div class="exhibition-hall">
-    <common-header :back-visible="true" title="当代文明启示录" :theme="showOrHiddenPic ? 'brown' : 'black'" />
-    <div class="exhibition-hall__map" v-if="showOrHiddenPic">
-      <image class="img"></image>
-      <div class="arrow" @click="hiddenPic">
-        <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
+    <common-header :back-visible="true" title="当代文明启示录" :theme="mapStatus ? 'brown' : 'black'" />
+    <div class="exhibition-hall__map">
+      <div class="image-content" v-if="mapStatus">
+        <image class="img"></image>
+      </div>
+      <div class="arrow" :class="{ 'map-show': mapStatus }" @click="mapHandle">
+        <image
+          src="/static/images/arrow-white.png"
+          class="arrow-icon"
+        ></image>
       </div>
     </div>
-    <guide-list @playerId="changeMusic" :showOrHiddenPic="showOrHiddenPic" @showOrHiddenPic="getShowOrHiddenFlag"></guide-list>
-    <audio-player :playAudio="audioItem"></audio-player>
-    <image class='go-icon go-home' @click="goHome" src='/static/images/go-home.png'></image>
-    <image class='go-icon go-top' @click="goTop" src='/static/images/go-top.png'></image>
+    <guide-list @playerId="changeMusic" />
+    <audio-player v-if="audioItem"></audio-player>
+    <!--<image class='go-icon go-home' @click="goHome" src='/static/images/go-home.png'></image>-->
+    <!--<image class='go-icon go-top' @click="goTop" src='/static/images/go-top.png'></image>-->
   </div>
 </template>
 
 <script>
-  import CommonHeader from '@/components/common/CommonHeader'
-  import GuideList from '@/components/guide/GuideList'
-  import AudioPlayer from '@/components/guide/AudioPlayer'
+  import CommonHeader from '../../components/common/CommonHeader'
+  import GuideList from '../../components/guide/GuideList'
+  import AudioPlayer from '../../components/guide/AudioPlayer'
+
   export default {
     name: 'ExhibitionHall',
     components: { CommonHeader, GuideList, AudioPlayer },
     data () {
       return {
-        showOrHiddenPic: true,
+        mapStatus: true,
         audioItem: null,
         list: [
           {
@@ -42,20 +48,16 @@
       }
     },
     methods: {
-      hiddenPic () {
-        this.showOrHiddenPic = false
-      },
-      getShowOrHiddenFlag () {
-        this.showOrHiddenPic = true
+      mapHandle () {
+        this.mapStatus = !this.mapStatus
       },
       goHome () {
-        wx.navigateTo({
+        wx.switchTab({
           url: '/pages/index/main'
         })
       },
       goTop () {},
       changeMusic (val) {
-        console.log(val, 'val')
         this.audioItem = val
       }
     }
@@ -64,36 +66,48 @@
 
 <style lang="less" scoped>
   .exhibition-hall {
-    padding-bottom: 130rpx;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     &__map {
       position: relative;
-      padding: 40rpx 62rpx;
-      background: #6F5654;
-      .img {
-        width: 620rpx;
-        height: 308rpx;
-        border: 2rpx solid #fff;
+      .image-content {
+        display: flex;
+        align-items: center;
+        height: 470rpx;
+        background-color: #6f5654;
+        .img {
+          display: block;
+          margin: 0 auto;
+          width: 620rpx;
+          height: 308rpx;
+          border: 2rpx solid #fff;
+        }
       }
       .arrow {
         position: absolute;
-        bottom: 0;
+        bottom: -30rpx;
         left: 50%;
-        transform: translate(-50%);
-        display: inline-block;
+        transform: translateX(-50%);
         width: 100rpx;
         height: 30rpx;
         line-height: 30rpx;
         text-align: center;
-        background: #000;
-        opacity: 0.6;
-        .arrow-pic {
+        background-color: rgba(0, 0, 0, .6);
+        .arrow-icon {
           position: absolute;
           top: 50%;
           left: 50%;
           z-index: 100;
           width: 30rpx;
           height: 54rpx;
-          transform: translate(-50%, -50%) rotate(-90deg) scale(.4);
+          transform: translate(-50%, -50%) rotate(90deg) scale(.4);
+        }
+        &.map-show {
+          bottom: 0;
+          .arrow-icon {
+            transform: translate(-50%, -50%) rotate(-90deg) scale(.4);
+          }
         }
       }
     }

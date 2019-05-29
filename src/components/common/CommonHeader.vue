@@ -8,6 +8,7 @@
       <div class="nav-bar__status" :style="{ height: statusBarHeight + 'px' }"></div>
       <!-- 标题栏 -->
       <div class="nav-bar__main" :style="{ height: titleBarHeight + 'px', borderBottom: themeInfo.borderBottom }">
+        <!-- 后退 -->
         <a
           class="arrow"
           @click="goBack"
@@ -31,6 +32,7 @@
 
 <script>
   import CommonLanguage from './CommonLanguage'
+
   export default {
     name: 'CommonHeader',
     components: { CommonLanguage },
@@ -47,11 +49,6 @@
       // 是否显示后退按钮
       backVisible: {
         type: Boolean,
-        default: false
-      },
-      // 导览模块title
-      showOrHidden: {
-        required: false,
         default: false
       }
     },
@@ -110,7 +107,7 @@
           if (platformReg.test(system.platform)) {
             self.titleBarHeight = 44
           } else {
-            self.titleBarHeight = 48
+            self.titleBarHeight = 44
           }
           self.navBarHeight = self.statusBarHeight + self.titleBarHeight
         }

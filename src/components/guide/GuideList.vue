@@ -1,8 +1,5 @@
 <template>
-  <scroll-view scroll-y class="guide-list" v-bind:style="!showOrHiddenPic ? 'height: 100%' : ''">
-    <div class="guide-list__arrow" @click="showPic" v-if="!showOrHiddenPic">
-      <image class="arrow-pic" src="/static/images/arrow-white.png"></image>
-    </div>
+  <scroll-view scroll-y class="guide-list" :style="{ paddingBottom: isPlaying ? '110rpx' : '0' }">
     <div class="item">
       <image class="pic" src="/static/images/pic.png"></image>
       <div class="card">
@@ -10,9 +7,9 @@
       </div>
     </div>
     <h2 class="title">一、蜂巢</h2>
-    <div style="position: relative" @click="goDetail">
+    <div style="position: relative">
       <div class="item noBoxShadow">
-        <image class="pic" src="/static/images/pic.png" @click="player(0)">
+        <image class="pic" src="/static/images/pic.png" @click="player(1)">
           <div class='list-image-play'>
             <div class='list-image-play-font'>01:23</div>
             <image class='list-image-play-icon' src='/static/images/audio/arrow-white1.png'></image>
@@ -127,18 +124,15 @@
 <script>
   export default {
     name: 'GuideList',
-    props: ['showOrHiddenPic'],
+    data () {
+      return {
+        isPlaying: false
+      }
+    },
     methods: {
-      showPic () {
-        this.$emit('showOrHiddenPic', true)
-      },
-      goDetail () {
-        wx.navigateTo({
-          url: ''
-        })
-      },
       player (id) {
         // 切换播放音频
+        this.isPlaying = true
         this.$emit('playerId', id)
       },
       goGuideContent () {
@@ -152,10 +146,10 @@
 
 <style lang="less" scoped>
   .guide-list {
+    flex: 1;
+    height: 0;
     padding: 30rpx 30rpx 0;
-    height: 650rpx;
     box-shadow: 20rpx 10rpx 25rpx rgba(0, 0, 0, 0.03);
-    overflow-y: hidden;
     .item {
       padding: 20rpx;
       display: flex;
