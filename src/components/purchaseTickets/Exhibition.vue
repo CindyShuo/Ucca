@@ -51,7 +51,8 @@
 </template>
 
 <script>
-  import CommonEntry from '@/components/common/CommonEntry'
+  import CommonEntry from '../../components/common/CommonEntry'
+
   export default {
     name: 'Exhibition',
     components: {
