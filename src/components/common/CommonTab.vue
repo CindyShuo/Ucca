@@ -1,5 +1,5 @@
 <template>
-  <div class="common-tab">
+  <div class="common-tab" :style="ifFixed">
     <a
       v-for="(item, i) in tabList"
       :key="i"
@@ -21,6 +21,9 @@
       value: {
         type: Number,
         default: 0
+      },
+      ifFixed: {
+        type: String
       }
     },
     methods: {
@@ -37,6 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 94rpx;
     padding: 0 194rpx;
     border-bottom: 1rpx solid rgba(0, 0, 0, .1);
@@ -46,6 +50,7 @@
       line-height: 94rpx;
       font-size: 28rpx;
       color: rgba(0, 0, 0, .6);
+      font-weight: 700;
       transition: all ease-in-out .3s;
       &.is-active{
         font-size: 42rpx;

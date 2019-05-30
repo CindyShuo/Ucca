@@ -65,7 +65,7 @@
         display: flex;
         align-items: center;
         background: #fff;
-        box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
+        box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
         .pic {
           width: 166rpx;
           height: 166rpx;

@@ -66,7 +66,7 @@
 <style lang="less" scoped>
   .home-page {
     height: 100%;
-    padding-bottom: 30rpx;
+    // padding-bottom: 30rpx;
     &__banner {
       display: block;
       margin: -212rpx auto 0;

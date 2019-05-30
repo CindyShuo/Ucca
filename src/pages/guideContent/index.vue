@@ -75,7 +75,7 @@
         height: 160rpx;
         background: #fff;
         border-left: 4rpx solid #232323;
-        box-shadow: 0 8px 20px 0 rgba(0,0,0,0.04);
+        box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.04);
         .left {
           display: flex;
           justify-content: space-between;

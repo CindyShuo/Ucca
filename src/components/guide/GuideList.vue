@@ -155,7 +155,7 @@
       display: flex;
       align-items: center;
       background: #fff;
-      box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
+      box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
       .pic {
         position: relative;
         width: 166rpx;
@@ -174,7 +174,7 @@
         .list-image-play-font {
           position:absolute;
           left: 10rpx;
-          right: 30rpx;
+          right: 16rpx;
           margin-left: 10rpx;
         }
         .list-image-play-icon {
@@ -225,13 +225,14 @@
       float: right;
       width: 500rpx;
       height: 1rpx;
-      border-bottom: 2rpx solid #232323;
+      border-bottom: 1rpx solid #232323;
       opacity: 0.1;
     }
     .title {
       margin: 30rpx 0;
       font-size: 30rpx;
       line-height: 30rpx;
+      font-weight: 700;
     }
     &__arrow {
       position: fixed;
@@ -260,7 +261,7 @@
       top: 94rpx;
       right: 40rpx;
       width: 20rpx;
-      height: 22rpx;
+      height: 26rpx;
     }
   }
 </style>

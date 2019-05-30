@@ -1,6 +1,6 @@
 <template>
   <div class='user-activity' style="padding-top: 50rpx">
-    <common-entry title="我收藏的活动" type="none" />
+    <common-entry title="我收藏的活动" titleFontStyle="font-weight: 700;" type="none" />
     <div class='user-activity-unit' @click="direction">
       <div class='user-activity-unit__bg'></div>
       <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>
@@ -23,7 +23,7 @@
       <div class='user-activity-unit__p'>文明：人类的影像</div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史活动" type="date" />
+      <common-entry title="历史活动" titleFontStyle="font-weight: 700;" type="date" />
     </div>
     <div class='user-activity-unit'>
       <div class='user-activity-unit__bg'></div>
@@ -80,7 +80,7 @@
       background: #fff;
       position: absolute;
       bottom: 0;
-      box-shadow: 3rpx 3rpx 35rpx rgba(0,0,0,.1);
+      box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
       z-index: 0;
     }
     &__p {

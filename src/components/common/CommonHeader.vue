@@ -24,7 +24,7 @@
           <common-language :text-color="themeInfo.textColor"></common-language>
         </div>
         <!-- 标题 -->
-        <h2 class="title" :style="{ color: themeInfo.textColor }">{{ title }}</h2>
+        <h2 class="title" :style="{ color: themeInfo.textColor, fontWeight: titleWeight }">{{ title }}</h2>
       </div>
     </div>
   </div>
@@ -50,6 +50,10 @@
       backVisible: {
         type: Boolean,
         default: false
+      },
+      // 个人中心title加粗
+      titleWeight: {
+        type: String
       }
     },
     data () {

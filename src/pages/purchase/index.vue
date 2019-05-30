@@ -1,7 +1,7 @@
 <template>
   <div class="purchase-index">
     <common-header />
-    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
+    <common-tab :ifFixed="fixedStyle" :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-if="showContent === 1"></activity>
   </div>
@@ -26,7 +26,8 @@
     data () {
       return {
         arrList: ['展览', '活动'],
-        showContent: null
+        showContent: null,
+        fixedStyle: 'position: fixed; top: 128rpx; left: 0;z-index: 102'
       }
     },
     computed: {
@@ -57,6 +58,6 @@
 
 <style>
   .purchase-index {
-    padding-bottom: 30rpx;
+    padding: 100rpx 0 30rpx;
   }
 </style>

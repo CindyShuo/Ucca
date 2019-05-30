@@ -13,8 +13,8 @@
       <h3>填写你的会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top: 40rpx;" placeholder="出生日期" />
-        <input type="text" style="margin: 40rpx 0;" placeholder="手机号" />
+        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期" />
+        <input type="text" style="margin: 80rpx 0;" placeholder="手机号" />
         <input type="text" placeholder="验证码" />
         <a class="send">发送验证码</a>
       </div>
@@ -40,8 +40,8 @@
       <h3>填写同办人的会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top: 40rpx;" placeholder="出生日期（非必填）" />
-        <input type="text" placeholder="手机号" style="margin: 40rpx 0;" />
+        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期（非必填）" />
+        <input type="text" placeholder="手机号" style="margin: 80rpx 0;" />
         <input type="text" placeholder="验证码" />
         <a class="send">发送验证码</a>
       </div>
@@ -122,8 +122,8 @@
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       .pic {
         margin: 0 auto 30rpx;
-        width: 230rpx;
-        height: 180rpx;
+        width: 300rpx;
+        height: 190rpx;
         float: left;
       }
       .font {
@@ -131,7 +131,8 @@
         margin-left: 30rpx;
         .font-1 {
           margin-top: 5rpx;
-          font-size: 34rpx;
+          font-size: 30rpx;
+          font-weight: 700;
         }
         .font-2 {
           margin-top: 10rpx;
@@ -174,11 +175,13 @@
         margin: 0 0 20rpx;
         font-size: 34rpx;
         color: #232323;
+        font-weight: 700;
       }
       .write {
         position: relative;
         padding: 40rpx;
         background: #fff;
+        box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,0.05);
         input {
           height: 40rpx;
           line-height: 40rpx;
@@ -204,6 +207,7 @@
         position: relative;
         padding: 40rpx;
         background: #fff;
+        box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,0.05);
         div {
           height: 40rpx;
           line-height: 40rpx;
@@ -211,6 +215,7 @@
             display: inline-block;
             min-width: 112rpx;
             font-size: 28rpx;
+            color: #232323;
             opacity: 0.4;
           }
           p {

@@ -1,6 +1,6 @@
 <template>
   <div class='activity' style="padding-top: 50rpx">
-    <common-entry title="近期活动" type="none" />
+    <common-entry title="近期活动" titleFontStyle="font-weight: 700;" type="none" />
     <div class='activity-unit' @click="direction">
       <div class='activity-unit__bg'></div>
       <image class='activity-unit__pic' src='/static/images/pic.png'></image>
@@ -32,7 +32,7 @@
       <div class='activity-ucca__p5'>￥100</div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史活动" type="date" />
+      <common-entry title="历史活动" titleFontStyle="font-weight: 700;" type="date" />
     </div>
     <div class='activity-unit'>
       <div class='activity-unit__bg'></div>
@@ -114,6 +114,7 @@
       margin: 0 40rpx 0 30rpx;
       font-size: 30rpx;
       width: 330rpx;
+      font-weight: 700;
       z-index: 100;
     }
     &__span {
@@ -132,6 +133,7 @@
       float: left;
       margin-right: 30rpx;
       line-height: 20rpx;
+      font-weight: 700;
     }
     &__p3-1 {
       position: relative;
@@ -155,6 +157,7 @@
       font-size: 24rpx;
       color: red;
       line-height: 20rpx;
+      font-weight: 700;
       float: left;
     }
   }

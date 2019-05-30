@@ -36,7 +36,7 @@
 <style lang="less" scoped>
   .near-activity {
     &__content {
-      margin-top: 30rpx;
+      margin: 30rpx 0 60rpx;
       padding-left: 40rpx;
       &__scroll {
         display: flex;

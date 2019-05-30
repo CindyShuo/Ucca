@@ -80,6 +80,7 @@
         line-height: 30rpx;
         text-align: center;
         background-color: rgba(0, 0, 0, .6);
+        border-radius: 4rpx 4rpx 0 0;
         .arrow-icon {
           position: absolute;
           top: 50%;
@@ -91,6 +92,7 @@
         }
         &.map-show {
           bottom: 0;
+          border-radius: 0 0 4rpx 4rpx !important;
           .arrow-icon {
             transform: translate(-50%, -50%) rotate(-90deg) scale(.4);
           }

@@ -5,8 +5,8 @@
       <h3>验证会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top: 40rpx;" placeholder="出生日期" />
-        <input type="text" style="margin: 40rpx 0;" placeholder="手机号" />
+        <input type="text" style="margin-top:80rpx;" placeholder="出生日期" />
+        <input type="text" style="margin: 80rpx 0;" placeholder="手机号" />
         <input type="text" placeholder="验证码" />
         <a class="send">发送验证码</a>
       </div>
@@ -60,12 +60,14 @@
       h3 {
         margin: 0 0 20rpx;
         font-size: 34rpx;
+        font-weight: 600;
         color: #232323;
       }
       .write {
         position: relative;
         padding: 40rpx;
         background: #fff;
+        box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,0.05);
         input {
           height: 40rpx;
           line-height: 40rpx;

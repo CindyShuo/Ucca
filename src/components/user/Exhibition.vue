@@ -1,6 +1,6 @@
 <template>
   <div class='user-exhibition' style="padding-top: 50rpx">
-    <common-entry title="我收藏的展览" type="none" />
+    <common-entry title="我收藏的展览" titleFontStyle="font-weight: 700;" type="none" />
     <div class='user-exhibition-ucca' @click="direction">
       <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
       <div class='user-exhibition-ucca__p'>
@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="当前展览" type="none" />
+      <common-entry title="当前展览" titleFontStyle="font-weight: 700;" type="none" />
     </div>
     <div class='user-exhibition-ucca'>
       <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史展览" type="date" />
+      <common-entry title="历史展览" titleFontStyle="font-weight: 700;" type="date" />
     </div>
     <div class='user-exhibition-ucca'>
       <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
@@ -54,7 +54,7 @@
     width: 670rpx;
     background: #fff;
     border-radius: 0 20rpx 0 0;
-    box-shadow: 3rpx 3rpx 35rpx rgba(0, 0, 0, 0.05);
+    box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
     &__pic {
       height: 375rpx;
       width: 670rpx;
@@ -68,8 +68,9 @@
       opacity: .4;
     }
     &__p2 {
-      font-size: 34rpx;
       margin: 10rpx 0 35rpx;
+      font-size: 34rpx;
+      font-weight: 700;
     }
   }
 </style>

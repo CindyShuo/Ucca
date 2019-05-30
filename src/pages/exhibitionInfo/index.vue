@@ -251,7 +251,7 @@ export default {
       width: 670rpx;
       border-radius: 0 20rpx 0 0;
       background-color: #fff;
-      box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
+      box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
       .intro {
         padding: 40rpx 60rpx 30rpx 40rpx;
         h2 {
@@ -359,6 +359,7 @@ export default {
       margin-top: 32rpx;
     }
     .exhibition-info__content {
+      margin-top: 16rpx;
       padding-left: 40rpx;
       width: 3000rpx;
       .swipe {
