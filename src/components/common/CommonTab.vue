@@ -1,16 +1,19 @@
 <template>
   <div class="common-tab">
-    <a
+    <div
       v-for="(item, i) in tabList"
       :key="i"
-      @click="tabFlag(i)"
       class="common-tab__item"
       :class="{ 'is-active': i === value }"
-    >{{ item }}</a>
+    >
+      <a @click="tabFlag(i)">{{ item }}</a>
+    </div>
   </div>
 </template>
 
 <script>
+  import store from '../../store'
+
   export default {
     name: 'CommonTab',
     props: {
@@ -23,6 +26,11 @@
         default: 0
       }
     },
+    computed: {
+      navHeight () {
+        return store.state.navHeight
+      }
+    },
     methods: {
       tabFlag (index) {
         this.$emit('handleChange', index)
@@ -33,23 +41,34 @@
 
 <style lang="less" scoped>
   .common-tab {
-    position: relative;
+    position: fixed;
+    left: 0;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 94rpx;
     padding: 0 194rpx;
     border-bottom: 1rpx solid rgba(0, 0, 0, .1);
     background: #fff;
     &__item {
       position: relative;
-      line-height: 94rpx;
-      font-size: 28rpx;
-      color: rgba(0, 0, 0, .6);
-      transition: all ease-in-out .3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      a {
+        font-size: 28rpx;
+        font-weight: bold;
+        color: 	rgba(35,35,35,.6);
+        transition: all ease-in-out .1s;
+      }
       &.is-active{
-        font-size: 42rpx;
-        color: #000;
+        a {
+          transform: scale(1.5);
+          color: #232323;
+        }
         &::after {
           content: '';
           position: absolute;

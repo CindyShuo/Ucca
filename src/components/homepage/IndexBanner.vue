@@ -1,8 +1,11 @@
 <template>
   <div class="index-banner">
     <swiper
-      autoplay="true"
-      circular="true"
+      autoplay
+      circular
+      indicator-dots
+      indicator-color="rgba(255, 255, 255, .5)"
+      indicator-active-color="#ffffff"
       class="swipe"
     >
       <swiper-item

@@ -32,6 +32,7 @@
 
 <script>
   import CommonLanguage from './CommonLanguage'
+  import store from '../../store'
 
   export default {
     name: 'CommonHeader',
@@ -50,6 +51,11 @@
       backVisible: {
         type: Boolean,
         default: false
+      },
+      // 是否有底部border
+      haveBorder: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
@@ -71,7 +77,7 @@
             return {
               backgroundColor: '#fff',
               textColor: '#000',
-              borderBottom: '1rpx solid rgba(0, 0, 0, .1);',
+              borderBottom: this.haveBorder ? '1rpx solid rgba(0, 0, 0, .1);' : 'none',
               arrow: '/static/images/arrow.png'
             }
           case 'black':
@@ -110,6 +116,7 @@
             self.titleBarHeight = 44
           }
           self.navBarHeight = self.statusBarHeight + self.titleBarHeight
+          store.commit('saveNavHeight', self.navBarHeight)
         }
       })
     },
@@ -117,6 +124,15 @@
       goBack () {
         wx.navigateBack({
           delta: 1
+        })
+      }
+    },
+    onShow () {
+      if (this.theme === 'white') {
+        wx.setNavigationBarColor({
+          frontColor: '#000000',
+          backgroundColor: '',
+          animation: {}
         })
       }
     }
@@ -158,6 +174,7 @@
           transform: translate(-50%, -50%);
           width: 45%;
           font-size: 14px;
+          font-weight: bold;
           text-align: center;
         }
       }
