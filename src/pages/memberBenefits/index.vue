@@ -1,6 +1,6 @@
 <template>
   <div class="member-benefits">
-    <common-header :back-visible="true" />
+    <common-header :back-visible="true" theme="black" />
     <div class="member-benefits__title">
       <image class="card" src="/static/images/me-banner4.png"></image>
       <h3>VIP 会员年卡</h3>
@@ -8,36 +8,57 @@
     </div>
     <div class="member-benefits__interests">
       <div class="first-row">
-        <div class="detail">
+        <div class="detail" @click="switchTicket(1)">
           <image src="/static/images/mfgz.png"></image>
           <p>免费观展</p>
         </div>
-        <div class="detail">
+        <div class="detail" @click="switchTicket(2)">
           <image src="/static/images/zstd.png"></image>
           <p>专属通道</p>
         </div>
-        <div class="detail">
+        <div class="detail" @click="switchTicket(3)">
           <image src="/static/images/zshd.png"></image>
           <p>专属活动</p>
         </div>
       </div>
       <div class="first-row second-row">
-        <div class="detail">
+        <div class="detail" @click="switchTicket(4)">
           <image src="/static/images/jthk.png"></image>
           <p>家庭回馈</p>
         </div>
-        <div class="detail">
+        <div class="detail" @click="switchTicket(5)">
           <image src="/static/images/xfzk.png"></image>
           <p>消费折扣</p>
         </div>
-        <div class="detail">
+        <div class="detail" @click="switchTicket(6)">
           <image src="/static/images/qtyh.png"></image>
           <p>其他优惠</p>
         </div>
       </div>
     </div>
-    <div class="member-benefits__description">
+    <div class="member-benefits__line"></div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 1">
       <h2>免费观展</h2>
+      <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
+    </div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 2">
+      <h2>专属通道</h2>
+      <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
+    </div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 3">
+      <h2>专属活动</h2>
+      <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
+    </div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 4">
+      <h2>家庭回馈</h2>
+      <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
+    </div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 5">
+      <h2>消费折扣</h2>
+      <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
+    </div>
+    <div class="member-benefits__description" v-if="showTicketFlag === 6">
+      <h2>其他优惠</h2>
       <p>免费观看 UCCA 尤伦斯当代艺术中心及 UCCA 沙丘美术馆全年所有常规艺术展 览，同行的一位同伴可享受优惠价购票(特殊项目除外)</p>
     </div>
     <div class="member-benefits__footer">
@@ -65,7 +86,8 @@
     data () {
       return {
         handle: false,
-        animationData: {}
+        animationData: {},
+        showTicketFlag: 1
       }
     },
     methods: {
@@ -120,6 +142,10 @@
           that.animationData = animation.export()
           that.handle = false
         }, 500)
+      },
+      // 切换展示内容介绍
+      switchTicket (val) {
+        this.showTicketFlag = val
       }
     },
     onLoad (option) {
@@ -188,9 +214,15 @@
       }
       .second-row {
         margin: 40rpx 74rpx 0 !important;
-        padding-bottom: 30rpx;
-        border-bottom: 1rpx solid #ccc;
+        padding-bottom: 25rpx;
       }
+    }
+    &__line {
+      margin: 0 auto;
+      width: 610rpx;
+      height: 1rpx;
+      border: 1rpx solid #232323;
+      opacity: 0.1;
     }
     &__description {
       margin: 30rpx 80rpx 0;

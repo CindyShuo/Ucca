@@ -1,6 +1,6 @@
 <template>
   <div class='exhibition' style="padding-top: 50rpx">
-    <common-entry title="展览预告" type="none" />
+    <common-entry title="展览预告" titleFontStyle="font-weight: 700;" type="none" />
     <div class='exhibition-ucca' @click="direction">
       <image class='exhibition-ucca__pic' src='/static/images/pic.png'></image>
       <div class='exhibition-ucca__p'>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="当前展览" type="none" />
+      <common-entry title="当前展览" titleFontStyle="font-weight: 700;" type="none" />
     </div>
     <div class='exhibition-ucca'>
       <image class='exhibition-ucca__pic' src='/static/images/pic.png'></image>
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史展览" type="date" />
+      <common-entry title="历史展览" titleFontStyle="font-weight: 700;" type="date" />
     </div>
     <div class='exhibition-ucca'>
       <image class='exhibition-ucca__pic' src='/static/images/pic.png'></image>
@@ -91,12 +91,14 @@
     &__p2 {
       font-size: 34rpx;
       margin: 10rpx 0 35rpx;
+      font-weight: 700;
     }
     &__p3 {
       font-size: 28rpx;
       float: left;
       margin-right: 30rpx;
       line-height: 20rpx;
+      font-weight: 700;
     }
     &__p4 {
       font-size: 16rpx;
@@ -112,6 +114,7 @@
       font-size: 24rpx;
       color: red;
       line-height: 20rpx;
+      font-weight: 700;
       float: left;
     }
   }

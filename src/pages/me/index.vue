@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <common-header title="UCCA" theme="black" />
+    <common-header title="UCCA" titleWeight="600" theme="black" />
     <div class="user-info__content">
       <div class='avatar'>
         <image class='photo' src='/static/images/photo.png'></image>
@@ -105,6 +105,7 @@
         }
         .name {
           font-size: 42rpx;
+          font-weight: 600;
           position: absolute;
           top: 47rpx;
           left: 190rpx;
@@ -118,10 +119,10 @@
         }
         .arrow {
           position: absolute;
-          width: 20rpx;
-          height: 27rpx;
+          width: 16rpx;
+          height: 30rpx;
           right: 48rpx;
-          top: 99rpx;
+          top: 90rpx;
         }
         .bg {
           position: absolute;
@@ -168,7 +169,7 @@
         width: 590rpx;
         background: #fff;
         border-radius: 0 20rpx 0 0;
-        box-shadow: 3rpx 3rpx 35rpx rgba(0, 0, 0, 0.1);
+        box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,0.05);
         .list-content {
           height: 55rpx;
           line-height: 55rpx;
@@ -182,12 +183,12 @@
           margin-right: 30rpx;
         }
         .me-list-arrow {
-          margin-top: 8rpx;
+          margin-top: 14rpx;
         }
         .topic-icon {
           float: right;
-          width: 22rpx;
-          height: 28rpx;
+          width: 14rpx;
+          height: 24rpx;
         }
       }
     }

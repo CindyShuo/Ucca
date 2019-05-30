@@ -47,14 +47,37 @@
 <style lang="less" scoped>
   .member-card {
     &__card {
-      padding: 0 76rpx;
+      position: relative;
+      margin: 0 76rpx;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 366rpx;
+        left: -14rpx;
+        width: 28rpx;
+        height: 30rpx;
+        background: #f8f8f8;
+        border-radius: 50%;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 366rpx;
+        right: -16rpx;
+        width: 28rpx;
+        height: 30rpx;
+        background: #f8f8f8;
+        border-radius: 50%;
+      }
       .pic {
         margin-top: 40rpx;
+        display: table;
         width: 600rpx;
         height: 378rpx;
       }
       .erweima {
         padding: 40rpx 130rpx 50rpx;
+        background: #fff;
         .number {
           font-size: 24rpx;
           text-align: center;
@@ -83,11 +106,12 @@
         line-height: 32rpx;
         a {
           font-size: 28rpx;
+          line-height: 28rpx;
           color: #232323;
         }
         image {
-          width: 20rpx;
-          height: 28rpx;
+          width: 14rpx;
+          height: 22rpx;
         }
       }
     }

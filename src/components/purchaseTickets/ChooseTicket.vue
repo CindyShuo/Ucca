@@ -131,11 +131,11 @@
           font-size: 35rpx;
           font-weight: bold;
           &.subtract {
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(35, 35, 35, 0.04);
             color:rgba(0,0,0,.1);
           }
           &.add {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(35, 35, 35, 0.04);
             color:rgba(0,0,0,.2);
           }
         }

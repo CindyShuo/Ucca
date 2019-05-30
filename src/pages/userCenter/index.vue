@@ -56,7 +56,7 @@
         }
       }
       .nickName {
-        margin-top: 60rpx;
+        margin-top: 80rpx;
         display: flex;
         justify-content: space-between;
         p {

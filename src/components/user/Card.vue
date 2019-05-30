@@ -18,7 +18,7 @@
         </div>
         <div class='kuang-span'>UCCA会员一年有效期（仅限本人使用）</div>
       </div>
-      <div class='year-card__kuang'>
+      <div class='year-card__kuang year-card__forbidden'>
         <div class="card">
           <p>双人优惠年卡</p>
           <p>¥800/年</p>
@@ -142,6 +142,7 @@
           margin-top: 0;
           font-size: 28rpx;
           font-weight: bold;
+          opacity: 1;
         }
       }
       .kuang-span {
@@ -150,6 +151,9 @@
         margin-top: 20rpx;
         font-weight: normal;
       }
+    }
+    &__forbidden {
+      background: rgba(35, 35, 35, 0.04) !important;
     }
     &__kuang1 {
       background: rgba(237, 48, 36, 0.1);
@@ -200,11 +204,11 @@
           font-size: 35rpx;
           font-weight: bold;
           &.subtract {
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(35, 35, 35, 0.04);
             color:rgba(0,0,0,.1);
           }
           &.add {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(35, 35, 35, 0.04);
             color:rgba(0,0,0,.2);
           }
         }
