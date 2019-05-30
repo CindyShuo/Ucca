@@ -251,6 +251,7 @@ export default {
       width: 670rpx;
       border-radius: 0 20rpx 0 0;
       background-color: #fff;
+      box-shadow: 0 12px 34px 0 rgba(0,0,0,0.05);
       .intro {
         padding: 40rpx 60rpx 30rpx 40rpx;
         h2 {
@@ -290,6 +291,7 @@ export default {
           padding: 0 4rpx;
           border: 1rpx solid #ed3024;
           border-radius: 0 8rpx 0 0;
+          height: 22rpx;
           line-height: 22rpx;
           font-size: 16rpx;
           color: #ed3024;
@@ -347,6 +349,7 @@ export default {
         margin: 50rpx 40rpx 10rpx;
       }
       .most-p {
+        width: 100%;
         padding: 10rpx 40rpx;
         line-height: 54rpx;
       }

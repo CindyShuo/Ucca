@@ -66,7 +66,7 @@
     box-shadow: 1rpx -1rpx 1rpx rgba(0, 0, 0, 0.05);
     &__div {
       float: left;
-      width: 248rpx;
+      width: 250rpx;
       height: 100%;
       border-right: 1rpx solid rgba(0, 0, 0, 0.1);
       text-align: center;

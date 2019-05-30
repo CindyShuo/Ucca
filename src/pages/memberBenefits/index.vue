@@ -229,7 +229,7 @@
           font-size: 30rpx;
           line-height: 30rpx;
           color: #fff;
-          font-weight: 300;
+          font-weight: 400;
         }
         .confirm {
           font-size: 20rpx;

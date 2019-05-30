@@ -39,7 +39,7 @@
 
 <style lang="less" scoped>
   .choose-ticket-type {
-    height: 520rpx;
+    max-height: 700rpx;
     padding: 0 40rpx;
     &__content {
       height: 100%;

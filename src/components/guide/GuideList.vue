@@ -206,6 +206,8 @@
           margin: 14rpx 0 20rpx;
           font-size: 28rpx;
           line-height: 28rpx;
+          font-weight: 600;
+          text-align: center;
         }
         p {
           padding-left: 36rpx;
