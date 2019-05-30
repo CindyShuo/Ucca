@@ -45,7 +45,7 @@
         <p class="size-24 opacity-6">x1</p>
       </div>
       <div class="right flex">
-        <a class="size-28">去预约</a>
+        <a class="size-28" @click="goReservation">去预约</a>
         <div class="arrow">
           <image
             src="/static/images/arrow.png"
@@ -152,7 +152,18 @@
       }
     },
     methods: {
-      codeClickHandle () {}
+      codeClickHandle () {
+        // 跳转 我的展览票
+        wx.navigateTo({
+          url: '/pages/purchaseSuccess/main?type=exhibition'
+        })
+      },
+      goReservation () {
+        // 去预约
+        wx.navigateTo({
+          url: '/pages/reservation/main'
+        })
+      }
     }
   }
 </script>

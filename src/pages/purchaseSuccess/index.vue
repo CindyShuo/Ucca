@@ -14,8 +14,9 @@
             <p>早鸟全日期通票</p>
             <p>x1</p>
           </div>
-          <div class="operating">
-            <a @click="goReservation">去预约 ></a>
+          <div class="operating" @click="goReservation">
+            <a>去预约</a>
+            <image class="arrow" src="/static/images/arrow.png"></image>
           </div>
         </div>
         <!-- 已预约状态 -->
@@ -175,9 +176,16 @@
         }
         .operating {
           a {
+            display: inline-block;
             font-size: 28rpx;
             line-height: 60rpx;
             color: #232323;
+          }
+          .arrow {
+            margin-left: 18rpx;
+            display: inline-block;
+            width: 14rpx;
+            height: 22rpx;
           }
           p {
             font-size: 28rpx;

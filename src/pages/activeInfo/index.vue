@@ -198,7 +198,7 @@ export default {
       justify-content: space-between;
       align-items: center;
       margin: 30rpx auto 0;
-      width: 590rpx;
+      width: 670rpx;
       height: 80rpx;
       padding: 0 40rpx;
       border-radius: 0 20rpx 0 0;

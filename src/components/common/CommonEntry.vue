@@ -102,10 +102,12 @@
     font-size: 14px;
   }
   .topic-icon1 {
+    position: relative;
+    top: -2rpx;
+    right: 0;
     display: inline-block;
     width: 20rpx;
     height: 12rpx;
-    margin-top: 20rpx;
     margin-left: 14rpx;
   }
 </style>

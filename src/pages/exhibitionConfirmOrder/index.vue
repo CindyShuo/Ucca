@@ -17,7 +17,7 @@
       <h3>填写你的信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" placeholder="手机号" />
+        <input type="text" bindinput="inputGetMobile" placeholder="手机号" />
         <input type="text" placeholder="验证码" />
         <a class="send">发送验证码</a>
       </div>
@@ -52,6 +52,9 @@
           type: '活动普通票',
           money: '￥138',
           number: '1张'
+        },
+        form: {
+          mobile: null
         }
       }
     },
@@ -62,6 +65,9 @@
           url: '/pages/purchaseSuccess/main'
         })
       }
+    },
+    inputGetMobile (e) {
+      console.log(e, 'eeeee')
     }
   }
 </script>

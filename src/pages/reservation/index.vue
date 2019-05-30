@@ -181,7 +181,7 @@
       }
 
       .time-icon {
-        width: 40rpx;
+        width: 44rpx;
         height: 40rpx;
         float: right;
       }
