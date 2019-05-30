@@ -48,7 +48,7 @@
           display: inline-block;
           margin-right: 30rpx;
           &:last-child {
-            margin-right: 0;
+            margin-right: 40rpx;
           }
         }
       }
