@@ -14,7 +14,7 @@
     "pages/writeInformation/main",
     "pages/verifyInformation/main",
     "pages/memberCard/main",
-    "pages/myExhibition/main",
+    "pages/myCollection/main",
     "pages/myTicket/main",
     "pages/reservation/main",
     "pages/guide/main",

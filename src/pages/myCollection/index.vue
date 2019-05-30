@@ -1,6 +1,6 @@
 <template>
-  <div class="my-exhibition">
-    <common-header :back-visible="true" title="我的收藏" />
+  <div class="my-collection">
+    <common-header :back-visible="true" title="我的收藏" :have-border="false" />
     <common-tab :ifFixed="fixedStyle" :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import CommonHeader from '@/components/common/CommonHeader'
-  import CommonTab from '@/components/common/CommonTab'
-  import Exhibition from '@/components/user/Exhibition'
-  import Activity from '@/components/user/Activity'
+  import CommonHeader from '../../components/common/CommonHeader'
+  import CommonTab from '../../components/common/CommonTab'
+  import Exhibition from '../../components/user/Exhibition'
+  import Activity from '../../components/user/Activity'
 
   export default {
     name: 'MyExhibition',
@@ -32,8 +32,7 @@
 </script>
 
 <style lang="less" scoped>
-  .my-exhibition {
-    // padding-bottom: 130rpx;
-    padding-top: 100rpx;
+  .my-collection {
+
   }
 </style>
