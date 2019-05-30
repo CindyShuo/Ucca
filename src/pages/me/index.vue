@@ -79,7 +79,7 @@
       goMyExhibition () {
         // 跳到我的收藏
         wx.navigateTo({
-          url: '/pages/myExhibition/main'
+          url: '/pages/myCollection/main'
         })
       }
     }

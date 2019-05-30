@@ -1,5 +1,5 @@
 <template>
-  <p class="common-member" :style="{ margin: margin }">UCAA会员</p>
+  <p class="common-member" :style="{ margin: margin }">UCCA会员</p>
 </template>
 
 <script>

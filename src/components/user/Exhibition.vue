@@ -1,34 +1,7 @@
 <template>
-  <div class='user-exhibition' style="padding-top: 50rpx">
+  <div class='user-exhibition'>
     <common-entry title="我收藏的展览" titleFontStyle="font-weight: 700;" type="none" />
     <div class='user-exhibition-ucca' @click="direction">
-      <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
-      <div class='user-exhibition-ucca__p'>
-        <div class='user-exhibition-ucca__p1'>2019.6.15-2019.9.1</div>
-        <div class='user-exhibition-ucca__p2'>毕加索：一位天才的降生</div>
-      </div>
-    </div>
-    <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="当前展览" titleFontStyle="font-weight: 700;" type="none" />
-    </div>
-    <div class='user-exhibition-ucca'>
-      <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
-      <div class='user-exhibition-ucca__p'>
-        <div class='user-exhibition-ucca__p1'>2019.6.15-2019.9.1</div>
-        <div class='user-exhibition-ucca__p2'>毕加索：一位天才的降生</div>
-      </div>
-    </div>
-    <div class='user-exhibition-ucca'>
-      <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
-      <div class='user-exhibition-ucca__p'>
-        <div class='user-exhibition-ucca__p1'>2019.6.15-2019.9.1</div>
-        <div class='user-exhibition-ucca__p2'>毕加索：一位天才的降生</div>
-      </div>
-    </div>
-    <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史展览" titleFontStyle="font-weight: 700;" type="date" />
-    </div>
-    <div class='user-exhibition-ucca'>
       <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
       <div class='user-exhibition-ucca__p'>
         <div class='user-exhibition-ucca__p1'>2019.6.15-2019.9.1</div>
@@ -39,7 +12,7 @@
 </template>
 
 <script>
-  import CommonEntry from '@/components/common/CommonEntry'
+  import CommonEntry from '../common/CommonEntry'
   export default {
     name: 'UserExhibition',
     components: {
@@ -49,6 +22,10 @@
 </script>
 
 <style lang="less" scoped>
+  .user-exhibition {
+    padding-top: 134rpx;
+    padding-bottom: 30rpx;
+  }
   .user-exhibition-ucca {
     margin: 30rpx auto 0;
     width: 670rpx;

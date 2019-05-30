@@ -1,31 +1,7 @@
 <template>
-  <div class='user-activity' style="padding-top: 50rpx">
+  <div class='user-activity'>
     <common-entry title="我收藏的活动" titleFontStyle="font-weight: 700;" type="none" />
     <div class='user-activity-unit' @click="direction">
-      <div class='user-activity-unit__bg'></div>
-      <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>
-      <div class='user-activity-unit__span'>2019.5.12-2019.5.28</div>
-      <div class='user-activity-unit__p'>影像艺术交流</div>
-      <div class='user-activity-unit__p'>文明：人类的影像</div>
-    </div>
-    <div class='user-activity-unit'>
-      <div class='user-activity-unit__bg'></div>
-      <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>
-      <div class='user-activity-unit__span'>2019.5.12-2019.5.28</div>
-      <div class='user-activity-unit__p'>影像艺术交流</div>
-      <div class='user-activity-unit__p'>文明：人类的影像</div>
-    </div>
-    <div class='user-activity-unit'>
-      <div class='user-activity-unit__bg'></div>
-      <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>
-      <div class='user-activity-unit__span'>2019.5.12-2019.5.28</div>
-      <div class='user-activity-unit__p'>影像艺术交流</div>
-      <div class='user-activity-unit__p'>文明：人类的影像</div>
-    </div>
-    <div class='topic' style="margin-top: 50rpx">
-      <common-entry title="历史活动" titleFontStyle="font-weight: 700;" type="date" />
-    </div>
-    <div class='user-activity-unit'>
       <div class='user-activity-unit__bg'></div>
       <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>
       <div class='user-activity-unit__span'>2019.5.12-2019.5.28</div>
@@ -50,7 +26,7 @@
 </template>
 
 <script>
-  import CommonEntry from '@/components/common/CommonEntry'
+  import CommonEntry from '../common/CommonEntry'
   export default {
     name: 'UserActivity',
     components: {
@@ -60,6 +36,10 @@
 </script>
 
 <style lang="less" scoped>
+  .user-activity {
+    padding-top: 134rpx;
+    padding-bottom: 30rpx;
+  }
   .user-activity-unit{
     position: relative;
     margin: 30rpx auto 0;
