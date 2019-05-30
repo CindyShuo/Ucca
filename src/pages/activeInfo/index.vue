@@ -54,12 +54,13 @@
     </div>
     <common-footerHandle type="true" @buyTicket="isBuyTicket"></common-footerHandle>
     <common-picker v-if="participate">
-      <div class="active-info__box">
-        <image @click="close" class='close' src='/static/images/close.png'></image>
-        <common-order-item :orderList="orderList" flag="buy"></common-order-item>
-        <choose-activity></choose-activity>
+      <div v-if="participate" :animation="animationData">
+        <div class="active-info__box">
+          <common-order-item :orderList="orderList" flag="buy"></common-order-item>
+          <choose-activity></choose-activity>
+        </div>
+        <choose-ticket buyType="active" @close="hideModal" />
       </div>
-      <choose-ticket buyType="active" />
     </common-picker>
   </scroll-view>
 </template>
@@ -84,6 +85,7 @@ export default {
         arrList: ['活动流程', '关于嘉宾', '活动须知'],
         showContent: 0,
         participate: false, // 参与活动
+        animationData: {},
         orderList: [
           {
             imgSrc: '/static/images/pic.png',
@@ -109,12 +111,49 @@ export default {
       tabHandle (val) {
         this.showContent = val
       },
+      chooseGroupAppointment (val) {
+        // 用that取代this，防止不必要的情况发生
+        let that = this
+        // 创建一个动画实例
+        let animation = wx.createAnimation({
+          // 动画持续时间
+          duration: 600,
+          // 定义动画效果，当前是匀速
+          timingFunction: 'linear'
+        })
+        // 将该变量赋值给当前动画
+        that.animation = animation
+        // 先在y轴偏移，然后用step()完成一个动画
+        animation.translateY(300).step()
+        // 通过export()方法导出数据
+        that.animationData = animation.export()
+        // 改变view里面的Wx：if
+        that[val] = true
+        // 设置setTimeout来改变y轴偏移量，实现有感觉的滑动
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+        }, 100)
+      },
       // 关闭弹框
-      close () {
-        this.participate = false
+      hideModal () {
+        let that = this
+        let animation = wx.createAnimation({
+          duration: 600,
+          timingFunction: 'linear'
+        })
+        that.animation = animation
+        animation.translateY(500).step()
+        that.animationData = animation.export()
+        setTimeout(function () {
+          animation.translateY(0).step()
+          that.animationData = animation.export()
+          that.participate = false
+        }, 100)
       },
       isBuyTicket (val) {
-        this[val.type] = val.buyTicket
+        // this[val.type] = val.buyTicket
+        this.chooseGroupAppointment(val.type)
       }
     },
     mounted () {

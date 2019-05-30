@@ -176,7 +176,6 @@ export default {
           this.chooseGroupAppointment(val.type)
         } else {
           this[val.type] = val.buyTicket
-          console.log(val, 'val')
         }
       },
       chooseGroupAppointment (val) {

@@ -19,7 +19,8 @@
     "pages/reservation/main",
     "pages/guide/main",
     "pages/exhibitionHall/main",
-    "pages/guideContent/main"
+    "pages/guideContent/main",
+    "pages/selectReservationType/main"
   ],
   "window": {
     "navigationStyle": "custom"

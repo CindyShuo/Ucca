@@ -28,7 +28,7 @@
       </div>
     </div>
     <!--已预约待参观-->
-    <div class="my-ticket-item__type" v-if="type === 'e2'">
+    <div class="my-ticket-item__type" v-if="type === 'e2'" @click="goReservationTime">
       <div class="left">
         <p class="size-28">已约待参观</p>
         <p class="size-24 opacity-6">时间：19.08.19 13:00-14:00</p>
@@ -61,7 +61,7 @@
         <p class="size-24 opacity-6">x1</p>
       </div>
       <div class="right flex">
-        <a class="size-28">重新预约</a>
+        <a class="size-28" @click="goReservation">重新预约</a>
         <div class="arrow">
           <image
             src="/static/images/arrow.png"
@@ -161,7 +161,12 @@
       goReservation () {
         // 去预约
         wx.navigateTo({
-          url: '/pages/reservation/main'
+          url: '/pages/selectReservationType/main'
+        })
+      },
+      goReservationTime () {
+        wx.navigateTo({
+          url: '/pages/selectReservationType/main?flag=false'
         })
       }
     }

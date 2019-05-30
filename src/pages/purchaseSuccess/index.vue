@@ -20,7 +20,7 @@
           </div>
         </div>
         <!-- 已预约状态 -->
-        <!-- <div class="status"> -->
+        <!-- <div class="status" @click='goReservationTime'> -->
         <!--    <div class="operating"> -->
         <!--       <p>已约待参观</p> -->
         <!--       <p>19.08.19 13:00-14:00</p> -->
@@ -77,9 +77,15 @@
         })
       },
       goReservation () {
-        // 去预约
+        // 未预约去预约跳转
         wx.navigateTo({
-          url: '/pages/reservation/main'
+          url: '/pages/selectReservationType/main'
+        })
+      },
+      goReservationTime () {
+        // 已预约状态
+        wx.navigateTo({
+          url: '/pages/selectReservationType/main?flag=false'
         })
       }
     },
