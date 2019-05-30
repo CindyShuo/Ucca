@@ -1,6 +1,6 @@
 <template>
   <div class="purchase-index">
-    <common-header />
+    <common-header :have-border="false" />
     <common-tab :ifFixed="fixedStyle" :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-if="showContent === 1"></activity>
@@ -58,6 +58,6 @@
 
 <style>
   .purchase-index {
-    padding: 100rpx 0 30rpx;
+    padding-bottom: 30rpx;
   }
 </style>

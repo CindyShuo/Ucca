@@ -136,6 +136,7 @@
           transform: translate(-50%, -50%);
           width: 45%;
           font-size: 14px;
+          font-weight: bold;
           text-align: center;
         }
       }

@@ -38,6 +38,7 @@
   .common-language {
     &__text {
       font-size: 28rpx;
+      font-weight: bold;
     }
   }
 </style>

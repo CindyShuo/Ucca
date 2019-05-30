@@ -1,5 +1,5 @@
 <template>
-  <div class='exhibition' style="padding-top: 50rpx">
+  <div class='exhibition' style="padding-top: 134rpx">
     <common-entry title="展览预告" titleFontStyle="font-weight: 700;" type="none" />
     <div class='exhibition-ucca' @click="direction">
       <image class='exhibition-ucca__pic' src='/static/images/pic.png'></image>

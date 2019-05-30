@@ -1,5 +1,5 @@
 <template>
-  <div class='activity' style="padding-top: 50rpx">
+  <div class='activity' style="padding-top: 134rpx">
     <common-entry title="近期活动" titleFontStyle="font-weight: 700;" type="none" />
     <div class='activity-unit' @click="direction">
       <div class='activity-unit__bg'></div>
