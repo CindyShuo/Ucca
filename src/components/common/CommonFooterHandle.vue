@@ -59,7 +59,7 @@
     display: flex;
     position: fixed;
     bottom: 0;
-    width: 750rpx;
+    width: 100%;
     height: 100rpx;
     background: #fff;
     z-index: 10009;
