@@ -1,7 +1,7 @@
 <template>
   <div class="purchase-index">
     <common-header :have-border="false" />
-    <common-tab :ifFixed="fixedStyle" :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
+    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-if="showContent === 1"></activity>
   </div>
@@ -26,8 +26,7 @@
     data () {
       return {
         arrList: ['展览', '活动'],
-        showContent: null,
-        fixedStyle: 'position: fixed; top: 128rpx; left: 0;z-index: 102'
+        showContent: null
       }
     },
     computed: {
@@ -45,6 +44,9 @@
             console.log(res)
           })
       }
+    },
+    mounted () {
+      this.getList()
     },
     onShow () {
       this.showContent = this.purchaseType || 0

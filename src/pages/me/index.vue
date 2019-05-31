@@ -1,56 +1,67 @@
 <template>
   <div class="user-info">
-    <common-header title="UCCA" titleWeight="600" theme="black" />
-    <div class="user-info__content">
-      <div class='avatar'>
-        <image class='photo' src='/static/images/photo.png'></image>
-        <div class='name'>Anapple</div>
-        <div class='name-span'>普通用户</div>
-        <image class='arrow' @click="goUserCenter" src='/static/images/arrow-white.png'></image>
-        <!-- 会员 -->
-        <div class="card" @click="goMyCard">
-          <image class='card1' src='/static/images/me-banner1.png'></image>
-          <div class='card-font'>VIP会员年卡</div>
-          <div class='card-number'>NO.23492353</div>
+    <common-header title="UCCA" theme="black" />
+    <div class='user-info__content'>
+      <div class="info">
+        <image
+          src='/static/images/photo.png'
+          class='photo'
+        ></image>
+        <div class="text">
+          <p class='name'>Anapple</p>
+          <p class='identity'>普通用户</p>
         </div>
-        <!-- 普通用户 -->
-        <div v-if="false" @click="goMemberBenefits">
-          <image class="bg" src="/static/images/me-banner2.png"></image>
+        <div class="blank"></div>
+        <common-arrow
+          area-width="32rpx"
+          area-height="32rpx"
+          arrow="/static/images/arrow-white.png"
+          arrow-width="15rpx"
+          arrow-height="27rpx"
+          :click-handle="goUserCenter"
+        />
+      </div>
+    </div>
+    <div class="user-info__vip">
+      <!-- 会员 -->
+      <div class="card is-vip" @click="goMyCard" v-if="false">
+        <image
+          src='/static/images/me-banner1.png'
+          class='bg'
+        ></image>
+        <div class="content">
+          <p class='card-name'>VIP会员年卡</p>
+          <p class='card-number'>NO.23492353</p>
+        </div>
+      </div>
+      <!-- 普通用户 -->
+      <div class="card is-normal" @click="goMemberBenefits">
+        <image
+          src="/static/images/me-banner2.png"
+          class="bg"
+        ></image>
+        <div class="content">
           <p class="add-member">加入UCCA会员，免费畅享艺术展览</p>
         </div>
       </div>
-      <div class='list'>
-        <div class='list-content' @click="goMyTicket">
-          <image class='me-icon' src='/static/images/me-icon1.png'></image>
-          我的票
-          <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
-        </div>
-        <div class='list-content' @click="goMyExhibition">
-          <image class='me-icon' src='/static/images/me-icon2.png'></image>
-          我的收藏
-          <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
-        </div>
-        <div class='list-content'>
-          <image class='me-icon' src='/static/images/me-icon3.png'></image>
-          意见反馈
-          <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
-        </div>
-        <div class='list-content' style="margin-bottom: 0">
-          <image class='me-icon' src='/static/images/me-icon4.png'></image>
-          关于我们
-          <image class='topic-icon me-list-arrow' src='/static/images/arrow.png'></image>
-        </div>
-      </div>
+    </div>
+    <div class="user-info__list">
+      <common-list-item icon="/static/images/me-icon1.png" text="我的票" :click-handle="goMyTicket" />
+      <common-list-item icon="/static/images/me-icon2.png" text="我的收藏" :click-handle="goMyCollection" />
+      <common-list-item icon="/static/images/me-icon3.png" text="意见反馈" />
+      <common-list-item icon="/static/images/me-icon4.png" text="关于我们" margin="0" />
     </div>
   </div>
 </template>
 
 <script>
-  import CommonHeader from '@/components/common/CommonHeader'
-  import CommonFooter from '@/components/common/CommonFooter'
+  import CommonHeader from '../../components/common/CommonHeader'
+  import CommonArrow from '../../components/common/CommonArrow'
+  import CommonListItem from '../../components/common/CommonListItem'
+
   export default {
     name: 'UserInfo',
-    components: { CommonHeader, CommonFooter },
+    components: { CommonHeader, CommonArrow, CommonListItem },
     methods: {
       goUserCenter () {
         // 跳个人中心，昵称等显示
@@ -76,7 +87,7 @@
           url: '/pages/myTicket/main'
         })
       },
-      goMyExhibition () {
+      goMyCollection () {
         // 跳到我的收藏
         wx.navigateTo({
           url: '/pages/myCollection/main'
@@ -89,108 +100,118 @@
 <style lang="less" scoped>
   .user-info {
     &__content {
-      .avatar {
-        position: relative;
-        width: 750rpx;
-        height: 292rpx;
-        background: #232323;
-        border-radius: 0 0 90rpx 90rpx;
-        color: #fff;
+      width: 750rpx;
+      height: 292rpx;
+      padding-top: 40rpx;
+      background-color: #232323;
+      border-radius: 0 0 90rpx 90rpx;
+      .info {
+        display: flex;
+        align-items: center;
+        padding: 0 40rpx;
         .photo {
+          display: block;
+          margin-right: 30rpx;
           width:120rpx;
           height:120rpx;
-          position:absolute;
-          top:40rpx;
-          left:40rpx;
         }
-        .name {
-          font-size: 42rpx;
-          font-weight: 600;
-          position: absolute;
-          top: 47rpx;
-          left: 190rpx;
+        .text {
+          color: #fff;
+          .name {
+            line-height: 56rpx;
+            font-size: 42rpx;
+            font-weight: bold;
+          }
+          .identity {
+            margin-top: 10rpx;
+            line-height: 34rpx;
+            font-size: 24rpx;
+            opacity: .6;
+          }
         }
-        .name-span {
-          position: absolute;
-          font-size: 24rpx;
-          opacity: 0.6;
-          top: 114rpx;
-          left: 190rpx;
+        .blank {
+          flex-grow: 1;
         }
-        .arrow {
-          position: absolute;
-          width: 16rpx;
-          height: 30rpx;
-          right: 48rpx;
-          top: 90rpx;
-        }
+      }
+  }
+    &__vip {
+      .card {
+        position: relative;
+        margin: 0 auto;
+        width: 600rpx;
+        color: #fff;
         .bg {
           position: absolute;
-          width: 600rpx;
-          height: 106rpx;
-          top: 232rpx;
-          left: 74rpx;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          display: block;
+          width: 100%;
+          height: 100%;
         }
-        .add-member {
+        .content {
           position: absolute;
-          top: 232rpx;
-          left: 104rpx;
-          height: 106rpx;
-          line-height: 106rpx;
-          font-size: 28rpx;
-          color: #FFF;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
         }
-        .card {
-          position: absolute;
-          top: 200rpx;
-          left: 74rpx;
-          .card1 {
-            width: 600rpx;
-            height: 168rpx;
-            font-size: 30rpx;
-            color: #fff;
+        &.is-normal {
+          margin-top: -60rpx;
+          height: 105rpx;
+          .add-member {
+            padding-left: 30rpx;
+            line-height: 105rpx;
+            font-size: 28rpx;
           }
-          .card-font {
+        }
+        &.is-vip {
+          margin-top: -92rpx;
+          height: 168rpx;
+          .card-name {
             position: absolute;
-            top: 38rpx;
+            top: 34rpx;
             left: 100rpx;
+            line-height: 44rpx;
+            font-size: 30rpx;
           }
           .card-number {
-            left: 30rpx;
-            bottom: 40rpx;
             position: absolute;
+            left: 30rpx;
+            bottom: 20rpx;
+            line-height: 28rpx;
             font-size: 20rpx;
           }
         }
       }
-      .list {
-        margin: 110rpx auto 0;
-        padding: 50rpx 40rpx;
-        width: 590rpx;
-        background: #fff;
-        border-radius: 0 20rpx 0 0;
-        box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,0.05);
-        .list-content {
-          height: 55rpx;
-          line-height: 55rpx;
-          font-size: 28rpx;
-          margin-bottom: 60rpx;
-        }
-        .me-icon {
-          width: 55rpx;
-          height: 55rpx;
-          float: left;
-          margin-right: 30rpx;
-        }
-        .me-list-arrow {
-          margin-top: 14rpx;
-        }
-        .topic-icon {
-          float: right;
-          width: 14rpx;
-          height: 24rpx;
-        }
-      }
+      /*.bg {*/
+        /*position: absolute;*/
+        /*width: 600rpx;*/
+        /*height: 106rpx;*/
+        /*top: 232rpx;*/
+        /*left: 74rpx;*/
+      /*}*/
+
+      /*.card {*/
+        /*position: absolute;*/
+        /*top: 200rpx;*/
+        /*left: 74rpx;*/
+        /*.card1 {*/
+          /*width: 600rpx;*/
+          /*height: 168rpx;*/
+          /*font-size: 30rpx;*/
+          /*color: #fff;*/
+        /*}*/
+      /*}*/
+    }
+    &__list {
+      margin: 40rpx auto 0;
+      width: 670rpx;
+      padding: 50rpx 40rpx;
+      border-radius: 0 20rpx 0 0;
+      background-color: #fff;
+      box-shadow: 0 3rpx 20rpx 0 rgba(0,0,0,.05);
     }
   }
 </style>

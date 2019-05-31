@@ -1,7 +1,7 @@
 <template>
   <div class="my-collection">
     <common-header :back-visible="true" title="我的收藏" :have-border="false" />
-    <common-tab :ifFixed="fixedStyle" :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
+    <common-tab :tab-list="arrList" v-model="showContent" @handleChange="tabHandle" />
     <exhibition v-if="showContent === 0"></exhibition>
     <activity v-else></activity>
   </div>
@@ -19,8 +19,7 @@
     data () {
       return {
         arrList: ['展览', '活动'],
-        showContent: 0,
-        fixedStyle: 'position: fixed; top: 128rpx; left: 0;z-index: 102'
+        showContent: 0
       }
     },
     methods: {
