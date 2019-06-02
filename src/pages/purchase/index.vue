@@ -45,9 +45,6 @@
           })
       }
     },
-    mounted () {
-      this.getList()
-    },
     onShow () {
       this.showContent = this.purchaseType || 0
     },

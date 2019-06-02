@@ -8,19 +8,17 @@ const BaseApi = {
     return fly.get('/api/exhibition/list', {
       type, // exhibition = 展览, event = 活动
       year, // 如果不带年份，返回首页所需内容，如果带年份，返回当年的数据
-      filterLike, // 是否查询收藏的内容，0=是， 1=否。如果选是，year参数将被忽略
+      filter_like: filterLike, // 是否查询收藏的内容，0=是， 1=否。如果选是，year参数将被忽略
       location,
       language
     })
+  },
+  getItemInfo: (exhibitionId, language) => {
+    return fly.get('/api/exhibition/info', {
+      exhibition_id: exhibitionId,
+      language
+    })
   }
-  // getItemInfo: (exhibition_id, language) => {
-  //   return fly.get('/api/exhibition/info', {
-  //     params: {
-  //       exhibition_id,
-  //       language
-  //     }
-  //   })
-  // },
   // // 提交展览团体预约订单
   // submitGroupOrder: () => {
   //   return fly.post('/api/exhibition/group', {

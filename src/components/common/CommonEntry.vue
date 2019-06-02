@@ -75,6 +75,7 @@
     padding: 0 40rpx;
     &__title {
       font-size: 48rpx;
+      font-weight: bold;
     }
     &__arrow {
       display: flex;

@@ -38,18 +38,18 @@
     &__content {
       margin: 30rpx 0 60rpx;
       padding-left: 40rpx;
-      &__scroll {
-        display: flex;
-        white-space: nowrap;
-        flex-wrap: nowrap;
-        width: 100%;
-        height: 490rpx;
-        .item {
-          display: inline-block;
-          margin-right: 30rpx;
-          &:last-child {
-            margin-right: 40rpx;
-          }
+    }
+    &__scroll {
+      display: flex;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      width: 100%;
+      height: 330rpx;
+      .item {
+        display: inline-block;
+        margin-right: 40rpx;
+        &:last-child {
+          margin-right: 40rpx;
         }
       }
     }
