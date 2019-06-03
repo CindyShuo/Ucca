@@ -17,7 +17,7 @@
       />
     </div>
     <div class="history">
-      <common-entry title="历史展览" type="date" />
+      <common-entry title="历史展览" type="date" @dateChange="dateChange" />
       <common-exhibition-item
         v-for="(item, i) in historyList"
         :key="i"
@@ -29,13 +29,13 @@
 
 <script>
   import CommonEntry from '../../components/common/CommonEntry'
-  import CommonExhibitionItem from '../CommonExhibitionItem'
+  import CommonExhibitionItem from '../common/CommonExhibitionItem'
 
   export default {
     name: 'Exhibition',
     components: {
-      CommonExhibitionItem,
-      CommonEntry
+      CommonEntry,
+      CommonExhibitionItem
     },
     props: {
       type: {
@@ -70,6 +70,9 @@
               this.currentList = currentList
             }
           })
+      },
+      dateChange (date) {
+        this.getList(date)
       }
     },
     mounted () {
