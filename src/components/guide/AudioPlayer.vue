@@ -3,7 +3,7 @@
     <div id="myAudio">
       <div class="audio-player__controller">
         <div class="time-bar">
-          <div class="time-play" v-bind:style="{ transform: 'translateX(' + songState.progress + '%)' }"></div>
+          <div class="time-play" v-bind:style="{ transform: 'translateX(' + sliderProgress + '%)' }"></div>
         </div>
       </div>
       <div class="audio-player__content">
@@ -12,9 +12,9 @@
           <h2 class="right">《墨西哥城鸟瞰图，XIII》</h2>
         </div>
         <div class="state">
-          <image class="state_chose" bindtap="before" src="/static/images/audio/play-left.png"></image>
-          <image class="state_play" @click="playAndPause" :src="!isPlaying ? '/static/images/audio/pause.png' : '/static/images/audio/play.png'"></image>
-          <image class="state_chose" bindtap="next" src="/static/images/audio/play-right.png"></image>
+          <image class="state_chose" src="/static/images/audio/play-left.png"></image>
+          <image class="state_play" @click="playHandle" :src="!isPlay ? '/static/images/audio/pause.png' : '/static/images/audio/play.png'"></image>
+          <image class="state_chose" src="/static/images/audio/play-right.png"></image>
         </div>
       </div>
     </div>
@@ -27,29 +27,52 @@
     props: ['playAudio'],
     data () {
       return {
-        audioCtx: null,
-        isPlaying: true,
-        currentIndex: 0,
-        marginTop: 0,
-        lrcHeight: 200,
-        songState: {
-          progress: 10,
-          currentPosition: '00:00',
-          duration: '00:00',
-          datalist: [],
-          lry: []
+        innerAudioContext: null, // 音频对象
+        isPlay: false, // 是否播放
+        sliderProgress: 0 // 滑动控制条进度
+      }
+    },
+    watch: {
+      isPlay (value) {
+        this.innerAudioContext.offCanplay()
+        if (value) {
+          this.innerAudioContext.play()
+        } else {
+          this.innerAudioContext.pause()
         }
       }
     },
     methods: {
-      requestDataSong (songId) {},
-      playSong () {},
-      playAndPause () {},
-      // 上一首
-      before () {
-      },
-      // 下一首
-      next: function () {}
+      // 播放暂停
+      playHandle () {
+        this.isPlay = !this.isPlay
+      }
+    },
+    created () {
+      // 创建音频播放对象
+      this.innerAudioContext = wx.createInnerAudioContext()
+      // 设置音频播放来源
+      this.innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
+      // 音频进入可以播放状态
+      this.innerAudioContext.onCanplay(res => {
+        this.isPlay = true
+      })
+      // 音频自然播放结束事件
+      this.innerAudioContext.onEnded(res => {
+        // 当音频播放结束后，将滑动条滑到末尾
+        this.sliderProgress = 100
+        this.isPlay = false
+      })
+      // 音频播放中
+      this.innerAudioContext.onTimeUpdate(res => {
+        let duration = this.innerAudioContext.duration
+        let currentTime = this.innerAudioContext.currentTime
+        // 设置滑动条位置，小数计算不精确，转为整数计算
+        this.sliderProgress = (currentTime * 1000000) / (duration * 1000000) * 100
+      })
+    },
+    destroyed () {
+      this.innerAudioContext.destroy()
     }
   }
 </script>

@@ -18,7 +18,7 @@ const BaseApi = {
       exhibition_id: exhibitionId,
       language
     })
-  }
+  },
   // // 提交展览团体预约订单
   // submitGroupOrder: () => {
   //   return fly.post('/api/exhibition/group', {
@@ -26,14 +26,14 @@ const BaseApi = {
   //   })
   // },
   // // 获取展览门票列表
-  // getTicketList: (exhibition_id, language) => {
+  // getTicketList: (exhibitionId, language) => {
   //   return fly.get('/api/exhibition/ticket/list', {
   //     params: {
-  //       exhibition_id,
+  //       exhibition_id: exhibitionId,
   //       language
   //     }
   //   })
-  // },
+  // }
   // // 提交展览订单
   // submitOrder: () => {
   //   return fly.post('/api/exhibition/ticket/buy', {
@@ -83,7 +83,12 @@ const BaseApi = {
   // 提交会员订单
   // 获取用户信息
   // 获取展览活动票务清单
-
+  getTicketList: (type, language) => {
+    return fly.get('/api/tickets/list', {
+      type,
+      language
+    })
+  }
 }
 
 export default BaseApi
