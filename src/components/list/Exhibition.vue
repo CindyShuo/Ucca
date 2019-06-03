@@ -68,24 +68,28 @@
       getList (year, filterLike) {
         this.$http.getList('exhibition', year || '', filterLike)
           .then(res => {
-            if (filterLike === 0) {
-              this.collectionList = res.data.items || []
-            }
-            if (year) {
-              this.historyList = res.data.items || []
-            } else {
-              let futureList = []
-              let currentList = []
-              res.data.items.map(item => {
-                if (item.timeType === 'future') {
-                  futureList.push(item)
+            switch (filterLike) {
+              case 0: // 收藏列表
+                this.collectionList = res.data.items || []
+                break
+              case 1: // 购票列表
+                if (year) {
+                  this.historyList = res.data.items || []
+                } else {
+                  let futureList = []
+                  let currentList = []
+                  res.data.items.map(item => {
+                    if (item.timeType === 'future') {
+                      futureList.push(item)
+                    }
+                    if (item.timeType === 'current') {
+                      currentList.push(item)
+                    }
+                  })
+                  this.futureList = futureList
+                  this.currentList = currentList
                 }
-                if (item.timeType === 'current') {
-                  currentList.push(item)
-                }
-              })
-              this.futureList = futureList
-              this.currentList = currentList
+                break
             }
           })
       },
