@@ -114,7 +114,7 @@
   import CommonInfoTab from '../../components/common/CommonInfoTab'
   import CommonScrollHeader from '../../components/common/CommonScrollHeader'
 
-export default {
+  export default {
     name: 'ExhibitionInfo',
     components: {
       CommonScrollHeader,
@@ -163,6 +163,12 @@ export default {
       },
       tabHandle (val) {
         this.showContent = val
+      },
+      getItemInfo (id) {
+        this.$http.getItemInfo(id)
+          .then(res => {
+            console.log(res)
+          })
       },
       // 关闭弹框
       close () {
@@ -231,6 +237,10 @@ export default {
           this.confirmSuccessFlag = false
         }, 1000)
       }
+    },
+    onLoad (options) {
+      console.log(options.id)
+      this.getItemInfo(options.id)
     }
   }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class='user-exhibition'>
-    <common-entry title="我收藏的展览" titleFontStyle="font-weight: 700;" type="none" />
+    <common-entry title="我收藏的展览" type="none" />
     <div class='user-exhibition-ucca' @click="direction">
       <image class='user-exhibition-ucca__pic' src='/static/images/pic.png'></image>
       <div class='user-exhibition-ucca__p'>

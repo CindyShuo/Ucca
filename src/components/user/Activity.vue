@@ -1,6 +1,6 @@
 <template>
   <div class='user-activity'>
-    <common-entry title="我收藏的活动" titleFontStyle="font-weight: 700;" type="none" />
+    <common-entry title="我收藏的活动" type="none" />
     <div class='user-activity-unit' @click="direction">
       <div class='user-activity-unit__bg'></div>
       <image class='user-activity-unit__pic' src='/static/images/pic.png'></image>

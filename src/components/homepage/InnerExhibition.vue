@@ -39,9 +39,6 @@
     &__content {
       margin-top: 30rpx;
       padding-left: 40rpx;
-      .swipe {
-        height: 490rpx;
-      }
     }
     &__scroll {
       display: flex;
