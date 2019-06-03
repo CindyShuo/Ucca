@@ -7,7 +7,7 @@
     <div class="common-activity-item__content">
       <p class="time">2019.5.12-2019.5.28</p>
       <p class="title">影像艺术交流文明：人类的影像</p>
-      <div class="item-info">
+      <div class="item-info" v-if="!isCollection">
         <p class="price">￥138-￥188</p>
         <common-member />
         <p class="vip-price">￥100</p>
@@ -28,6 +28,10 @@
         default: () => {
           return {}
         }
+      },
+      isCollection: {
+        type: Boolean,
+        default: false
       }
     },
     methods: {

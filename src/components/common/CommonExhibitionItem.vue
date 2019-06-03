@@ -7,7 +7,7 @@
     <div class="common-exhibition-item__content">
       <p class="time">{{ item.open }}</p>
       <p class="title">{{ item.title }}</p>
-      <div class="item-info">
+      <div class="item-info" v-if="!isCollection">
         <p class="price">{{ item.price }}</p>
         <common-member />
         <p class="vip-price">{{ item.memberPrice }}</p>
@@ -28,6 +28,10 @@
         default: () => {
           return {}
         }
+      },
+      isCollection: {
+        type: Boolean,
+        default: false
       }
     },
     methods: {
