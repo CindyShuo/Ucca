@@ -8,7 +8,6 @@ fly.interceptors.request.use((request) => {
   request.headers['X-Tag'] = 'flyio'
   request.baseURL = 'http://47.94.198.193:19516/'
   // 打印出请求体
-  console.log(request.body)
   return request
 })
 

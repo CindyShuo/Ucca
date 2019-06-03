@@ -1,34 +1,46 @@
 <template>
   <div class="common-entry">
     <p class="common-entry__title" v-bind:style="titleFontStyle">{{ title }}</p>
-    <a class="common-entry__arrow" v-if="type === 'arrow'" @click="navigate">
-      <p v-if="description" class="description-content">共24件作品</p>
-      <image
-        src="/static/images/arrow.png"
-        mode="widthFix"
-        class="icon-arrow"
-      ></image>
+    <div class="blank"></div>
+    <a
+      class="common-entry__arrow"
+      @click="navigate"
+      v-if="type === 'arrow'"
+    >
+      <slot></slot>
+      <common-arrow
+        area-width="32rpx"
+        area-height="32rpx"
+        arrow-width="15rpx"
+        arrow-height="27rpx"
+      />
     </a>
     <picker
-      v-else-if="type === 'date'"
       mode="date"
       :value="defaultDate"
       fields="year"
-      start="2005-01-01"
-      end="2019-01-01"
-      bindchange="bindDateChange"
+      start="2009"
+      end="2019"
+      @change="bindDateChange"
+      v-if="type === 'date'"
     >
-      <div class="common-entry_picker">
-        {{ defaultDate }}
+      <div class="common-entry__date">
+        <p>{{ defaultDate }}</p>
+        <image
+          src='/static/images/arrow1.png'
+          class='select-arrow'
+        ></image>
       </div>
-      <image class='topic-icon1' src='/static/images/arrow1.png'></image>
     </picker>
   </div>
 </template>
 
 <script>
+  import CommonArrow from './CommonArrow'
+
   export default {
     name: 'CommonEntry',
+    components: { CommonArrow },
     props: {
       title: {
         type: String,
@@ -40,16 +52,13 @@
       titleFontStyle: {
         type: String
       },
-      description: {
-        type: String
-      },
       goLink: {
         type: String
       }
     },
     data () {
       return {
-        defaultDate: '2010'
+        defaultDate: 2019
       }
     },
     methods: {
@@ -57,10 +66,8 @@
         this.$emit('navigate')
       },
       bindDateChange (e) {
-        console.log(e.detail, 'e.detail')
-        this.setData({
-          defaultDate: e.detail.value
-        })
+        this.defaultDate = e.mp.detail.value
+        this.$emit('dateChange', e.mp.detail.value)
       }
     }
   }
@@ -69,13 +76,16 @@
 <style lang="less" scoped>
   .common-entry {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 68rpx;
     padding: 0 40rpx;
+    .blank {
+      flex-grow: 1;
+    }
     &__title {
       font-size: 48rpx;
       font-weight: bold;
+      color: #232323;
     }
     &__arrow {
       display: flex;
@@ -83,32 +93,20 @@
       align-items: center;
       height: 32rpx;
       line-height: 32rpx;
-      .description-content {
-        margin-right: 20rpx;
-        font-size: 24rpx;
-        line-height: 24rpx;
+    }
+    &__date {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 30rpx;
         color: #232323;
-        vertical-align: top;
       }
-      .icon-arrow {
-        width: 16rpx;
-        height: 28rpx;
+      .select-arrow {
+        display: block;
+        margin-left: 14rpx;
+        width: 20rpx;
+        height: 12rpx;
       }
     }
-  }
-  .common-entry_picker {
-    display: inline-block;
-    height: 28px;
-    line-height: 28px;
-    font-size: 14px;
-  }
-  .topic-icon1 {
-    position: relative;
-    top: -2rpx;
-    right: 0;
-    display: inline-block;
-    width: 20rpx;
-    height: 12rpx;
-    margin-left: 14rpx;
   }
 </style>

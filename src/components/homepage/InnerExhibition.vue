@@ -4,7 +4,7 @@
     <div class="inner-exhibition__content">
       <scroll-view scroll-x class="inner-exhibition__scroll">
         <div v-for="(item, i) in list" :key="i" class="item">
-          <common-exhibition-item :item="item" />
+          <inner-exhibition-item :item="item" />
         </div>
       </scroll-view>
     </div>
@@ -13,12 +13,12 @@
 
 <script>
   import CommonEntry from '../common/CommonEntry'
-  import CommonExhibitionItem from '../common/CommonExhibitionItem'
+  import InnerExhibitionItem from './InnerExhibitionItem'
   import store from '../../store'
 
   export default {
     name: 'InnerExhibition',
-    components: { CommonEntry, CommonExhibitionItem },
+    components: { CommonEntry, InnerExhibitionItem },
     props: {
       list: Array
     },

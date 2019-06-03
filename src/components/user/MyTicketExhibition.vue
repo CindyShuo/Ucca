@@ -31,6 +31,12 @@
       MyTicketItem
     },
     methods: {
+      getList () {
+        this.$http.getTicketList('exhibition')
+          .then(res => {
+            console.log(res)
+          })
+      },
       goPurchaseSuccess () {
         // 跳转 我的展览票
         wx.navigateTo({
@@ -43,6 +49,9 @@
           url: '/pages/reservation/main'
         })
       }
+    },
+    mounted () {
+      this.getList()
     }
   }
 </script>

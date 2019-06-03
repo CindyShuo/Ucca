@@ -189,8 +189,8 @@
       z-index: 100;
       width: 24rpx;
       height: 28rpx;
-      background-color: #fcfcfc;
-      box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
+      background-color: #f8f8f8;
+      box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,.05);
       border-radius: 50%;
     }
     &:before {

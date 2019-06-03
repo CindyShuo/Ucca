@@ -10,8 +10,8 @@
 <script>
   import CommonHeader from '../../components/common/CommonHeader'
   import CommonTab from '../../components/common/CommonTab'
-  import Exhibition from '../../components/purchaseTickets/Exhibition'
-  import Activity from '../../components/purchaseTickets/Activity'
+  import Exhibition from '../../components/list/Exhibition'
+  import Activity from '../../components/list/Activity'
   import store from '../../store'
 
   export default {

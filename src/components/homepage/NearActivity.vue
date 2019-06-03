@@ -4,7 +4,7 @@
     <div class="near-activity__content">
       <scroll-view scroll-x class="near-activity__scroll">
         <div v-for="(item, i) in list" :key="i" class="item">
-          <common-activity-item :item="item" />
+          <near-activity-item :item="item" />
         </div>
       </scroll-view>
     </div>
@@ -13,12 +13,12 @@
 
 <script>
   import CommonEntry from '../common/CommonEntry'
-  import CommonActivityItem from '../common/CommonActivityItem'
+  import NearActivityItem from './NearActivityItem'
   import store from '../../store'
 
   export default {
     name: 'NearActivity',
-    components: { CommonEntry, CommonActivityItem },
+    components: { CommonEntry, NearActivityItem },
     props: {
       list: Array
     },
@@ -36,7 +36,7 @@
 <style lang="less" scoped>
   .near-activity {
     &__content {
-      margin: 30rpx 0 60rpx;
+      margin-top: 30rpx;
       padding-left: 40rpx;
     }
     &__scroll {
@@ -44,7 +44,7 @@
       white-space: nowrap;
       flex-wrap: nowrap;
       width: 100%;
-      height: 330rpx;
+      height: 390rpx;
       .item {
         display: inline-block;
         margin-right: 40rpx;

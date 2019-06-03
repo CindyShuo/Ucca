@@ -32,6 +32,6 @@
 
 <style lang="less" scoped>
   .my-ticket {
-
+    background-color: #f8f8f8;
   }
 </style>

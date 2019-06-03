@@ -24,7 +24,7 @@
     </div>
     <div class="user-info__vip">
       <!-- 会员 -->
-      <div class="card is-vip" @click="goMyCard" v-if="false">
+      <div class="card is-vip" @click="goMyCard" v-if="isVip">
         <image
           src='/static/images/me-banner1.png'
           class='bg'
@@ -35,7 +35,7 @@
         </div>
       </div>
       <!-- 普通用户 -->
-      <div class="card is-normal" @click="goMemberBenefits">
+      <div class="card is-normal" @click="goMemberBenefits" v-else>
         <image
           src="/static/images/me-banner2.png"
           class="bg"
@@ -62,6 +62,11 @@
   export default {
     name: 'UserInfo',
     components: { CommonHeader, CommonArrow, CommonListItem },
+    data () {
+      return {
+        isVip: true
+      }
+    },
     methods: {
       goUserCenter () {
         // 跳个人中心，昵称等显示
