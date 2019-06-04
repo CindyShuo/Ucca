@@ -103,7 +103,17 @@
         this.step = true
       },
       nextStep () {
-
+        this.submitMemberBuy()
+      },
+      // 提交会员订单
+      submitMemberBuy () {
+        this.$http.getMemberBuy()
+          .then(res => {
+            console.log(res, 'res 提交会员订单')
+          })
+          .catch(e => {
+            console.log(e)
+          })
       }
     }
   }

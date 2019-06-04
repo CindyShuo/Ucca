@@ -69,7 +69,20 @@
         wx.navigateTo({
           url: '/pages/writeInformation/main'
         })
+      },
+      // 获取可以购买的会员列表
+      getList () {
+        this.$http.getProductList()
+          .then(res => {
+            console.log(res, 'res 获取可以购买的会员列表')
+          })
+          .catch(e => {
+            console.log(e)
+          })
       }
+    },
+    mounted () {
+      this.getList()
     }
   }
 </script>
