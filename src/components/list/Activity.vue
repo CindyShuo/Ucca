@@ -52,13 +52,14 @@
       getList (year, filterLike) {
         this.$http.getList('event', year, filterLike)
           .then(res => {
+            if (!res.data.items) return
             switch (filterLike) {
               case 0: // 收藏列表
-                this.collectionList = res.data.items || []
+                this.collectionList = res.data.items
                 break
               case 1: // 购票列表
                 if (year) {
-                  this.historyList = res.data.items || []
+                  this.historyList = res.data.items
                 } else {
                   let futureList = []
                   let currentList = []

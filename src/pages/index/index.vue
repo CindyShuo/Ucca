@@ -27,7 +27,7 @@
         isTop: true,
         banner: '',
         location: '',
-        bannerList: '',
+        bannerList: [],
         exhibitionList: [],
         activityList: [],
         info: {}
@@ -37,9 +37,8 @@
       getHomePage () {
         this.$http.getHomePage()
           .then(res => {
-            console.log(res)
             this.banner = res.data.background
-            this.location = res.data.locations[0]
+            this.location = res.data.locations ? res.data.locations[0] : ''
             this.bannerList = res.data.banner
             this.exhibitionList = res.data.exhibitions
             this.activityList = res.data.events
