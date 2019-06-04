@@ -88,6 +88,70 @@ const BaseApi = {
       type,
       language
     })
+  },
+  // 获取会员权益信息
+  getMemberInfo: (userId, nonce, timestamp, language) => {
+    return fly.get('/api/member/info', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      language
+    })
+  },
+  // 获取可以购买的会员列表
+  getProductList: (userId, nonce, timestamp, language) => {
+    return fly.get('/api/member/product/list', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      language
+    })
+  },
+  // 验证会员身份
+  getMemberVerify: (userId, nonce, timestamp, name, birthday, phone, smsCode) => {
+    return fly.get('/api/member/verify', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      name,
+      birthday,
+      phone,
+      sms_code: smsCode
+    })
+  },
+  // 提交会员订单
+  getMemberBuy: (userId, nonce, timestamp, productId, name, phone, birthday, secondName, secondPhone, secondBirthday) => {
+    return fly.post('/api/member/buy', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      product_id: productId,
+      name,
+      phone,
+      birthday,
+      second_name: secondName,
+      second_phone: secondPhone,
+      second_birthday: secondBirthday
+    })
+  },
+  // 获取用户信息
+  getUserInfo: (userId, nonce, timestamp, language) => {
+    return fly.get('/api/user/info', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      language
+    })
+  },
+  // 获取展览活动票务清单
+  getTicketsList: (userId, nonce, timestamp, type, language) => {
+    return fly.get('/api.tickets/list', {
+      user_id: userId,
+      nonce,
+      timestamp,
+      type,
+      language
+    })
   }
 }
 

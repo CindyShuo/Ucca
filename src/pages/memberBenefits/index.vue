@@ -146,12 +146,24 @@
       // 切换展示内容介绍
       switchTicket (val) {
         this.showTicketFlag = val
+      },
+      getMember () {
+        this.$http.getMemberInfo()
+          .then(res => {
+            console.log(res, 'res 获取会员权益信息')
+          })
+          .catch(e => {
+            console.log(e)
+          })
       }
     },
     onLoad (option) {
       if (option.handle) {
         this.handle = Boolean(option.handle)
       }
+    },
+    mounted () {
+      this.getMember()
     }
   }
 </script>

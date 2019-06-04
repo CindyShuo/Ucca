@@ -59,7 +59,7 @@
           <common-order-item :orderList="orderList" flag="buy"></common-order-item>
           <choose-activity></choose-activity>
         </div>
-        <choose-ticket buyType="active" @close="hideModal" />
+        <choose-ticket buyType="active" @close="close" />
       </div>
     </common-picker>
   </scroll-view>
@@ -152,8 +152,11 @@ export default {
         }, 100)
       },
       isBuyTicket (val) {
-        // this[val.type] = val.buyTicket
-        this.chooseGroupAppointment(val.type)
+        this[val.type] = val.buyTicket
+        // this.chooseGroupAppointment(val.type)
+      },
+      close () {
+        this.participate = false
       }
     },
     mounted () {

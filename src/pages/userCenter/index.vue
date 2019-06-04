@@ -36,7 +36,22 @@
 
   export default {
     name: 'UserCenter',
-    components: { CommonHeader }
+    components: { CommonHeader },
+    methods: {
+      // 获取用户信息
+      getUserInfo () {
+        this.$http.getUserInfo()
+          .then(res => {
+            console.log(res, 'res 获取用户信息')
+          })
+          .catch(e => {
+            console.log(e)
+          })
+      }
+    },
+    mounted () {
+      this.getUserInfo()
+    }
   }
 </script>
 

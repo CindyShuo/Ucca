@@ -97,7 +97,20 @@
         wx.navigateTo({
           url: '/pages/myCollection/main'
         })
+      },
+      // 验证会员身份
+      getVerify () {
+        this.$http.getMemberVerify()
+          .then(res => {
+            console.log(res, 'res 验证会员身份')
+          })
+          .catch(e => {
+            console.log(e)
+          })
       }
+    },
+    mounted () {
+      this.getVerify()
     }
   }
 </script>
