@@ -112,7 +112,7 @@
             console.log(res, 'res 提交会员订单')
           })
           .catch(e => {
-            console.log(e)
+            console.log(e, 'e 提交会员订单')
           })
       }
     }
