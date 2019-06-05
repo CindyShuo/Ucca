@@ -28,7 +28,7 @@
       </div>
       <div class='choice-bg choice-bg3'>10:00-12:00</div>
     </div>
-    <a class='reservation-index__button'>确认预约</a>
+    <a class='reservation-index__button'><span>确认预约</span></a>
   </div>
 </template>
 
@@ -241,10 +241,18 @@
       height: 100rpx;
       line-height: 100rpx;
       width: 100%;
-      background: #000;
-      font-size: 30rpx;
-      color: #fff;
       text-align: center;
+      border: 1rpx solid rgba(0, 0, 0, 0.1);
+      span {
+        padding: 0 40rpx;
+        display: inline-block;
+        font-size: 28rpx;
+        color: #fff;
+        height: 64rpx;
+        line-height: 64rpx;
+        background: #232323;
+        border-radius: 64rpx;
+      }
     }
   }
 </style>

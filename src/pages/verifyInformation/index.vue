@@ -11,7 +11,7 @@
         <a class="send">发送验证码</a>
       </div>
     </div>
-    <a class="verify-info__btn" @click="verify" v-if="!verifySuccess && !verifyFail">立即验证</a>
+    <a class="verify-info__btn" @click="verify" v-if="!verifySuccess && !verifyFail"><span>立即验证</span></a>
     <div v-if="verifySuccess && !verifyFail">
       <image class="verify-info__img" src="/static/images/ok.png"></image>
       <p class="verify-info__content">验证成功</p>
@@ -117,10 +117,20 @@
       width: 100%;
       height: 100rpx;
       line-height: 100rpx;
-      font-size: 30rpx;
       text-align: center;
-      color: #FFF;
-      background: #232323;
+      border: 1rpx solid rgba(0, 0, 0, 0.1);
+      span {
+        margin: 20rpx auto;
+        display: inline-block;
+        width: 240rpx;
+        height: 64rpx;
+        line-height: 64rpx;
+        font-size: 28rpx;
+        color: #FFF;
+        text-align: center;
+        background: #232323;
+        border-radius: 64rpx;
+      }
     }
     &__img {
       margin: 200rpx auto 0;
@@ -148,11 +158,12 @@
       transform: translateX(-50%);
       padding: 0 80rpx;
       display: block;
-      height: 80rpx;
-      line-height: 80rpx;
-      font-size: 30rpx;
+      height: 64rpx;
+      line-height: 64rpx;
+      font-size: 28rpx;
       text-align: center;
       border: 2px solid #232323;
+      border-radius: 62rpx;
     }
   }
 </style>

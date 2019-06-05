@@ -63,8 +63,7 @@
     </div>
     <div class="member-benefits__footer">
       <div class="left" @click="goVerify">
-        <span class="already">已是会员？</span>
-        <span class="confirm">立即验证</span>
+        验证会员
       </div>
       <a class="button" @click="chooseHandle">立即办理会员</a>
     </div>
@@ -256,42 +255,34 @@
       left: 0;
       bottom: 0;
       display: flex;
+      padding: 20rpx 30rpx;
       width: 100%;
       height: 100rpx;
-      background: #232323;
+      line-height: 100rpx;
+      border-top: 1rpx solid rgba(0, 0, 0, 0.1);
       .left {
         position: relative;
-        padding-top: 16rpx;
         flex: 1;
-        line-height: 100rpx;
+        margin-right: 30rpx;
+        height: 64rpx;
+        line-height: 64rpx;
         text-align: center;
-        .already {
-          position: absolute;
-          top: 14rpx;
-          left: 74rpx;
-          width: 90rpx;
-          font-size: 30rpx;
-          line-height: 30rpx;
-          color: #fff;
-          font-weight: 400;
-        }
-        .confirm {
-          font-size: 20rpx;
-          line-height: 20rpx;
-          color: #FFF;
-          opacity: 0.6;
-        }
+        font-size: 28rpx;
+        color: #fff;
+        border-radius: 64rpx;
+        background: #232323;
       }
       .button {
         display: block;
-        width: 520rpx;
-        height: 100rpx;
+        width: 480rpx;
+        height: 64rpx;
         background: #ED3024;
-        line-height: 100rpx;
-        font-size: 30rpx;
+        line-height: 64rpx;
+        font-size: 28rpx;
         font-weight: bold;
         color: #fff;
         text-align: center;
+        border-radius: 64rpx;
       }
     }
   }

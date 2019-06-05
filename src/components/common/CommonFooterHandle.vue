@@ -1,26 +1,28 @@
 <template>
   <div class='common-footer-handle'>
     <div class='common-footer-handle__div' v-bind:style="[type? 'width: 270rpx': '']">
-      <navigator url="/pages/index/main" open-type="switchTab" class="common-footer-handle__a">
-        <image class='div1' src='/static/images/footerHandle/details-icon1.png'></image>
-      </navigator>
-      <a class="common-footer-handle__a">
-        <image class='div1' src='/static/images/footerHandle/details-icon2.png'></image>
-      </a>
-      <a @click="showShareBox" class="common-footer-handle__a">
-        <image class='div1' src='/static/images/footerHandle/details-icon3.png'></image>
-      </a>
+      <common-home-btn></common-home-btn>
+      <common-collection-btn></common-collection-btn>
+      <common-share-btn></common-share-btn>
     </div>
-    <div @click="groupAppointment" class='common-footer-handle__div common-footer-handle__div2' v-if="!type">团体预约<div class='content'>20人以上</div></div>
-    <div @click="buyTicket" class='common-footer-handle__div common-footer-handle__div3' v-if="!type">立即购票</div>
-    <div @click="participate" class='common-footer-handle__div common-footer-handle__div3' style="width: 480rpx" v-else-if="type">参与活动</div>
+    <div @click="groupAppointment" class='common-footer-handle__div2' v-if="!type">团体预约</div>
+    <div @click="buyTicket" class='common-footer-handle__div3' v-if="!type">立即购票</div>
+    <div @click="participate" class='common-footer-handle__div3' style="width: 450rpx" v-else-if="type">参与活动</div>
   </div>
 </template>
 
 <script>
+  import CommonHomeBtn from './CommonHomeBtn'
+  import CommonCollectionBtn from './CommonCollectionBtn'
+  import CommonShareBtn from './CommonShareBtn'
   export default {
     name: 'CommonFooterHandle',
     props: ['type'],
+    components: {
+      CommonHomeBtn,
+      CommonCollectionBtn,
+      CommonShareBtn
+    },
     data () {
       return {
         isGroupAppointment: false,
@@ -68,7 +70,7 @@
       float: left;
       width: 250rpx;
       height: 100%;
-      border-right: 1rpx solid rgba(0, 0, 0, 0.1);
+      // border-right: 1rpx solid rgba(0, 0, 0, 0.1);
       text-align: center;
     }
     &__a {
@@ -81,9 +83,15 @@
       }
     }
     &__div2 {
-      font-size: 30rpx;
-      line-height: 80rpx;
       position: relative;
+      margin: 20rpx 30rpx 0 0;
+      padding: 0 50rpx;
+      font-size: 28rpx;
+      height: 64rpx;
+      line-height: 64rpx;
+      text-align: center;
+      border-radius: 64rpx;
+      border: 1rpx solid rgba(0, 0, 0, 0.2);
       .content {
         position: absolute;
         font-size: 20rpx;
@@ -93,10 +101,15 @@
       }
     }
     &__div3 {
+      margin: 20rpx 30rpx 20rpx 0rpx;
+      padding: 0 50rpx;
       background: #000;
       color: #fff;
-      font-size: 30rpx;
-      line-height: 100rpx;
+      font-size: 28rpx;
+      height: 64rpx;
+      line-height: 64rpx;
+      text-align: center;
+      border-radius: 64rpx;
     }
   }
 </style>

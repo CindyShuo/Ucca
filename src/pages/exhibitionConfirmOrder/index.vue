@@ -217,14 +217,16 @@
           }
         }
         .button {
+          margin: 20rpx 30rpx 20rpx 0;
           display: block;
           width: 240rpx;
-          height: 100rpx;
+          height: 64rpx;
           background-color: #000;
-          line-height: 100rpx;
-          font-size: 30rpx;
+          line-height: 64rpx;
+          font-size: 28rpx;
           color:#fff;
           text-align: center;
+          border-radius: 64rpx;
         }
       }
     }

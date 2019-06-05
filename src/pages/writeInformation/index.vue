@@ -64,7 +64,7 @@
       </div>
     </div>
     <p class="write-information__tip" v-if="step">该会员已是UCCA会员，会员有效期将延长一年</p>
-    <a class="write-information__btn" v-if="!step" @click="firstStep">下一步</a>
+    <a class="write-information__btn" v-if="!step" @click="firstStep"><span>下一步</span></a>
     <div class="write-information__footer" v-else-if="step">
       <div class="choose-check">
         <checkbox checked color="#232323" class="box" />同意<span>《UCCA用户协议》</span>
@@ -74,7 +74,7 @@
           <span class="title">合计</span>
           <span class="total">{{ orderList.money }}</span>
         </div>
-        <a class="button" @click="nextStep">下一步</a>
+        <a class="button" @click="nextStep"><span>下一步</span></a>
       </div>
     </div>
   </div>
@@ -250,10 +250,19 @@
       width: 100%;
       height: 100rpx;
       line-height: 100rpx;
-      font-size: 30rpx;
       text-align: center;
-      color: #FFF;
-      background: #232323;
+      border: 1rpx solid rgba(0, 0, 0, 0.1);
+      span {
+        display: inline-block;
+        padding: 0 40rpx;
+        font-size: 28rpx;
+        height: 64rpx;
+        line-height: 64rpx;
+        color: #FFF;
+        text-align: center;
+        background: #232323;
+        border-radius: 64rpx;
+      }
     }
     &__footer {
       position: absolute;
@@ -300,11 +309,19 @@
           display: block;
           width: 240rpx;
           height: 100rpx;
-          background-color: #000;
           line-height: 100rpx;
-          font-size: 30rpx;
-          color:#fff;
           text-align: center;
+          span {
+            display: inline-block;
+            padding: 0 40rpx;
+            font-size: 28rpx;
+            color:#fff;
+            height: 64rpx;
+            line-height: 64rpx;
+            background-color: #232323;
+            text-align: center;
+            border-radius: 64rpx;
+          }
         }
       }
     }

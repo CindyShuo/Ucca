@@ -225,19 +225,22 @@
       position: fixed;
       bottom: 0;
       left: 0;
+      padding: 20rpx 30rpx;
       width: 100%;
       border-top: 1px solid rgba(0,0,0,0.1);
       a {
         display: inline-block;
-        width: 50%;
-        height: 98rpx;
-        font-size: 30rpx;
-        line-height: 98rpx;
+        width: 46%;
+        height: 64rpx;
+        font-size: 28rpx;
+        line-height: 62rpx;
         color: #232323;
         text-align: center;
         background: #fff;
+        border: 1rpx solid rgba(0, 0, 0, 0.2);
+        border-radius: 64rpx;
         &:first-child {
-          border-right: 1px solid #D4D4D4;
+          margin-right: 50rpx;
         }
       }
     }

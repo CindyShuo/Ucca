@@ -179,14 +179,15 @@
     }
     &__button {
       position: fixed;
-      bottom: 0;
-      height: 100rpx;
-      line-height: 100rpx;
-      width: 100%;
+      bottom: 30rpx;
+      padding: 0 40rpx;
+      height: 64rpx;
+      line-height: 64rpx;
       background: #7b7b7b;
-      font-size: 30rpx;
+      font-size: 28rpx;
       color: #fff;
       text-align: center;
+      border-radius: 64rpx;
     }
     &__button-down {
       background: #000;
@@ -208,11 +209,12 @@
       bottom: 40rpx;
       left: 265rpx;
       width: 220rpx;
-      height: 80rpx;
-      border: 1rpx solid #000;
+      height: 64rpx;
+      border: 1rpx solid #232323;
       text-align: center;
-      font-size: 30rpx;
-      line-height: 80rpx;
+      font-size: 28rpx;
+      line-height: 62rpx;
+      border-radius: 64rpx;
     }
   }
 </style>
