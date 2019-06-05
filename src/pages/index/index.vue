@@ -58,6 +58,10 @@
     },
     mounted () {
       this.getHomePage()
+      this.$http.orderTicket()
+        .then(res => {
+          console.log(res)
+        })
     }
   }
 </script>

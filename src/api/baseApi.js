@@ -2,19 +2,19 @@ import fly from '../config/fly'
 
 const BaseApi = {
   getHomePage: () => {
-    return fly.get('/api/homepage')
+    return fly.post('/api/homepage')
   },
-  getList: (type, year, filterLike, location, language) => {
-    return fly.get('/api/exhibition/list', {
+  getList: (type, filterLike, year, location, language) => {
+    return fly.post('/api/exhibition/list', {
       type, // exhibition = 展览, event = 活动
-      year, // 如果不带年份，返回首页所需内容，如果带年份，返回当年的数据
       filter_like: filterLike, // 是否查询收藏的内容，0=是， 1=否。如果选是，year参数将被忽略
+      year, // 如果不带年份，返回首页所需内容，如果带年份，返回当年的数据
       location,
       language
     })
   },
   getItemInfo: (exhibitionId, language) => {
-    return fly.get('/api/exhibition/info', {
+    return fly.post('/api/exhibition/info', {
       exhibition_id: exhibitionId,
       language
     })
@@ -84,14 +84,14 @@ const BaseApi = {
   // 获取用户信息
   // 获取展览活动票务清单
   getTicketList: (type, language) => {
-    return fly.get('/api/tickets/list', {
+    return fly.post('/api/tickets/list', {
       type,
       language
     })
   },
   // 获取会员权益信息
   getMemberInfo: (userId, nonce, timestamp, language) => {
-    return fly.get('/api/member/info', {
+    return fly.post('/api/member/info', {
       user_id: userId,
       nonce,
       timestamp,
@@ -100,7 +100,7 @@ const BaseApi = {
   },
   // 获取可以购买的会员列表
   getProductList: (userId, nonce, timestamp, language) => {
-    return fly.get('/api/member/product/list', {
+    return fly.post('/api/member/product/list', {
       user_id: userId,
       nonce,
       timestamp,
@@ -109,7 +109,7 @@ const BaseApi = {
   },
   // 验证会员身份
   getMemberVerify: (userId, nonce, timestamp, name, birthday, phone, smsCode) => {
-    return fly.get('/api/member/verify', {
+    return fly.post('/api/member/verify', {
       user_id: userId,
       nonce,
       timestamp,
@@ -136,7 +136,7 @@ const BaseApi = {
   },
   // 获取用户信息
   getUserInfo: (userId, nonce, timestamp, language) => {
-    return fly.get('/api/user/info', {
+    return fly.post('/api/user/info', {
       user_id: userId,
       nonce,
       timestamp,
@@ -145,12 +145,22 @@ const BaseApi = {
   },
   // 获取展览活动票务清单
   getTicketsList: (userId, nonce, timestamp, type, language) => {
-    return fly.get('/api.tickets/list', {
+    return fly.post('/api/tickets/list', {
       user_id: userId,
       nonce,
       timestamp,
       type,
       language
+    })
+  },
+  // test
+  orderTicket: () => {
+    return fly.post('/api/order/ticket', {
+      count: 1,
+      price: 1,
+      ticketid: '5cf65f2ca26d2072cbf55a37',
+      usermobile: '18310930019',
+      username: '123'
     })
   }
 }
