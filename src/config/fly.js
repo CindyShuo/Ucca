@@ -1,5 +1,5 @@
 import Fly from 'flyio/dist/npm/wx'
-import qs from 'qs'
+// import qs from 'qs'
 import * as CONFIG from './settings'
 
 let fly = new Fly()
@@ -11,7 +11,7 @@ fly.interceptors.request.use((request) => {
   request.baseURL = CONFIG.BASE_URL
   return formatBody(request.url, request.body)
     .then(res => {
-      request.body = res
+      request.url = res
       return request
     })
 })
@@ -85,9 +85,10 @@ const formatBody = (api, request) => {
       let requestUrl = request ? JSON.stringify(request) : ''
       let CryptoJS = require('crypto-js')
       let url = api + '?' + configUrl + requestUrl
+      console.log(url)
       let hash = CryptoJS.HmacSHA1(url, res.token)
       let sign64 = encodeURIComponent(CryptoJS.enc.Base64.stringify(hash))
-      let requestBody = configUrl + '&' + qs.stringify(request) + '&sign=' + sign64
+      let requestBody = api + '?' + configUrl + '&sign=' + sign64
       resolve(requestBody)
     })
   })

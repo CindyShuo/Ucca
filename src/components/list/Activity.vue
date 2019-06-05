@@ -49,8 +49,8 @@
       }
     },
     methods: {
-      getList (year, filterLike) {
-        this.$http.getList('event', year, filterLike)
+      getList (filterLike, year) {
+        this.$http.getList('event', filterLike, year)
           .then(res => {
             if (!res.data.items) return
             switch (filterLike) {
@@ -84,10 +84,10 @@
     },
     mounted () {
       if (this.isCollection) {
-        this.getList('', 0)
+        this.getList(0)
       } else {
-        this.getList('', 1)
-        this.getList('2019', 1)
+        this.getList(1)
+        this.getList(1, 2019)
       }
     }
   }
