@@ -12,11 +12,13 @@
     <div class="write-information__information" v-if="!step">
       <h3>填写你的会员信息</h3>
       <div class="write">
-        <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期" />
-        <input type="text" style="margin: 80rpx 0;" placeholder="手机号" />
-        <input type="text" placeholder="验证码" />
-        <a class="send">发送验证码</a>
+        <div>
+          <input type="text" placeholder="姓名" v-model="formData.memberName1" />
+        </div>
+        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期" v-model="formData.dateBirth1" />
+        <input type="number" style="margin: 80rpx 0;" placeholder="手机号" v-model="formData.number1" />
+        <input type="text" placeholder="验证码" v-model="formData.verifyCode1" />
+        <a class="send" :style="sendCode1 ? 'color: #ED3024;opacity: 1' : ''">发送验证码</a>
       </div>
     </div>
     <div class="write-information__information" v-else-if="step">
@@ -24,26 +26,26 @@
       <div class="confirm">
         <div>
           <span>姓名</span>
-          <p>曾庆芬</p>
+          <p>{{ formData.memberName1 }}</p>
         </div>
         <div style="margin: 40rpx 0;">
           <span>出生日期</span>
-          <p>1993/07/11</p>
+          <p>{{ formData.dateBirth1 }}</p>
         </div>
         <div>
           <span>手机号</span>
-          <p>15521328933</p>
+          <p>{{ formData.number1 }}</p>
         </div>
       </div>
     </div>
     <div class="write-information__information" style="padding-top: 0" v-if="!step">
       <h3>填写同办人的会员信息</h3>
       <div class="write">
-        <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期（非必填）" />
-        <input type="text" placeholder="手机号" style="margin: 80rpx 0;" />
-        <input type="text" placeholder="验证码" />
-        <a class="send">发送验证码</a>
+        <input type="text" placeholder="姓名" v-model="formData.memberName2" />
+        <input type="text" style="margin-top: 80rpx;" placeholder="出生日期（非必填）" v-model="formData.dateBirth2" />
+        <input type="number" placeholder="手机号" style="margin: 80rpx 0;" v-model="formData.number2" />
+        <input type="text" placeholder="验证码" v-model="formData.verifyCode2" />
+        <a class="send" :style="sendCode2 ? 'color: #ED3024;opacity: 1' : ''">发送验证码</a>
       </div>
     </div>
     <div class="write-information__information" style="padding: 0 40rpx;" v-else-if="step">
@@ -51,15 +53,15 @@
       <div class="confirm">
         <div>
           <span>姓名</span>
-          <p>曾庆芬</p>
+          <p>{{ formData.memberName2 }}</p>
         </div>
         <div style="margin: 40rpx 0;">
           <span>出生日期</span>
-          <p>1993/07/11</p>
+          <p>{{ formData.dateBirth2 }}</p>
         </div>
         <div>
           <span>手机号</span>
-          <p>15521328933</p>
+          <p>{{ formData.number2 }}</p>
         </div>
       </div>
     </div>
@@ -95,6 +97,30 @@
           type: '活动普通票',
           money: '￥138',
           number: '1张'
+        },
+        formData: {
+          memberName1: '',
+          memberName2: '',
+          dateBirth1: '',
+          dateBirth2: '',
+          number1: null,
+          number2: null,
+          verifyCode1: null,
+          verifyCode2: null
+        },
+        sendCode1: false,
+        sendCode2: false
+      }
+    },
+    watch: {
+      'formData.number1' (val) {
+        if (val.length) {
+          this.sendCode1 = true
+        }
+      },
+      'formData.number2' (val) {
+        if (val.length) {
+          this.sendCode2 = true
         }
       }
     },
@@ -210,7 +236,8 @@
           font-size: 28rpx;
           font-weight: bold;
           line-height: 40rpx;
-          color: #ED3024;
+          color: #232323;
+          opacity: 0.6;
         }
       }
       .confirm {

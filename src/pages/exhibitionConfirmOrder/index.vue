@@ -16,10 +16,10 @@
     <div class="exhibition-confirm-order__information">
       <h3>填写你的信息</h3>
       <div class="write">
-        <input type="text" placeholder="姓名" />
-        <input type="text" bindinput="inputGetMobile" placeholder="手机号" />
-        <input type="text" placeholder="验证码" />
-        <a class="send">发送验证码</a>
+        <input type="text" placeholder="姓名" v-model="formData.name" />
+        <input type="text" bindinput="inputGetMobile" placeholder="手机号" v-model="formData.phoneNumber" />
+        <input type="text" placeholder="验证码" v-model="formData.verifyCode" />
+        <a class="send" :style="sendCode ? 'color: #ED3024;opacity: 1' : ''">发送验证码</a>
       </div>
     </div>
     <div class="exhibition-confirm-order__footer">
@@ -53,8 +53,18 @@
           money: '￥138',
           number: '1张'
         },
-        form: {
-          mobile: null
+        formData: {
+          name: '',
+          phoneNumber: null,
+          verifyCode: null
+        },
+        sendCode: false // 当手机号有值时发送短信按钮颜色为红色
+      }
+    },
+    watch: {
+      'formData.phoneNumber' (val) {
+        if (val.length) {
+          this.sendCode = true
         }
       }
     },
@@ -171,7 +181,8 @@
           font-size: 28rpx;
           font-weight: bold;
           line-height: 40rpx;
-          color: #ED3024;
+          color: #232323;
+          opacity: 0.6;
         }
       }
     }

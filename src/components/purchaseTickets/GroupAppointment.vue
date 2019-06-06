@@ -14,24 +14,24 @@
       </div>
       <div>
         <div class='list'>联系人
-          <input class='list-span' placeholder="请输入联系人姓名" />
+          <input class='list-span' placeholder="请输入联系人姓名" v-model="formData.name" />
         </div>
         <div class='list'>联系电话
-          <input class='list-span' placeholder="请输入联系人姓名" />
+          <input class='list-span' placeholder="请输入联系人电话" v-model="formData.phoneNumber" />
         </div>
         <div class='list'>参观人数
-          <input class='list-span' placeholder="请输入您的联系电话" />
+          <input class='list-span' placeholder="请输入参观人数" v-model="formData.number" />
         </div>
         <div class='list'>导览服务
-          <div class='list-kuang' v-bind:class="{ 'list-kuang-down': isOrNoNeed === 1 }" @click="isOrNoNeed = 1">需要</div>
-          <div class='list-kuang' v-bind:class="{ 'list-kuang-down': isOrNoNeed === 0 }" @click="isOrNoNeed = 0">不需要</div>
+          <div class='list-kuang' v-bind:class="{ 'list-kuang-down': formData.isOrNoNeed === 1 }" @click="formData.isOrNoNeed = 1">需要</div>
+          <div class='list-kuang' v-bind:class="{ 'list-kuang-down': formData.isOrNoNeed === 0 }" @click="formData.isOrNoNeed = 0">不需要</div>
         </div>
         <div class='list'>参观日期
           <image class='win-icon' src='/static/images/arrow.png'></image>
           <div class='list-span' @click="chooseSelectData">请选择参观日期</div>
         </div>
         <div class='list list1'>备注(非必填)
-          <input class='list1-span' placeholder="您有什么想说的">
+          <input class='list1-span' placeholder="您有什么想说的" v-model="formData.remark">
         </div>
       </div>
     </div>
@@ -49,10 +49,16 @@
     components: {InCalendar},
     data () {
       return {
-        isOrNoNeed: 1,
         selectData: false, // 二次确认购买团票
         confirmSuccess: false, // 提交成功
-        animationData: {}
+        animationData: {},
+        formData: {
+          name: '',
+          phoneNumber: null,
+          number: null,
+          isOrNoNeed: 1,
+          remark: '' // 备注
+        }
       }
     },
     methods: {

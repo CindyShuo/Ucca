@@ -5,10 +5,10 @@
       <h3>验证会员信息</h3>
       <div class="write">
         <input type="text" placeholder="姓名" />
-        <input type="text" style="margin-top:80rpx;" placeholder="出生日期" />
-        <input type="text" style="margin: 80rpx 0;" placeholder="手机号" />
-        <input type="text" placeholder="验证码" />
-        <a class="send">发送验证码</a>
+        <input type="text" style="margin-top:80rpx;" placeholder="出生日期" v-model="formData.name" />
+        <input type="text" style="margin: 80rpx 0;" placeholder="手机号" v-model="formData.phoneNumber" />
+        <input type="text" placeholder="验证码" v-model="formData.verifyCode" />
+        <a class="send" :style="sendCode ? 'color: #ED3024;opacity: 1' : ''">发送验证码</a>
       </div>
     </div>
     <a class="verify-info__btn" @click="verify" v-if="!verifySuccess && !verifyFail"><span>立即验证</span></a>
@@ -36,7 +36,20 @@
     data () {
       return {
         verifySuccess: false, // 验证成功
-        verifyFail: false // 验证失败
+        verifyFail: false, // 验证失败
+        formData: {
+          name: '',
+          phoneNumber: null,
+          verifyCode: null
+        },
+        sendCode: false // 当手机号有值时发送短信按钮颜色为红色
+      }
+    },
+    watch: {
+      'formData.phoneNumber' (val) {
+        if (val.length) {
+          this.sendCode = true
+        }
       }
     },
     methods: {
@@ -86,7 +99,8 @@
           font-size: 28rpx;
           font-weight: bold;
           line-height: 40rpx;
-          color: #ED3024;
+          color: #232323;
+          opacity: 0.6;
         }
       }
       .confirm {
