@@ -1,8 +1,14 @@
 import fly from '../config/fly'
 
+let location = 'BJ'
+let language = 'CN'
+
 const BaseApi = {
   getHomePage: () => {
-    return fly.post('/api/homepage')
+    return fly.post('/api/homepage', {
+      location: location,
+      language: language
+    })
   },
   getList: (type, filterLike, year, location, language) => {
     return fly.post('/api/exhibition/list', {
@@ -19,12 +25,18 @@ const BaseApi = {
       language
     })
   },
-  // // 提交展览团体预约订单
-  // submitGroupOrder: () => {
-  //   return fly.post('/api/exhibition/group', {
-
-  //   })
-  // },
+  // 提交展览团体预约订单
+  submitGroupOrder: (exhibitionID, name, phone, amount, guide, date, memo) => {
+    return fly.post('/api/exhibition/group', {
+      exhibitionID,
+      name,
+      phone,
+      amount,
+      guide,
+      date,
+      memo
+    })
+  },
   // // 获取展览门票列表
   // getTicketList: (exhibitionId, language) => {
   //   return fly.get('/api/exhibition/ticket/list', {
@@ -57,12 +69,12 @@ const BaseApi = {
   //     language
   //   })
   // },
-  // // 收藏展览和活动
-  // submitLike: (exhibition_id) => {
-  //   return fly.post('/api/exhibition/like', {
-  //     exhibition_id
-  //   })
-  // },
+  // 收藏展览和活动
+  submitLike: (exhibitionID) => {
+    return fly.post('/api/exhibition/like', {
+      exhibitionID
+    })
+  },
   // // 获取展览和活动的订单详情
   // getOrderInfo: (order_number, language) => {
   //   return fly.get('/api/order/status', {
@@ -74,7 +86,19 @@ const BaseApi = {
   // }
 
   // 获取展厅信息
+  getHallInfo: () => {
+    return fly.post('/api/hall/info', {
+      location,
+      language
+    })
+  },
   // 获取展览活动列表
+  getHallArtwork: (hallID) => {
+    return fly.post('/api/hall/artwork', {
+      language,
+      hallID
+    })
+  },
   // 获取作品详情
 
   // 获取会员权益信息
@@ -161,6 +185,12 @@ const BaseApi = {
       ticketid: '5cf65f2ca26d2072cbf55a37',
       usermobile: '18310930019',
       username: '123'
+    })
+  },
+  // 发送验证短信
+  sendSms: (phone) => {
+    return fly.post('/api/sendsms', {
+      phone
     })
   }
 }

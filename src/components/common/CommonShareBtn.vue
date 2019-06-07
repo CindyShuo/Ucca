@@ -1,8 +1,7 @@
 <template>
-  <div class="common-share-btn">
-    <a @click="showShareBox" class="common-share-btn__a">
-      <image class='div1' src='/static/images/footerHandle/details-icon3.png'></image>
-    </a>
+  <div class="common-share-btn" @click="showShareBox">
+    <image class='button' src='/static/images/footerHandle/share.png'></image>
+    <p class="text">分享</p>
   </div>
 </template>
 
@@ -14,17 +13,17 @@
 
 <style lang="less" scoped>
   .common-share-btn {
-    display: inline-block;
-    width: 82rpx;
-    height: 100%;
-    &__a {
-      display: inline-block;
-      width: 82rpx;
-      height: 100%;
-      .div1 {
-        width: 82rpx;
-        height: 100%;
-      }
+    width: 54rpx;
+    .button {
+      display: block;
+      width: 54rpx;
+      height: 54rpx;
+    }
+    .text {
+      line-height: 28rpx;
+      font-size: 20rpx;
+      color: #232323;
+      text-align: center;
     }
   }
 </style>

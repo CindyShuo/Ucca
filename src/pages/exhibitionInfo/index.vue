@@ -74,7 +74,7 @@
         活动须知
       </div>
     </div>
-    <common-footer-handle @buyTicket="isBuyTicket"></common-footer-handle>
+    <common-footer-handle @buyTicket="isBuyTicket" id="0"></common-footer-handle>
     <!-- 团体活动 -->
     <common-picker v-if="groupAppointment">
       <div class="exhibition-info__box" v-if="groupAppointment" :animation="animationData">
@@ -239,7 +239,6 @@
       }
     },
     onLoad (options) {
-      console.log(options.id)
       this.getItemInfo(options.id)
     }
   }

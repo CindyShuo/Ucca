@@ -1,5 +1,4 @@
 import Fly from 'flyio/dist/npm/wx'
-// import qs from 'qs'
 import * as CONFIG from './settings'
 
 let fly = new Fly()

@@ -1,30 +1,48 @@
 <template>
-  <div class="common-collection-btn">
-    <a class="common-collection-btn__a">
-      <image class='div1' src='/static/images/footerHandle/details-icon2.png'></image>
-    </a>
+  <div class="common-collection-btn" @click="submitLike">
+    <image class="button" :src="isCollection ? '/static/images/footerHandle/is_collect.png' : '/static/images/footerHandle/collect.png'"></image>
+    <p class="text">收藏</p>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'CommonCollectionBtn'
+    name: 'CommonCollectionBtn',
+    props: {
+      id: {
+        type: String,
+        required: true
+      }
+    },
+    data () {
+      return {
+        isCollection: false
+      }
+    },
+    methods: {
+      submitLike () {
+        this.$http.submitLike(this.id)
+          .then(res => {
+            console.log(res)
+          })
+      }
+    }
   }
 </script>
 
 <style lang="less" scoped>
   .common-collection-btn {
-    display: inline-block;
-    width: 82rpx;
-    height: 100%;
-    &__a {
-      display: inline-block;
-      width: 82rpx;
-      height: 100%;
-      .div1 {
-        width: 82rpx;
-        height: 100%;
-      }
+    width: 54rpx;
+    .button {
+      display: block;
+      width: 54rpx;
+      height: 54rpx;
+    }
+    .text {
+      line-height: 28rpx;
+      font-size: 20rpx;
+      color: #232323;
+      text-align: center;
     }
   }
 </style>
