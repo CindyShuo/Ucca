@@ -3,7 +3,7 @@
     <div class='common-footer-handle__div' v-bind:style="[type? 'width: 270rpx': '']">
       <common-home-btn></common-home-btn>
       <common-collection-btn></common-collection-btn>
-      <common-share-btn></common-share-btn>
+      <common-share-btn @share="showShareBox"></common-share-btn>
     </div>
     <div @click="groupAppointment" class='common-footer-handle__div2' v-if="!type">团体预约</div>
     <div @click="buyTicket" class='common-footer-handle__div3' v-if="!type">立即购票</div>
@@ -33,8 +33,8 @@
     },
     methods: {
       // 分享
-      showShareBox () {
-        this.share = true
+      showShareBox (val) {
+        this.share = val
         this.$emit('buyTicket', {'buyTicket': this.share, 'type': 'share'})
       },
       // 团体预约
@@ -50,6 +50,7 @@
       // 参与活动
       participate () {
         this.isParticipate = true
+        console.log(this.isParticipate, 'this.isParticipate')
         this.$emit('buyTicket', {'buyTicket': this.isParticipate, 'type': 'participate'})
       }
     }

@@ -62,6 +62,9 @@
         <choose-ticket buyType="active" @close="close" />
       </div>
     </common-picker>
+    <common-picker v-if="share">
+      <share-box @close="close"></share-box>
+    </common-picker>
   </scroll-view>
 </template>
 
@@ -75,10 +78,11 @@
   import CommonHeader from '../../components/common/CommonHeader'
   import store from '../../store'
   import CommonScrollHeader from '../../components/common/CommonScrollHeader'
+  import ShareBox from '../../components/purchaseTickets/ShareBox'
 
-export default {
+  export default {
     name: 'ActiveInfo',
-    components: { CommonScrollHeader, CommonHeader, CommonFooterHandle, CommonInfoTab, CommonPicker, ChooseTicket, CommonOrderItem, ChooseActivity },
+    components: { CommonScrollHeader, CommonHeader, CommonFooterHandle, CommonInfoTab, CommonPicker, ChooseTicket, CommonOrderItem, ChooseActivity, ShareBox },
     data () {
       return {
         isTop: true,
@@ -96,7 +100,8 @@ export default {
             money: '￥138',
             number: '1张'
           }
-        ]
+        ],
+        share: false // 分享
       }
     },
     computed: {
@@ -149,6 +154,7 @@ export default {
           animation.translateY(0).step()
           that.animationData = animation.export()
           that.participate = false
+          that.share = false
         }, 100)
       },
       isBuyTicket (val) {
@@ -157,6 +163,7 @@ export default {
       },
       close () {
         this.participate = false
+        this.share = false
       }
     },
     mounted () {

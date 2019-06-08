@@ -8,7 +8,12 @@
 
 <script>
   export default {
-    name: 'CommonShareBtn'
+    name: 'CommonShareBtn',
+    methods: {
+      showShareBox () {
+        this.$emit('share', true)
+      }
+    }
   }
 </script>
 
