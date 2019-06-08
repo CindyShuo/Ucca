@@ -62,6 +62,14 @@
         .then(res => {
           console.log(res)
         })
+      // this.$http.sendSms('18310930019')
+      //   .then(res => {
+      //     console.log(res)
+      //   })
+      this.$http.submitGroupOrder()
+        .then(res => {
+          console.log(res)
+        })
     }
   }
 </script>

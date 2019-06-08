@@ -34,6 +34,12 @@
       }
     },
     methods: {
+      getHallArtwork (id) {
+        this.$http.getHallArtwork(id)
+          .then(res => {
+            console.log(res)
+          })
+      },
       mapHandle () {
         this.mapStatus = !this.mapStatus
       },
@@ -46,6 +52,10 @@
       changeMusic (val) {
         this.audioItem = val
       }
+    },
+    onLoad (options) {
+      console.log(options)
+      this.getHallArtwork(options.id)
     }
   }
 </script>

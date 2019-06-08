@@ -2,28 +2,20 @@
   <div class="guide-index">
     <common-header title="UCCA尤伦斯当代艺术中心" />
     <div class="guide-index__content">
-      <image class="map"></image>
-      <div class="item" @click="goExhibitionHall">
+      <image
+        :src="mapURL"
+        class="map"
+      ></image>
+      <div
+        v-for="(item, i) in hallList"
+        :key="i"
+        class="item"
+        @click="goExhibitionHall(item.exhi_id)"
+      >
         <image class="pic" src="/static/images/pic.png"></image>
         <div class="card">
-          <span class="hall">大展厅</span>
-          <h2>文明：当代生活启示录</h2>
-          <p>34件作品</p>
-        </div>
-      </div>
-      <div class="item">
-        <image class="pic" src="/static/images/pic.png"></image>
-        <div class="card">
-          <span class="hall">中展厅</span>
-          <h2>“邱志杰：寰宇全图”系列</h2>
-          <p>34件作品</p>
-        </div>
-      </div>
-      <div class="item">
-        <image class="pic" src="/static/images/pic.png"></image>
-        <div class="card">
-          <span class="hall">新展厅</span>
-          <h2>毕加索：天才的诞生</h2>
+          <span class="hall">{{ item.name }}</span>
+          <h2>{{ item.title }}</h2>
           <p>34件作品</p>
         </div>
       </div>
@@ -33,16 +25,33 @@
 
 <script>
   import CommonHeader from '../../components/common/CommonHeader'
-  import CommonFooter from '../../components/common/CommonFooter'
+
   export default {
     name: 'Guide',
-    components: { CommonHeader, CommonFooter },
+    components: { CommonHeader },
+    data () {
+      return {
+        mapURL: '',
+        hallList: []
+      }
+    },
     methods: {
-      goExhibitionHall () {
+      getHallInfo () {
+        this.$http.getHallInfo()
+          .then(res => {
+            console.log(res)
+            this.mapURL = res.data.mapURL
+            this.hallList = res.data.halls
+          })
+      },
+      goExhibitionHall (id) {
         wx.navigateTo({
-          url: '/pages/exhibitionHall/main'
+          url: '/pages/exhibitionHall/main?id=' + id
         })
       }
+    },
+    mounted () {
+      this.getHallInfo()
     }
   }
 </script>
@@ -60,11 +69,11 @@
         border-radius: 5rpx;
       }
       .item {
-        margin-top: 20rpx;
-        padding: 20rpx;
         display: flex;
         align-items: center;
-        background: #fff;
+        margin-top: 20rpx;
+        padding: 20rpx;
+        background-color: #fff;
         box-shadow: 0 12rpx 34rpx 0 rgba(0,0,0,0.05);
         .pic {
           width: 166rpx;
